@@ -128,8 +128,8 @@ tbody td:first-child{font-weight:500}
 .faq-list{display:flex;flex-direction:column}
 .faq-item{border-bottom:1px solid var(--border);padding:18px 0}
 .faq-q{font-size:15px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center}
-.faq-q::after{content:'+';font-size:20px;color:var(--blue);flex-shrink:0;transition:transform .2s;font-weight:300}
-.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-q::after{content:'✓';font-size:16px;color:var(--blue);flex-shrink:0;transition:transform .2s;font-weight:400}
+.faq-item.open .faq-q::after{transform:rotate(0deg);content:'✕';color:var(--muted)}
 .faq-a{font-size:14px;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s ease}
 .faq-item.open .faq-a{max-height:300px;padding-top:10px}
 
@@ -1013,7 +1013,7 @@ a:hover{text-decoration:underline}
 
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">Как правильно чистить зубы электрощёткой</div>
-          <div class="faq-a" style="max-height:none !important">
+          <div class="faq-a">
             <div style="padding-top:12px;display:grid;gap:12px">
               <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px 16px">
                 <b style="font-size:13px">1. Угол 45° к линии дёсен</b>
