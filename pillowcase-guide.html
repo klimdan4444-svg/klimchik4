@@ -966,3 +966,23 @@ a:hover{text-decoration:underline}
     </div>
   </div>
 </div>
+
+<footer>
+  <div class="container">
+    <p style="margin-bottom:8px">Источники: Sleep Foundation · CNN Underscored · Good Housekeeping · PubMed NIH · ClinicalTrials.gov NCT06142487 · Journal of Cosmetic Dermatology 2012 · Water's Edge Dermatology · Moonchild Sleep · NCBI PMC 2024 · fishersfinery.com · blissy.com · mayfairsilk.com</p>
+    <p>Обновлено: Май 2026. Материал носит информационный характер.</p>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var item = el.closest('.faq-item');
+  var wasOpen = item.classList.contains('open');
+  var allItems = document.querySelectorAll('.faq-item');
+  allItems.forEach(function(i){ i.classList.remove('open'); });
+  if(!wasOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
