@@ -34,7 +34,7 @@
   --radius:12px;
   --radius-sm:8px;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:0}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.7}
 
 /* HERO */
@@ -51,6 +51,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);f
 .container{max-width:960px;margin:0 auto;padding:0 24px}
 .section{padding:64px 0}
 .section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.section-title+p,.section-title~p:not([class]){max-width:660px}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:600;margin-bottom:24px;line-height:1.25}
 .divider{height:1px;background:var(--border);margin:0}
 
@@ -610,73 +611,84 @@ a:hover{text-decoration:underline}
           <tr>
             <th>Бренд</th>
             <th>Материал</th>
-            <th>Медь/Серебро</th>
-            <th>Гипоаллерг.</th>
+            <th>Момме</th>
+            <th>Класс</th>
+            <th>Антибакт.</th>
             <th>Сертификат</th>
-            <th>Срок службы</th>
+            <th>Застёжка</th>
             <th>Лучше всего для</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Coppry <span class="mark-best">Топ-выбор</span></td>
-            <td>Медь + шёлк</td>
-            <td>—</td>
-            <td class="tick">✓ Медь</td>
-            <td class="tick">✓</td>
-            <td>Лаб. тесты</td>
-            <td>12–18 мес.</td>
-            <td>Акне, коллаген</td>
-          </tr>
-          <tr>
-            <td>Brightr Sleep</td>
-            <td>Медь + эвкалипт</td>
-            <td>—</td>
-            <td class="tick">✓ Медь</td>
-            <td class="tick">✓</td>
-            <td>OEKO-TEX</td>
-            <td>12+ мес.</td>
-            <td>Европа, охлаждение</td>
-          </tr>
-          <tr>
-            <td>Blissy</td>
-            <td>Тутовый шёлк 22mm</td>
-            <td>—</td>
-            <td class="cross">—</td>
-            <td class="tick">✓</td>
-            <td>Oeko-Tex</td>
-            <td>3+ года</td>
-            <td>Волосы, увлажнение</td>
-          </tr>
-          <tr>
-            <td>Slip</td>
+          <tr style="background:#fff8ee">
+            <td><b>Fishers Finery</b> <span class="mark-best">CNN #1</span></td>
             <td>Тутовый шёлк</td>
-            <td>—</td>
+            <td><b>25mm</b></td>
+            <td class="tick">6A</td>
             <td class="cross">—</td>
-            <td class="tick">✓</td>
-            <td>—</td>
-            <td>3+ года</td>
-            <td>Дерматологи</td>
+            <td>OEKO-TEX</td>
+            <td>Envelope</td>
+            <td>Долговечность, кожа лица</td>
           </tr>
           <tr>
-            <td>enVy</td>
-            <td>Медь + шёлк без краски</td>
+            <td><b>Lunya</b></td>
+            <td>Washable Silk</td>
+            <td>22mm</td>
+            <td class="tick">6A</td>
+            <td class="cross">—</td>
             <td>—</td>
-            <td class="tick">✓ Медь</td>
-            <td class="tick">✓</td>
-            <td>Лаб. тесты</td>
-            <td>12–18 мес.</td>
-            <td>Сверхчувствит. кожа</td>
+            <td>Envelope</td>
+            <td>Машинная стирка, комфорт</td>
           </tr>
           <tr>
-            <td>Cozy Earth</td>
-            <td>Бамбук</td>
+            <td><b>Brooklinen</b></td>
+            <td>Long-strand Mulberry</td>
+            <td>22mm</td>
+            <td class="tick">6A</td>
+            <td class="cross">—</td>
+            <td>—</td>
+            <td>Envelope</td>
+            <td>Волосы, доступный люкс</td>
+          </tr>
+          <tr>
+            <td><b>Blissy</b></td>
+            <td>Тутовый шёлк</td>
+            <td>22mm</td>
+            <td class="tick">6A</td>
+            <td class="cross">—</td>
+            <td>OEKO-TEX</td>
+            <td><b>Zipper</b></td>
+            <td>Аллергики, акне</td>
+          </tr>
+          <tr>
+            <td><b>Cozy Earth</b></td>
+            <td>Bamboo viscose</td>
             <td>—</td>
             <td class="cross">—</td>
-            <td class="tick">✓</td>
+            <td class="tick">Природный</td>
             <td>—</td>
-            <td>10 лет гарантия</td>
-            <td>Жаркий климат</td>
+            <td>Envelope</td>
+            <td>Жаркий климат, охлаждение</td>
+          </tr>
+          <tr>
+            <td><b>ZIMASILK</b></td>
+            <td>Тутовый шёлк</td>
+            <td>19–22mm</td>
+            <td class="tick">6A</td>
+            <td class="cross">—</td>
+            <td>—</td>
+            <td>Zipper</td>
+            <td>Первый шёлк, бюджет</td>
+          </tr>
+          <tr>
+            <td><b>Mayfairsilk</b></td>
+            <td>Тутовый шёлк</td>
+            <td><b>25mm</b></td>
+            <td class="tick">6A</td>
+            <td class="cross">—</td>
+            <td>OEKO-TEX</td>
+            <td>Envelope</td>
+            <td>Премиум, чувствительная кожа</td>
           </tr>
         </tbody>
       </table>
