@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roost V3 vs Nexstand K2 — где и как заказать в Сербию и Грузию</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f4f0;--white:#fff;--ink:#111;--muted:#6b6a66;--border:#e2e0d8;
+  --blue:#1a4fd6;--blue-light:#eef2fd;--blue-dark:#0f2e8a;
+  --green:#1a7a3c;--green-light:#e8f5ee;
+  --amber:#c47a00;--amber-light:#fef8e8;
+  --red:#c0392b;--red-light:#fdf0ee;
+  --radius:14px;--radius-sm:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7}
+
+.hero{background:var(--ink);color:#fff;padding:72px 24px 60px}
+.hero-inner{max-width:860px;margin:0 auto}
+.hero-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:5px 14px;display:inline-block;margin-bottom:20px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:#6b9fff}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.5);max-width:540px;line-height:1.7}
+
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+.section{padding:56px 0}
+.s-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.s-title{font-family:'Syne',sans-serif;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;margin-bottom:24px}
+.divider{height:1px;background:var(--border)}
+
+/* PRODUCT CARDS */
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.prod-card.winner{border:2px solid var(--blue)}
+.prod-header{padding:20px 22px 16px;border-bottom:1px solid var(--border)}
+.prod-badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:8px}
+.prod-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px}
+.prod-price{font-size:15px;font-weight:500;color:var(--blue)}
+.prod-body{padding:18px 22px}
+.prod-row{font-size:13px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px}
+.prod-row:last-child{border-bottom:none}
+.prod-row b{color:var(--ink)}
+.pros{margin-top:12px}
+.pro{font-size:12.5px;color:var(--green);padding:2px 0}
+.con{font-size:12.5px;color:var(--red);padding:2px 0}
+
+/* VERDICT */
+.verdict{background:var(--blue-light);border:1px solid #b0c8f5;border-radius:var(--radius);padding:22px 26px;margin-bottom:24px}
+.verdict h4{font-family:'Syne',sans-serif;font-size:15px;color:var(--blue-dark);margin-bottom:8px}
+.verdict p{font-size:14px;color:var(--blue-dark);line-height:1.65}
+
+/* COUNTRY SECTIONS */
+.country-block{margin-bottom:40px}
+.country-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.flag{font-size:24px}
+.option-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.option-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+.option-card.best{border:2px solid var(--green)}
+.option-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.option-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;margin-bottom:10px}
+.opt-row{font-size:13px;color:var(--muted);padding:3px 0;display:flex;gap:6px}
+.opt-row b{color:var(--ink)}
+.warn{background:var(--amber-light);border:1px solid #f5d890;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;color:var(--amber);margin-top:10px}
+.good{background:var(--green-light);border:1px solid #a5d6b5;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;color:var(--green);margin-top:10px}
+.danger{background:var(--red-light);border:1px solid #f5c6c2;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;color:var(--red);margin-top:10px}
+
+/* COMPARISON TABLE */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:var(--ink);color:#fff;font-weight:500;padding:11px 14px;text-align:left;font-size:12px}
+thead th:first-child{border-radius:8px 0 0 0}
+thead th:last-child{border-radius:0 8px 0 0}
+tbody tr:nth-child(even){background:#faf9f6}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody td{padding:10px 14px;vertical-align:top}
+.tick{color:var(--green);font-weight:700}
+.best-m{background:var(--blue-light);color:var(--blue-dark);font-size:11px;padding:2px 7px;border-radius:4px}
+
+footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:13px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+@media(max-width:600px){
+  .prod-grid,.option-grid{grid-template-columns:1fr}
+  .hero{padding:52px 20px 44px}
+  .section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Май 2026</div>
+    <h1>Roost V3 vs<br><em>Nexstand K2</em></h1>
+    <p class="hero-sub">Две лучшие портативные стойки для ноутбука — краткое сравнение и конкретно где и как заказать в Сербию (Белград) и Грузию (Батуми).</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ПРОДУКТЫ -->
+<div class="section">
+  <div class="container">
+    <p class="s-tag">Сравнение</p>
+    <h2 class="s-title">Два варианта</h2>
+
+    <div class="prod-grid">
+
+      <div class="prod-card winner">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--blue-light);color:var(--blue-dark)">Премиум · Оригинал</div>
+          <div class="prod-name">Roost V3</div>
+          <div class="prod-price">$69–90</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Вес</b> 170 г — легчайший в классе</div>
+          <div class="prod-row"><b>Высота</b> 7 настроек, до 14 дюймов подъёма</div>
+          <div class="prod-row"><b>Материал</b> Композит с нулевым люфтом</div>
+          <div class="prod-row"><b>Грипсы</b> Резиновые самоподстраивающиеся</div>
+          <div class="prod-row"><b>Чехол</b> Включён</div>
+          <div class="prod-row"><b>Гарантия</b> Да, US-компания</div>
+          <div class="pros">
+            <div class="pro">✓ Абсолютно жёсткий — ноут не трясётся</div>
+            <div class="pro">✓ Самый компактный в сложенном виде</div>
+            <div class="pro">✓ Лучший хват — ноут не соскальзывает</div>
+            <div class="con">✕ Дороже в ~3 раза</div>
+            <div class="con">✕ Сложнее найти физически</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--green-light);color:var(--green)">Бюджет · 90% функций</div>
+          <div class="prod-name">Nexstand K2</div>
+          <div class="prod-price">$25–40</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Вес</b> 230 г — чуть тяжелее</div>
+          <div class="prod-row"><b>Высота</b> 8 настроек, до 30 см</div>
+          <div class="prod-row"><b>Материал</b> Стеклонаполненный нейлон</div>
+          <div class="prod-row"><b>Грипсы</b> Пластик (доп. клипсы для тонких)</div>
+          <div class="prod-row"><b>Чехол</b> Включён</div>
+          <div class="prod-row"><b>Гарантия</b> 30 дней возврат</div>
+          <div class="pros">
+            <div class="pro">✓ В 3 раза дешевле Roost</div>
+            <div class="pro">✓ Легко найти на Amazon и AliExpress</div>
+            <div class="pro">✓ 90% функций за треть цены</div>
+            <div class="con">✕ Небольшой люфт при наборе</div>
+            <div class="con">✕ Пластиковые грипсы — хуже держат</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="verdict" style="margin-top:16px">
+      <h4>Честный вывод</h4>
+      <p><strong>Nexstand K2</strong> даёт ~90% функций за 33% цены — лучший выбор если стойка нужна для работы, а не как предмет коллекционирования. <strong>Roost V3</strong> оправдан если: работаете на дорогом ноутбуке (лучший хват), часто в кафе на неустойчивых столах, или важен минимальный размер в сумке.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ГДЕ ЗАКАЗАТЬ -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Доставка</p>
+    <h2 class="s-title">Куда заказать — Белград или Батуми</h2>
+
+    <!-- СЕРБИЯ -->
+    <div class="country-block">
+      <div class="country-title"><span class="flag">🇷🇸</span> Сербия — Белград</div>
+
+      <div class="option-grid">
+
+        <div class="option-card best">
+          <div class="option-label">Лучший вариант</div>
+          <div class="option-name">Amazon.de → Сербия</div>
+          <div class="opt-row"><b>Nexstand K2</b> — есть на Amazon.de, ~€25–35</div>
+          <div class="opt-row"><b>Roost V3</b> — есть на Amazon.com/.de, ~$69–90</div>
+          <div class="opt-row"><b>Срок</b> — 5–10 рабочих дней</div>
+          <div class="opt-row"><b>Доставка</b> — €5–15 в зависимости от продавца</div>
+          <div class="opt-row"><b>Таможня</b> — посылки до €150 обычно проходят без пошлин через почту</div>
+          <div class="good">✓ Nexstand K2 (€25–35) + доставка < €150 → скорее всего без таможни</div>
+        </div>
+
+        <div class="option-card">
+          <div class="option-label">Официальный сайт</div>
+          <div class="option-name">nexstand.eu → Сербия</div>
+          <div class="opt-row"><b>Nexstand K2</b> — европейский сайт, €32 + доставка</div>
+          <div class="opt-row"><b>Доставка в Сербию</b> — подтверждена (EU склад)</div>
+          <div class="opt-row"><b>Срок</b> — 3–7 рабочих дней</div>
+          <div class="opt-row"><b>therooststand.com</b> — Roost, США, доставка $15–25, 10–14 дней</div>
+          <div class="good">✓ nexstand.eu — быстрее чем Amazon, склад в Европе</div>
+        </div>
+
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px">
+        <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;margin-bottom:10px">⚠ Таможня Сербии — важно знать</div>
+        <div class="opt-row"><b>До €150</b> — обычно без пошлины (почтовые отправления)</div>
+        <div class="opt-row"><b>€150–1000</b> — таможенная пошлина ~5% + НДС 20% (PDV)</div>
+        <div class="opt-row"><b>Подарок до €70</b> — освобождён от пошлины если помечен как gift</div>
+        <div class="opt-row"><b>Дополнительно</b> — фиксированный сбор почты 200 RSD (~€1.7) при получении</div>
+        <div class="warn" style="margin-top:10px">Nexstand K2 (~€25–35) — проходит без проблем. Roost ($69–90) — тоже ниже €150, но с учётом доставки может чуть превысить. Лучше заказывать с Amazon.de — декларируют честно.</div>
+      </div>
+    </div>
+
+    <!-- ГРУЗИЯ -->
+    <div class="country-block">
+      <div class="country-title"><span class="flag">🇬🇪</span> Грузия — Батуми</div>
+
+      <div class="option-grid">
+
+        <div class="option-card best">
+          <div class="option-label">Лучший вариант</div>
+          <div class="option-name">Amazon.com → Грузия</div>
+          <div class="opt-row"><b>Nexstand K2</b> — Amazon.com, ~$25–35 + доставка</div>
+          <div class="opt-row"><b>Roost V3</b> — Amazon.com, ~$69–90 + доставка</div>
+          <div class="opt-row"><b>Срок</b> — 7–14 рабочих дней</div>
+          <div class="opt-row"><b>Доставка</b> — $10–20, зависит от продавца</div>
+          <div class="opt-row"><b>Таможня</b> — Грузия очень либеральна, пошлин почти нет</div>
+          <div class="good">✓ Грузия — одна из самых open для импорта стран. Мелкие посылки проходят без задержек.</div>
+        </div>
+
+        <div class="option-card">
+          <div class="option-label">Альтернатива</div>
+          <div class="option-name">AliExpress → Батуми</div>
+          <div class="opt-row"><b>Nexstand K2</b> — официальный магазин, ~$20–28</div>
+          <div class="opt-row"><b>Roost</b> — нет на AliExpress (только подделки)</div>
+          <div class="opt-row"><b>Срок</b> — 10–20 дней</div>
+          <div class="opt-row"><b>Доставка</b> — часто бесплатная</div>
+          <div class="warn">Для Roost — только therooststand.com или Amazon. На AliExpress Roost нет — там копии.</div>
+        </div>
+
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px">
+        <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;margin-bottom:10px">✅ Таможня Грузии — одна из лучших в регионе</div>
+        <div class="opt-row"><b>Порог без пошлины</b> — до $300 на физлицо в месяц (онлайн-покупки)</div>
+        <div class="opt-row"><b>Выше $300</b> — 18% НДС + пошлина (зависит от товара)</div>
+        <div class="opt-row"><b>Стойка для ноутбука</b> — попадает под категорию аксессуаров, обычно 0% пошлина</div>
+        <div class="good">✓ Обе стойки (~$25–90) — хорошо проходят. Грузия не задерживает мелкие посылки. Батуми — порт, логистика быстрая.</div>
+      </div>
+    </div>
+
+    <!-- ИТОГОВАЯ ТАБЛИЦА -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Что / Куда</th>
+            <th>Nexstand K2 → Белград</th>
+            <th>Nexstand K2 → Батуми</th>
+            <th>Roost V3 → Белград</th>
+            <th>Roost V3 → Батуми</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Цена товара</b></td>
+            <td>~€25–35</td>
+            <td>~$25–35</td>
+            <td>~$69–90</td>
+            <td>~$69–90</td>
+          </tr>
+          <tr>
+            <td><b>Доставка</b></td>
+            <td>€5–15</td>
+            <td>$10–20</td>
+            <td>$15–25</td>
+            <td>$15–25</td>
+          </tr>
+          <tr>
+            <td><b>Таможня</b></td>
+            <td class="tick">✓ Вероятно без</td>
+            <td class="tick">✓ Без</td>
+            <td>⚠ Возможна</td>
+            <td class="tick">✓ Без</td>
+          </tr>
+          <tr>
+            <td><b>Срок</b></td>
+            <td>5–10 дней</td>
+            <td>7–14 дней</td>
+            <td>10–14 дней</td>
+            <td>7–14 дней</td>
+          </tr>
+          <tr>
+            <td><b>Где заказать</b></td>
+            <td><a href="https://nexstand.eu" target="_blank">nexstand.eu</a> или Amazon.de</td>
+            <td>Amazon.com или AliExpress</td>
+            <td><a href="https://www.therooststand.com" target="_blank">therooststand.com</a> или Amazon</td>
+            <td>Amazon.com или therooststand.com</td>
+          </tr>
+          <tr style="background:var(--blue-light)">
+            <td><b>Лучший выбор</b></td>
+            <td colspan="2"><span class="best-m">Nexstand → nexstand.eu или Amazon.de</span></td>
+            <td colspan="2"><span class="best-m">Roost → Amazon.com</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- БЫСТРЫЙ ВЫВОД -->
+<div class="section">
+  <div class="container">
+    <p class="s-tag">Итог</p>
+    <h2 class="s-title">Что заказывать и куда</h2>
+
+    <div class="option-grid">
+      <div class="option-card best">
+        <div class="option-label">Если нужно быстро и выгодно</div>
+        <div class="option-name">Nexstand K2 → Батуми</div>
+        <div class="opt-row">Заказать на <a href="https://www.amazon.com/s?k=nexstand+k2" target="_blank"><b>Amazon.com</b></a> или <b>AliExpress</b></div>
+        <div class="opt-row">~$25–35 + доставка $10–15</div>
+        <div class="opt-row">Без таможни, 7–14 дней</div>
+        <div class="good">✓ Самый простой путь без рисков</div>
+      </div>
+      <div class="option-card best">
+        <div class="option-label">Если хочется лучшее</div>
+        <div class="option-name">Roost V3 → Батуми</div>
+        <div class="opt-row">Заказать на <a href="https://www.amazon.com/dp/B01C9KG8IG" target="_blank"><b>Amazon.com</b></a></div>
+        <div class="opt-row">~$69–90 + доставка ~$15</div>
+        <div class="opt-row">Без таможни, 7–14 дней</div>
+        <div class="good">✓ Грузия — без проблем с таможней на эту сумму</div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">В Белград — Nexstand</div>
+        <div class="option-name">Nexstand K2 → Белград</div>
+        <div class="opt-row">Заказать на <a href="https://nexstand.eu/products/nexstand-k2-laptop-stand-1" target="_blank"><b>nexstand.eu</b></a></div>
+        <div class="opt-row">~€32 + доставка, 3–7 дней</div>
+        <div class="opt-row">Европейский склад — без таможни ЕС</div>
+        <div class="warn">⚠ Сербия не в ЕС — небольшая таможенная обработка возможна, но сумма мала</div>
+      </div>
+      <div class="option-card">
+        <div class="option-label">В Белград — Roost</div>
+        <div class="option-name">Roost V3 → Белград</div>
+        <div class="opt-row">Заказать на <a href="https://www.therooststand.com/products/roost-v3-roost-laptop-stand" target="_blank"><b>therooststand.com</b></a></div>
+        <div class="opt-row">~$69–90 + доставка $20–25</div>
+        <div class="opt-row">10–14 дней из США</div>
+        <div class="warn">⚠ С доставкой может быть >€150 — возможна таможня ~5% + НДС 20%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Источники: therooststand.com · nexstand.eu · amazon.com · freakingnomads.com · gearuptravel.com · beogeek.com · statt.rs · Май 2026</p>
+</footer>
+
+</body>
+</html>
