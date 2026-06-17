@@ -43,8 +43,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-s
 .prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:start}
 .prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
 .prod-card.top{border:2px solid var(--blue)}
-.prod-icon-row{display:flex;align-items:center;gap:8px;padding:14px 14px 0}
-.prod-icon{font-size:20px;line-height:1}
+.prod-icon-row{display:flex;align-items:center;justify-content:center;padding:14px 14px 0}
+.prod-photo{width:100%;max-width:110px;height:90px;object-fit:contain;display:block}
 .prod-header{padding:8px 14px 12px;border-bottom:1px solid var(--border)}
 .prod-badge{font-size:10px;font-weight:500;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:6px}
 .prod-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:4px;line-height:1.25}
@@ -181,7 +181,7 @@ a{color:var(--blue);text-decoration:none}
 
       <!-- BRAUN 7 -->
       <div class="prod-card top">
-        <div class="prod-icon-row"><span class="prod-icon">🩺👂</span></div>
+        <div class="prod-icon-row"><img class="prod-photo" src="img/braun7.jpg" alt="Braun ThermoScan 7"></div>
         <div class="prod-header">
           <div class="prod-badge" style="background:var(--blue-light);color:var(--blue-dark)">#1 врачи</div>
           <div class="prod-name">Braun ThermoScan 7<br>IRT6520</div>
@@ -193,6 +193,7 @@ a{color:var(--blue);text-decoration:none}
           <div class="prod-row"><b>Зонд</b>Преднагретый + ExacTemp</div>
           <div class="prod-row"><b>Индикация</b>Цветовая по возрасту</div>
           <div class="prod-row"><b>Память</b>9 измерений + подсветка</div>
+          <div class="prod-row"><b>Размер</b>14.5×3.3×5.3 см</div>
           <div class="pros">
             <div class="pro">✓ Цвет сразу показывает норму/жар</div>
             <div class="pro">✓ ExacTemp — без ошибок позиции</div>
@@ -208,7 +209,7 @@ a{color:var(--blue);text-decoration:none}
 
       <!-- BRAUN 5 -->
       <div class="prod-card top">
-        <div class="prod-icon-row"><span class="prod-icon">👂✅</span></div>
+        <div class="prod-icon-row"><img class="prod-photo" src="img/braun5.jpg" alt="Braun ThermoScan 5"></div>
         <div class="prod-header">
           <div class="prod-badge" style="background:var(--green-light);color:var(--green)">Топ TechGearLab</div>
           <div class="prod-name">Braun ThermoScan 5<br>IRT6020</div>
@@ -220,6 +221,7 @@ a{color:var(--blue);text-decoration:none}
           <div class="prod-row"><b>Зонд</b>Преднагретый + ExacTemp</div>
           <div class="prod-row"><b>Индикация</b>Только цифра, без цвета</div>
           <div class="prod-row"><b>Память</b>Только последнее</div>
+          <div class="prod-row"><b>Размер</b>14.5×3.3×5.6 см</div>
           <div class="pros">
             <div class="pro">✓ Та же точность, дешевле на 30–40%</div>
             <div class="pro">✓ Ключевые технологии на месте</div>
@@ -235,7 +237,7 @@ a{color:var(--blue);text-decoration:none}
 
       <!-- BRAUN PRO 6000 -->
       <div class="prod-card">
-        <div class="prod-icon-row"><span class="prod-icon">🏥👂</span></div>
+        <div class="prod-icon-row"><img class="prod-photo" src="img/pro6000.jpg" alt="Braun ThermoScan PRO 6000"></div>
         <div class="prod-header">
           <div class="prod-badge" style="background:var(--amber-light);color:var(--amber)">Клинический</div>
           <div class="prod-name">Braun ThermoScan<br>PRO 6000</div>
@@ -246,6 +248,7 @@ a{color:var(--blue);text-decoration:none}
           <div class="prod-row"><b>Насадка</b>Мягкие чехлы — любая анатомия</div>
           <div class="prod-row"><b>Зонд</b>Преднагретый + ExacTemp</div>
           <div class="prod-row"><b>База</b>Диспенсер на 20/40 чехлов</div>
+          <div class="prod-row"><b>Размер</b>~17.5×4×6 см</div>
           <div class="pros">
             <div class="pro">✓ Единств. с мягкой насадкой</div>
             <div class="con">✕ В 3–4× дороже домашних</div>
@@ -258,7 +261,7 @@ a{color:var(--blue);text-decoration:none}
 
       <!-- iProven -->
       <div class="prod-card">
-        <div class="prod-icon-row"><span class="prod-icon">👂🤚</span></div>
+        <div class="prod-icon-row"><img class="prod-photo" src="img/iproven.jpg" alt="iProven DMT-316"></div>
         <div class="prod-header">
           <div class="prod-badge" style="background:var(--teal-light);color:var(--teal)">2 в 1</div>
           <div class="prod-name">iProven<br>DMT-316</div>
@@ -269,6 +272,7 @@ a{color:var(--blue);text-decoration:none}
           <div class="prod-row"><b>Насадка</b>Стандартная, без подогрева</div>
           <div class="prod-row"><b>Режимы</b>Ухо + бесконтактный лоб</div>
           <div class="prod-row"><b>Память</b>50 измерений</div>
+          <div class="prod-row"><b>Размер</b>~16×6×5 см</div>
           <div class="pros">
             <div class="pro">✓ Альтернатива при узком ухе — лоб</div>
             <div class="pro">✓ Дешевле Braun</div>
@@ -284,7 +288,7 @@ a{color:var(--blue);text-decoration:none}
 
       <!-- Vicks SpeedRead -->
       <div class="prod-card">
-        <div class="prod-icon-row"><span class="prod-icon">🌡️💰</span></div>
+        <div class="prod-icon-row"><img class="prod-photo" src="img/vicks.jpg" alt="Vicks SpeedRead V901"></div>
         <div class="prod-header">
           <div class="prod-badge" style="background:var(--green-light);color:var(--green)">Бюджет</div>
           <div class="prod-name">Vicks<br>SpeedRead V901</div>
@@ -294,6 +298,7 @@ a{color:var(--blue);text-decoration:none}
           <div class="prod-row"><b>Точность</b>±0.2°C</div>
           <div class="prod-row"><b>Тип</b>Оральный/подмышечный</div>
           <div class="prod-row"><b>Скорость</b>8 секунд</div>
+          <div class="prod-row"><b>Размер</b>~14×2×1.5 см</div>
           <div class="pros">
             <div class="pro">✓ Точность за минимум денег</div>
             <div class="con">✕ Не ушной, медленнее</div>
