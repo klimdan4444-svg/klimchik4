@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Внешние SSD/M.2 с отпечатком пальца и военным шифрованием — топ 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f4f0;--white:#fff;--ink:#111;--muted:#6b6a66;--border:#e2e0d8;
+  --blue:#1a4fd6;--blue-light:#eef2fd;--blue-dark:#0f2e8a;
+  --green:#1a7a3c;--green-light:#e8f5ee;
+  --amber:#c47a00;--amber-light:#fef8e8;
+  --red:#c0392b;--red-light:#fdf0ee;
+  --teal:#0d7a6b;--teal-light:#e8f5f3;
+  --radius:14px;--radius-sm:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7}
+
+.hero{background:var(--ink);color:#fff;padding:72px 24px 60px}
+.hero-inner{max-width:860px;margin:0 auto}
+.hero-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:5px 14px;display:inline-block;margin-bottom:20px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:#6b9fff}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.5);max-width:580px;line-height:1.7;margin-bottom:28px}
+.hero-nav{display:flex;flex-wrap:wrap;gap:10px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.hero-nav-label{font-size:12px;color:rgba(255,255,255,.3);width:100%;margin-bottom:4px;letter-spacing:.06em;text-transform:uppercase}
+.hero-nav a{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:30px;padding:8px 18px;font-size:13px;color:rgba(255,255,255,.8);text-decoration:none}
+
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+.section{padding:56px 0}
+.s-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.s-title{font-family:'Syne',sans-serif;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;margin-bottom:8px}
+.s-sub{font-size:15px;color:var(--muted);max-width:640px;line-height:1.7;margin-bottom:28px}
+.divider{height:1px;background:var(--border)}
+
+.verdict{background:var(--blue-light);border:1px solid #b0c8f5;border-radius:var(--radius);padding:22px 26px;margin-bottom:24px}
+.verdict h4{font-family:'Syne',sans-serif;font-size:15px;color:var(--blue-dark);margin-bottom:8px}
+.verdict p{font-size:14px;color:var(--blue-dark);line-height:1.65}
+
+.critical{background:var(--red-light);border:2px solid #f5c6c2;border-radius:var(--radius);padding:22px 26px;margin-bottom:24px}
+.critical h4{font-family:'Syne',sans-serif;font-size:15px;color:var(--red);margin-bottom:8px}
+.critical p{font-size:14px;color:var(--red);line-height:1.65}
+
+.prod-grid{display:grid;gap:16px}
+.prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.prod-card.top{border:2px solid var(--blue)}
+.prod-header{padding:20px 24px 16px;border-bottom:1px solid var(--border)}
+.prod-badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:6px}
+.prod-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px}
+.prod-price{font-size:15px;font-weight:500;color:var(--blue)}
+.prod-body{padding:18px 24px}
+.prod-row{font-size:13px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:flex-start}
+.prod-row:last-child{border-bottom:none}
+.prod-row b{color:var(--ink);flex-shrink:0;min-width:140px}
+.pros{margin-top:12px;display:grid;gap:3px}
+.pro{font-size:13px;color:var(--green)}
+.con{font-size:13px;color:var(--red)}
+
+.choose-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:24px}
+.choose-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+.choose-card.best{border:2px solid var(--green)}
+.choose-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.choose-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px}
+.choose-p{font-size:13px;color:var(--muted);line-height:1.6}
+.choose-price{font-size:14px;font-weight:600;color:var(--blue);margin-top:10px}
+
+.table-wrap{overflow-x:auto;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:var(--ink);color:#fff;font-weight:500;padding:10px 14px;text-align:left;font-size:12px}
+tbody tr:nth-child(even){background:#faf9f6}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody td{padding:9px 14px;vertical-align:top}
+.tick{color:var(--green);font-weight:700}
+.cross{color:var(--red)}
+.best-m{background:var(--blue-light);color:var(--blue-dark);font-size:11px;padding:2px 7px;border-radius:4px;white-space:nowrap}
+
+.warn{background:var(--amber-light);border:1px solid #f5d890;border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--amber);margin-top:12px}
+.good{background:var(--green-light);border:1px solid #a5d6b5;border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--green);margin-top:12px}
+
+.level2{background:var(--ink);color:#fff;padding:48px 24px;text-align:center}
+.level2 h3{font-family:'Syne',sans-serif;font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:700;margin-bottom:10px}
+.level2 p{font-size:15px;color:rgba(255,255,255,.5);max-width:520px;margin:0 auto}
+.level2-line{width:40px;height:2px;background:rgba(255,255,255,.2);margin:20px auto 0}
+
+.faq-list{display:grid;gap:8px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.faq-q{padding:14px 18px;font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+.faq-q::after{content:'↓';color:var(--blue);flex-shrink:0;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 18px}
+.faq-item.open .faq-a{max-height:2000px;padding:0 18px 14px}
+
+footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:13px}
+a{color:var(--blue);text-decoration:none}
+
+@media(max-width:600px){
+  .hero{padding:52px 20px 44px}
+  .section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Обновлено: июнь 2026 · данные актуальны</div>
+    <h1>Внешние SSD<br>с <em>отпечатком пальца</em><br>и военным шифрованием</h1>
+    <p class="hero-sub">Кто на самом деле делает диски с биометрией и реальным FIPS-сертифицированным шифрованием — и почему это почти никогда одно и то же устройство.</p>
+    <div class="hero-nav">
+      <div class="hero-nav-label">Навигация</div>
+      <a href="#quick">⚡ Быстрый выбор</a>
+      <a href="#compare">📊 Сравнение</a>
+      <a href="#deep">🔬 Углублённо</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- КЛЮЧЕВОЙ ВЫВОД -->
+<div class="section" id="quick">
+  <div class="container">
+    <p class="s-tag">Главное — сразу</p>
+    <h2 class="s-title">Короткий ответ на вопрос</h2>
+
+    <div class="critical">
+      <h4>⚠ Samsung — не единственный, но сценарий «отпечаток + военное шифрование в одном диске» почти не существует</h4>
+      <p>Проверил весь рынок. <strong>Samsung T7 Touch</strong> — действительно практически единственный массовый портативный SSD со встроенным сканером отпечатка пальца на корпусе. Но его шифрование — AES 256-bit <strong>без FIPS-сертификации</strong>. А все производители с настоящей военной/гос. сертификацией (FIPS 140-2/140-3 Level 3) — iStorage, Apricorn, Kingston IronKey, SecureData — используют <strong>PIN-клавиатуру или смартфон (Bluetooth/приложение)</strong>, а не встроенный сканер отпечатка на самом диске. Это не маркетинговая прихоть — добавление биометрического сенсора усложняет прохождение FIPS Level 3 (требования к физической защите модуля).</p>
+    </div>
+
+    <div class="choose-grid">
+      <div class="choose-card best">
+        <div class="choose-label">Встроенный отпечаток на корпусе</div>
+        <div class="choose-name">Samsung T7 Touch</div>
+        <p class="choose-p">Единственный массовый вариант. AES 256-bit, скорость 1050/1000 МБ/с. Сертификации военного уровня (FIPS) нет.</p>
+        <div class="choose-price">~$80–230 (500ГБ–2ТБ)</div>
+      </div>
+      <div class="choose-card best">
+        <div class="choose-label">Реальный военный стандарт</div>
+        <div class="choose-name">iStorage diskAshur M2 / PRO2</div>
+        <p class="choose-p">FIPS 140-2/140-3 Level 3. Разблокировка — PIN-клавиатура на корпусе, не отпечаток пальца.</p>
+        <div class="choose-price">~$200–700</div>
+      </div>
+      <div class="choose-card">
+        <div class="choose-label">Биометрия через смартфон + FIPS</div>
+        <div class="choose-name">SecureData SecureDrive BT</div>
+        <p class="choose-p">FIPS 140-2 Level 3. Разблокировка по Touch ID/Face ID/отпечатку — но на экране телефона, не диска.</p>
+        <div class="choose-price">~$250–500</div>
+      </div>
+      <div class="choose-card">
+        <div class="choose-label">FIPS + клавиатура, ругедность</div>
+        <div class="choose-name">Apricorn Aegis Fortress L3</div>
+        <p class="choose-p">FIPS 140-2 Level 3, авиационный алюминий, 10-значная PIN-клавиатура.</p>
+        <div class="choose-price">~$180–1000+</div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <h4>Что выбрать в зависимости от задачи</h4>
+      <p>Нужен именно физический сканер отпечатка на самом диске и устраивает «просто хорошее» AES-256 — берёшь <strong>Samsung T7 Touch</strong>, он есть в открытой продаже везде. Нужна формальная сертификация военного/гос. уровня (для работы с гостайной, гос. закупок, оборонных контрактов, аудита compliance) — биометрия отпадает, нужен <strong>iStorage diskAshur M2 (FIPS 140-3 Level 3)</strong> с PIN-клавиатурой.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- РАЗБОР МОДЕЛЕЙ -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Топ моделей</p>
+    <h2 class="s-title">Подробный разбор</h2>
+    <p class="s-sub">Только устройства с подтверждённым форм-фактором (внешний SSD/M.2) и проверенными характеристиками с официальных сайтов производителей.</p>
+
+    <div class="prod-grid">
+
+      <!-- SAMSUNG T7 TOUCH -->
+      <div class="prod-card top">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--blue-light);color:var(--blue-dark)">Единственный массовый с отпечатком на корпусе</div>
+          <div class="prod-name">Samsung T7 Touch</div>
+          <div class="prod-price">~$80 (500ГБ) – $230 (2ТБ)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Биометрия</b>Встроенный сканер отпечатка прямо на корпусе диска</div>
+          <div class="prod-row"><b>Шифрование</b>AES 256-bit аппаратное · без FIPS-сертификации</div>
+          <div class="prod-row"><b>Скорость</b>До 1050 МБ/с чтение, 1000 МБ/с запись (официальный datasheet Samsung)</div>
+          <div class="prod-row"><b>Интерфейс</b>USB 3.2 Gen 2</div>
+          <div class="prod-row"><b>Размер</b>85×57×8.0мм, 58г</div>
+          <div class="prod-row"><b>Ёмкости</b>500ГБ / 1ТБ / 2ТБ</div>
+          <div class="prod-row"><b>Гарантия</b>3 года</div>
+          <div class="prod-row"><b>Альтернативный вход</b>Пароль (если отпечаток не подходит)</div>
+          <div class="pros">
+            <div class="pro">✓ Только этот бренд массово продаёт диск с физическим сканером отпечатка на корпусе</div>
+            <div class="pro">✓ Лучшая скорость в категории — 1050 МБ/с</div>
+            <div class="pro">✓ Широко доступен — Amazon, официальные магазины, везде</div>
+            <div class="con">✕ Нет FIPS-сертификации — формально не «военный стандарт», просто AES-256</div>
+            <div class="con">✕ Не подходит для гос. закупок/контрактов где требуется сертификат</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ISTORAGE DISKASHUR M2 -->
+      <div class="prod-card top">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--green-light);color:var(--green)">Реальный военный стандарт</div>
+          <div class="prod-name">iStorage diskAshur M2</div>
+          <div class="prod-price">~$200–700 (128ГБ–2ТБ)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Биометрия</b>❌ Нет — PIN-клавиатура с полимерным покрытием (скрывает следы износа клавиш)</div>
+          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit · FIPS 140-3 Level 3 compliant · Common Criteria EAL5+</div>
+          <div class="prod-row"><b>Защита</b>IP68 (погружение 1.5м/30мин), удар 4м на бетон, раздавливание 2.7т</div>
+          <div class="prod-row"><b>Интерфейс</b>USB 3.2 (USB-A и USB-C)</div>
+          <div class="prod-row"><b>Платформы</b>Без драйверов — Windows, macOS, Linux, Android, Chrome</div>
+          <div class="pros">
+            <div class="pro">✓ Настоящая военная сертификация — FIPS 140-3 Level 3</div>
+            <div class="pro">✓ Самый компактный и лёгкий в линейке iStorage</div>
+            <div class="pro">✓ Common Criteria EAL5+ — высший уровень для коммерческого устройства</div>
+            <div class="con">✕ Нет биометрии — только PIN с клавиатуры на корпусе</div>
+            <div class="con">✕ Дороже Samsung в 2–3 раза за аналогичный объём</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECUREDRIVE BT -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--amber-light);color:var(--amber)">Биометрия через смартфон</div>
+          <div class="prod-name">SecureData SecureDrive BT</div>
+          <div class="prod-price">~$250 (250ГБ) – $500+ (2ТБ)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Биометрия</b>Touch ID / Face ID / отпечаток — но через приложение DataLock на смартфоне, не сам диск</div>
+          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit · FIPS 140-2 Level 3 Validated</div>
+          <div class="prod-row"><b>Связь</b>Bluetooth между диском и телефоном для разблокировки</div>
+          <div class="prod-row"><b>Доп.</b>Удалённое стирание данных, антивирус встроен</div>
+          <div class="prod-row"><b>Compliance</b>CJIS, HIPAA, CMMC, GDPR, TAA</div>
+          <div class="pros">
+            <div class="pro">✓ Единственный с FIPS-сертификацией где биометрия всё же участвует в процессе разблокировки</div>
+            <div class="pro">✓ Удалённое стирание данных при потере/краже</div>
+            <div class="con">✕ Отпечаток считывается смартфоном, не диском — нужен телефон каждый раз</div>
+            <div class="con">✕ Зависимость от Bluetooth и приложения</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APRICORN AEGIS FORTRESS L3 -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--teal-light);color:var(--teal)">Ругедность + FIPS</div>
+          <div class="prod-name">Apricorn Aegis Fortress L3</div>
+          <div class="prod-price">~$180 (500ГБ) – $1000+ (20ТБ)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Биометрия</b>❌ Нет — 10-значная PIN-клавиатура, мембранного типа</div>
+          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit real-time · FIPS 140-2 Level 3</div>
+          <div class="prod-row"><b>Корпус</b>Авиационный алюминий 6061, цельнофрезерованный</div>
+          <div class="prod-row"><b>Скорость</b>До 5 Гбит/с (USB 3.1 Gen 1)</div>
+          <div class="prod-row"><b>Защита</b>Принудительное создание PIN, авто-блокировка, само-уничтожение при подборе</div>
+          <div class="pros">
+            <div class="pro">✓ Огромный диапазон ёмкостей — от 500ГБ до 20ТБ</div>
+            <div class="pro">✓ FIPS 140-2 Level 3 включает весь корпус, не только чип</div>
+            <div class="con">✕ Нет биометрии вообще</div>
+            <div class="con">✕ Крупнее и тяжелее чем Samsung/SecureDrive</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- СРАВНИТЕЛЬНАЯ ТАБЛИЦА -->
+<div class="section" id="compare">
+  <div class="container">
+    <p class="s-tag">Сравнение</p>
+    <h2 class="s-title">Сравнительная таблица</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Модель</th>
+            <th>Отпечаток на корпусе</th>
+            <th>FIPS сертификат</th>
+            <th>Скорость</th>
+            <th>Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef2fd">
+            <td><b>Samsung T7 Touch</b></td>
+            <td class="tick">✓ Да</td>
+            <td class="cross">❌ Нет</td>
+            <td>1050/1000 МБ/с</td>
+            <td>$80–230</td>
+          </tr>
+          <tr>
+            <td><b>iStorage diskAshur M2</b></td>
+            <td class="cross">❌ PIN-клавиатура</td>
+            <td class="tick">✓ FIPS 140-3 L3</td>
+            <td>~USB 3.2 скорости</td>
+            <td>$200–700</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>SecureDrive BT</b></td>
+            <td>⚠️ Через смартфон</td>
+            <td class="tick">✓ FIPS 140-2 L3</td>
+            <td>355/333 МБ/с</td>
+            <td>$250–500+</td>
+          </tr>
+          <tr>
+            <td><b>Apricorn Aegis Fortress L3</b></td>
+            <td class="cross">❌ PIN-клавиатура</td>
+            <td class="tick">✓ FIPS 140-2 L3</td>
+            <td>до 5 Гбит/с</td>
+            <td>$180–1000+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn">⚠ Ни одна модель не объединяет встроенный отпечаток на корпусе диска и FIPS Level 3 одновременно — это и есть главный вывод из исследования рынка.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LEVEL 2 -->
+<div id="deep"></div>
+<div class="level2">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px">Углублённо</div>
+  <h3>Хочу разобраться детально</h3>
+  <p>Что значит FIPS 140-2/140-3 Level 3, почему биометрия и эта сертификация плохо сочетаются, и где купить каждую модель.</p>
+  <div class="level2-line"></div>
+</div>
+
+<!-- ЧТО ЗНАЧИТ FIPS -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Технология</p>
+    <h2 class="s-title">Что такое «военное шифрование» на самом деле</h2>
+    <p class="s-sub">Термин используется маркетингово почти везде — разберём что стоит за ним юридически.</p>
+
+    <div style="display:grid;gap:12px;margin-bottom:20px">
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">AES-256 — это алгоритм, не сертификат</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">AES (Advanced Encryption Standard) с ключом 256 бит — сам по себе уже используется военными и спецслужбами США для данных уровня TOP SECRET. Любой производитель, включая Samsung, честно может писать «военный уровень шифрования» имея в виду именно алгоритм. Но это не означает что устройство прошло формальную государственную проверку.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">FIPS 140-2/140-3 — это формальная сертификация NIST (США)</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">FIPS (Federal Information Processing Standard) — стандарт который NIST (Национальный институт стандартов США) выдаёт после лабораторной проверки. Level 3 означает: физическая защита от вскрытия корпуса, обнаружение попыток взлома, эпоксидная заливка компонентов, защита от side-channel атак. Без этой сертификации устройство нельзя продать для большинства гос. контрактов США и многих стран НАТО.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">Почему биометрия мешает Level 3</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">Сканер отпечатка — это дополнительный электронный модуль с собственной прошивкой, который физически встроен в корпус и потенциально может стать точкой атаки (side-channel, spoofing отпечатка). PIN-клавиатура проще с точки зрения сертификации: меньше уязвимых поверхностей, легче залить эпоксидной смолой целиком, легче доказать аудитору NIST отсутствие закладок. Это не невозможно технически — просто значительно дороже и дольше проходить сертификацию, поэтому никто пока не довёл такой продукт до серийного производства.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ГДЕ КУПИТЬ -->
+<div class="section">
+  <div class="container">
+    <p class="s-tag">Покупка</p>
+    <h2 class="s-title">Где купить каждую модель</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Модель</th>
+            <th>Официальный сайт</th>
+            <th>Маркетплейсы</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Samsung T7 Touch</b></td>
+            <td><a href="https://www.samsung.com/us/computing/memory-storage/portable-ssds/" target="_blank">samsung.com</a></td>
+            <td>Amazon, Best Buy, B&H, везде</td>
+          </tr>
+          <tr style="background:#faf9f6">
+            <td><b>iStorage diskAshur M2</b></td>
+            <td><a href="https://istorage-uk.com/usa/product/diskashur-m2/" target="_blank">istorage-uk.com</a></td>
+            <td>CDW, Insight, Best Buy (US), B&H</td>
+          </tr>
+          <tr>
+            <td><b>SecureData SecureDrive BT</b></td>
+            <td><a href="https://www.securedata.com/product/securedrive-bt-encrypted-portable-drive" target="_blank">securedata.com</a></td>
+            <td>Amazon, Newegg</td>
+          </tr>
+          <tr style="background:#faf9f6">
+            <td><b>Apricorn Aegis Fortress L3</b></td>
+            <td><a href="https://apricorn.com/aegis-fortress-l3" target="_blank">apricorn.com</a></td>
+            <td>B&H, Amazon, Newegg</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Вопрос-ответ</p>
+    <h2 class="s-title">Частые вопросы</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Точно ли нет дисков с отпечатком + FIPS одновременно?</div>
+        <div class="faq-a">На момент июня 2026 — да, не нашёл ни одного. Проверены все основные производители сегмента: iStorage (вся линейка datAshur/diskAshur — только PIN), Apricorn (Aegis — только PIN), Kingston IronKey (D500S и Keypad 200 — PIN/клавиатура), SecureData (SecureDrive BT/KP/DUO — биометрия только через смартфон). Это не вопрос «не успели сделать» — архитектурное решение, продиктованное сложностью сертификации.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Если нужна и биометрия, и FIPS — что делать?</div>
+        <div class="faq-a">Реалистичный компромисс — SecureData SecureDrive BT: разблокировка по Touch ID/Face ID/отпечатку на смартфоне через приложение DataLock, при этом сам диск имеет FIPS 140-2 Level 3 сертификат. Не идеально (нужен телефон рядом), но единственный вариант где биометрия реально участвует в цепочке доступа к FIPS-сертифицированному устройству.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Samsung T7 Touch — это плохое шифрование?</div>
+        <div class="faq-a">Нет, шифрование там нормальное — AES 256-bit аппаратное, тот же алгоритм что использует и FIPS-сертифицированное оборудование. Просто нет формальной государственной валидации NIST. Для личного использования, защиты корпоративных данных без гос. контрактов — T7 Touch более чем достаточен. Проблема возникает только если нужен официальный сертификат для прохождения compliance-аудита, гос. закупок или работы с классифицированной информацией.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">M.2 внешние корпуса с биометрией — отдельная история?</div>
+        <div class="faq-a">Да, рынок отдельных корпусов (enclosures) для M.2 NVMe SSD с биометрией — менее зрелый. Встречаются бренды вроде VCOM с заявленным fingerprint enclosure, но они не от крупных производителей и не имеют независимых тестов или FIPS. iStorage diskAshur M2 — готовый SSD в защищённом корпусе (не отдельный enclosure для своего M.2), это нужно учитывать если задача — взять свой M.2 диск и просто добавить защиту снаружи.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">FIPS 140-2 vs FIPS 140-3 — какая разница?</div>
+        <div class="faq-a">FIPS 140-3 — более новый стандарт (заменяет 140-2 с 2019 года), требования строже в части тестирования прошивки и защиты от физических атак. Большинство устройств на рынке всё ещё сертифицированы по 140-2 (валидно и принимается), новые модели (как Kingston IronKey D500S, iStorage diskAshur M2/PRO3) переходят на 140-3. Для большинства задач разница не критична — оба уровня Level 3 считаются высоким стандартом защиты.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Источники: Samsung официальный datasheet · iStorage UK/USA · Apricorn.com · SecureData.com · Kingston.com · NIST FIPS публикации · B&H Photo Video · Tom's Hardware 2026 · Июнь 2026</p>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var item = el.closest('.faq-item');
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!wasOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
