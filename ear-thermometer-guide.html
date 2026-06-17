@@ -40,20 +40,32 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-s
 .verdict h4{font-family:'Syne',sans-serif;font-size:15px;color:var(--blue-dark);margin-bottom:8px}
 .verdict p{font-size:14px;color:var(--blue-dark);line-height:1.65}
 
-.prod-grid{display:grid;gap:16px}
-.prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:start}
+.prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
 .prod-card.top{border:2px solid var(--blue)}
-.prod-header{padding:20px 24px 16px;border-bottom:1px solid var(--border)}
-.prod-badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:6px}
-.prod-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px}
-.prod-price{font-size:15px;font-weight:500;color:var(--blue)}
-.prod-body{padding:18px 24px}
-.prod-row{font-size:13px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:flex-start}
+.prod-icon-row{display:flex;align-items:center;gap:8px;padding:14px 14px 0}
+.prod-icon{font-size:20px;line-height:1}
+.prod-header{padding:8px 14px 12px;border-bottom:1px solid var(--border)}
+.prod-badge{font-size:10px;font-weight:500;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:6px}
+.prod-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:4px;line-height:1.25}
+.prod-price{font-size:13px;font-weight:600;color:var(--blue)}
+.prod-body{padding:12px 14px;flex:1}
+.prod-row{font-size:11.5px;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--border);line-height:1.4}
 .prod-row:last-child{border-bottom:none}
-.prod-row b{color:var(--ink);flex-shrink:0;min-width:130px}
-.pros{margin-top:12px;display:grid;gap:3px}
-.pro{font-size:13px;color:var(--green)}
-.con{font-size:13px;color:var(--red)}
+.prod-row b{color:var(--ink);display:block;font-size:10px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:1px}
+.pros{margin-top:10px;display:grid;gap:3px}
+.pro{font-size:11.5px;color:var(--green);line-height:1.35}
+.con{font-size:11.5px;color:var(--red);line-height:1.35}
+.prod-src{margin-top:10px;display:grid;gap:5px}
+.prod-src-label{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.prod-src-item{font-size:11px;color:var(--muted);padding:6px 8px;background:var(--bg);border-radius:6px;line-height:1.4}
+.prod-src-item a{font-weight:600}
+@media(max-width:900px){
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .prod-grid{grid-template-columns:1fr}
+}
 
 .choose-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:24px}
 .choose-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
@@ -163,161 +175,133 @@ a{color:var(--blue);text-decoration:none}
   <div class="container">
     <p class="s-tag">Топ моделей</p>
     <h2 class="s-title">Подробный разбор</h2>
-    <p class="s-sub">Только модели прошедшие независимые тесты Consumer Reports, TechGearLab, Wirecutter и клинические исследования.</p>
+    <p class="s-sub">Независимые тесты Consumer Reports, TechGearLab, CNN Underscored, Tom's Guide.</p>
 
     <div class="prod-grid">
 
       <!-- BRAUN 7 -->
       <div class="prod-card top">
+        <div class="prod-icon-row"><span class="prod-icon">🩺👂</span></div>
         <div class="prod-header">
-          <div style="font-size:32px;margin-bottom:8px">🩺👂</div><div class="prod-badge" style="background:var(--blue-light);color:var(--blue-dark)">#1 врачи · Consumer Reports лидер</div>
-          <div class="prod-name">Braun ThermoScan 7 — IRT6520</div>
+          <div class="prod-badge" style="background:var(--blue-light);color:var(--blue-dark)">#1 врачи</div>
+          <div class="prod-name">Braun ThermoScan 7<br>IRT6520</div>
           <div class="prod-price">~$50–70</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Скорость</b> 1–2 секунды</div>
-          <div class="prod-row"><b>Точность</b> ±0.2°C (35–42°C) · Клинически доказана = ректальному методу</div>
-          <div class="prod-row"><b>Насадка</b> Зонд с ограничителем глубины — не повреждает барабанную перепонку · Жёсткий пластик</div>
-          <div class="prod-row"><b>Преднагретый зонд</b> ✅ Да — не пугает ребёнка, не искажает показания</div>
-          <div class="prod-row"><b>ExacTemp</b> ✅ Свет + звук подтверждают правильное положение</div>
-          <div class="prod-row"><b>Цветовая индикация</b> ✅ По возрастным группам — помогает интерпретировать температуру</div>
-          <div class="prod-row"><b>Память</b> 9 последних измерений</div>
-          <div class="prod-row"><b>Ночная подсветка</b> ✅ Есть</div>
-          <div class="prod-row"><b>Насадки в комплекте</b> 21 штука</div>
-          <div class="prod-row"><b>Батарейки</b> 2×AA, ~1000 измерений</div>
-          <div class="prod-row"><b>Сертификация</b> FDA (США), CE (Европа)</div>
+          <div class="prod-row"><b>Точность</b>±0.2°C</div>
+          <div class="prod-row"><b>Насадка</b>Жёсткая, ограничитель глубины</div>
+          <div class="prod-row"><b>Зонд</b>Преднагретый + ExacTemp</div>
+          <div class="prod-row"><b>Индикация</b>Цветовая по возрасту</div>
+          <div class="prod-row"><b>Память</b>9 измерений + подсветка</div>
           <div class="pros">
-            <div class="pro">✓ Лучший выбор для семьи с детьми — педиатры рекомендуют #1</div>
-            <div class="pro">✓ Цветовая индикация — сразу понятно нормальная температура или нет</div>
-            <div class="pro">✓ Преднагретый зонд — не холодит ухо, не искажает показания</div>
-            <div class="pro">✓ ExacTemp — невозможно ошибиться с позиционированием</div>
-            <div class="con">✕ Жёсткая насадка — не подходит при очень узком ушном канале</div>
-            <div class="con">✕ Насадки расходные — стоят ~$10–15 за 40 штук</div>
+            <div class="pro">✓ Цвет сразу показывает норму/жар</div>
+            <div class="pro">✓ ExacTemp — без ошибок позиции</div>
+            <div class="con">✕ Жёсткая насадка — не для узких каналов</div>
           </div>
-          <div style="margin-top:14px;display:grid;gap:8px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Независимые источники</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.techgearlab.com/topics/health-fitness/best-thermometer" target="_blank" style="color:var(--blue);font-weight:500">TechGearLab 2026</a>: «Braun ThermoScan 5 — наш фаворит среди ушных. ThermoScan 7 — апгрейд для тех кому важна цветовая интерпретация результата»</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.consumerreports.org/babies-kids/thermometers/best-in-ear-thermometers-of-the-year-a2860521578/" target="_blank" style="color:var(--blue);font-weight:500">Consumer Reports 2026</a>: Braun ThermoScan протестирован на точность и воспроизводимость — лидер среди ушных термометров</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.cnn.com/cnn-underscored/reviews/best-thermometers" target="_blank" style="color:var(--blue);font-weight:500">CNN Underscored 2026</a>: «Braun ThermoScan 7+ — надёжный выбор для ушного термометра»</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.thesgmama.com/2024/08/Braun-Thermoscan-7-Review.html" target="_blank" style="color:var(--blue);font-weight:500">TheSGMama (клинический обзор)</a>: «Цветовая индикация IRT6520 — мгновенный визуальный сигнал особенно полезен при быстрой оценке состояния пациента»</div>
+          <div class="prod-src">
+            <div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.techgearlab.com/topics/health-fitness/best-thermometer" target="_blank">TechGearLab 2026</a>: «7 — апгрейд для тех кому важна интерпретация цветом»</div>
+            <div class="prod-src-item"><a href="https://www.consumerreports.org/babies-kids/thermometers/best-in-ear-thermometers-of-the-year-a2860521578/" target="_blank">Consumer Reports 2026</a>: лидер по точности</div>
           </div>
         </div>
       </div>
 
       <!-- BRAUN 5 -->
       <div class="prod-card top">
+        <div class="prod-icon-row"><span class="prod-icon">👂✅</span></div>
         <div class="prod-header">
-          <div style="font-size:32px;margin-bottom:8px">👂✅</div><div class="prod-badge" style="background:var(--green-light);color:var(--green)">Лучший бюджет · TechGearLab рекомендует</div>
-          <div class="prod-name">Braun ThermoScan 5 — IRT6020</div>
+          <div class="prod-badge" style="background:var(--green-light);color:var(--green)">Топ TechGearLab</div>
+          <div class="prod-name">Braun ThermoScan 5<br>IRT6020</div>
           <div class="prod-price">~$35–50</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Скорость</b> 1–2 секунды</div>
-          <div class="prod-row"><b>Точность</b> ±0.2°C — идентична IRT6520</div>
-          <div class="prod-row"><b>Насадка</b> Ограничитель глубины · Жёсткий пластик</div>
-          <div class="prod-row"><b>Преднагретый зонд</b> ✅ Да</div>
-          <div class="prod-row"><b>ExacTemp</b> ✅ Свет + звук</div>
-          <div class="prod-row"><b>Цветовая индикация</b> ❌ Нет — только цифра на дисплее</div>
-          <div class="prod-row"><b>Память</b> Последнее измерение</div>
-          <div class="prod-row"><b>Ночная подсветка</b> ❌ Нет</div>
-          <div class="prod-row"><b>Насадки в комплекте</b> 21 штука</div>
-          <div class="prod-row"><b>Батарейки</b> 2×AA, ~600 измерений</div>
+          <div class="prod-row"><b>Точность</b>±0.2°C — как у IRT6520</div>
+          <div class="prod-row"><b>Насадка</b>Жёсткая, ограничитель</div>
+          <div class="prod-row"><b>Зонд</b>Преднагретый + ExacTemp</div>
+          <div class="prod-row"><b>Индикация</b>Только цифра, без цвета</div>
+          <div class="prod-row"><b>Память</b>Только последнее</div>
           <div class="pros">
-            <div class="pro">✓ Та же точность что у IRT6520 — на 30–40% дешевле</div>
-            <div class="pro">✓ Преднагретый зонд и ExacTemp — ключевые функции на месте</div>
-            <div class="pro">✓ #1 бренд педиатров — без переплаты за цветовую индикацию</div>
-            <div class="con">✕ Нет цветовой индикации — нужно знать нормы температуры самостоятельно</div>
-            <div class="con">✕ Нет подсветки — неудобно ночью</div>
+            <div class="pro">✓ Та же точность, дешевле на 30–40%</div>
+            <div class="pro">✓ Ключевые технологии на месте</div>
+            <div class="con">✕ Нет подсветки и цвета</div>
           </div>
-          <div style="margin-top:14px;display:grid;gap:8px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Независимые источники</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://stuckathomemom.com/reviews/best-thermometer-for-kids/" target="_blank" style="color:var(--blue);font-weight:500">Stuckathomemom 2026</a>: «Braun ThermoScan 5 — то, что я беру когда нужна клиническая точность. ExacTemp убирает все догадки о правильности положения»</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.techgearlab.com/topics/health-fitness/best-thermometer" target="_blank" style="color:var(--blue);font-weight:500">TechGearLab 2026</a>: «Braun ThermoScan 5 — наш любимый ушной термометр. Если нужна простая точная модель без лишнего — это он»</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://thermometerguru.com/braun-thermoscan-5-vs-7/" target="_blank" style="color:var(--blue);font-weight:500">ThermometerGuru</a>: «Обе модели — преднагретый зонд и ExacTemp. IRT6020 даёт ту же точность что IRT6520, дешевле на 30–40%»</div>
+          <div class="prod-src">
+            <div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.techgearlab.com/topics/health-fitness/best-thermometer" target="_blank">TechGearLab 2026</a>: «наш фаворит среди ушных»</div>
+            <div class="prod-src-item"><a href="https://stuckathomemom.com/reviews/best-thermometer-for-kids/" target="_blank">Stuckathomemom</a>: «клиническая точность без лишнего»</div>
           </div>
         </div>
       </div>
 
       <!-- BRAUN PRO 6000 -->
       <div class="prod-card">
+        <div class="prod-icon-row"><span class="prod-icon">🏥👂</span></div>
         <div class="prod-header">
-          <div style="font-size:32px;margin-bottom:8px">🏥👂</div><div class="prod-badge" style="background:var(--amber-light);color:var(--amber)">Клинический · Для медучреждений</div>
-          <div class="prod-name">Braun ThermoScan PRO 6000</div>
+          <div class="prod-badge" style="background:var(--amber-light);color:var(--amber)">Клинический</div>
+          <div class="prod-name">Braun ThermoScan<br>PRO 6000</div>
           <div class="prod-price">~$150–200</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Скорость</b> &lt;1 секунды</div>
-          <div class="prod-row"><b>Точность</b> ±0.1°C — вдвое точнее домашних моделей</div>
-          <div class="prod-row"><b>Насадка</b> Мягкие одноразовые чехлы — адаптируются под форму канала любой анатомии</div>
-          <div class="prod-row"><b>Преднагретый зонд</b> ✅ Да</div>
-          <div class="prod-row"><b>База хранения</b> ✅ С диспенсером чехлов (20 или 40 штук)</div>
-          <div class="prod-row"><b>Применение</b> Больницы, клиники, медицинские учреждения</div>
-          <div class="prod-row"><b>Вес</b> ~100г без батареек</div>
+          <div class="prod-row"><b>Точность</b>±0.1°C — вдвое точнее</div>
+          <div class="prod-row"><b>Насадка</b>Мягкие чехлы — любая анатомия</div>
+          <div class="prod-row"><b>Зонд</b>Преднагретый + ExacTemp</div>
+          <div class="prod-row"><b>База</b>Диспенсер на 20/40 чехлов</div>
           <div class="pros">
-            <div class="pro">✓ Максимальная точность — ±0.1°C</div>
-            <div class="pro">✓ Мягкие чехлы — более комфортно для маленьких детей</div>
-            <div class="pro">✓ Профессиональный стандарт — используется в педиатрических клиниках</div>
-            <div class="con">✕ Цена в 3–4 раза выше домашних моделей</div>
-            <div class="con">✕ Чехлы дороже и менее доступны</div>
+            <div class="pro">✓ Единств. с мягкой насадкой</div>
+            <div class="con">✕ В 3–4× дороже домашних</div>
           </div>
-          <div class="warn">⚠ Для домашнего использования избыточно — профессиональная клиническая модель.</div>
-          <div style="background:var(--red-light);border:1px solid #f5c6c2;border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--red);margin-top:8px">
-            ⚠ <b>FDA/Health Canada Recall 2024:</b> Модели выпущенные между сентябрём 2022 и февралём 2024 были поставлены с устаревшей инструкцией по чистке. При неправильной чистке возможен перегрев зонда. <b>Статус:</b> производитель обновил инструкции. При покупке убедитесь что версия IFU актуальная. Источник: <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=208441" target="_blank">FDA.gov</a>
+          <div style="background:var(--red-light);border-radius:6px;padding:8px 10px;font-size:11px;color:var(--red);margin-top:8px;line-height:1.4">
+            ⚠ <b>FDA Recall 2024:</b> модели 09.2022–02.2024 — устаревшая инструкция чистки. Производитель обновил. <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=208441" target="_blank">FDA.gov</a>
           </div>
         </div>
       </div>
 
       <!-- iProven -->
       <div class="prod-card">
+        <div class="prod-icon-row"><span class="prod-icon">👂🤚</span></div>
         <div class="prod-header">
-          <div style="font-size:32px;margin-bottom:8px">👂🤚</div><div class="prod-badge" style="background:var(--teal-light);color:var(--teal)">2 в 1 · Ухо + лоб</div>
-          <div class="prod-name">iProven DMT-316</div>
+          <div class="prod-badge" style="background:var(--teal-light);color:var(--teal)">2 в 1</div>
+          <div class="prod-name">iProven<br>DMT-316</div>
           <div class="prod-price">~$30–45</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Скорость</b> 1 секунда (ухо) · 2 секунды (лоб)</div>
-          <div class="prod-row"><b>Точность</b> Ухо: ±0.2°C · Лоб: ±0.3°C</div>
-          <div class="prod-row"><b>Режимы</b> Ушной + бесконтактный лоб — удобно при узком канале</div>
-          <div class="prod-row"><b>Чип</b> 2025 — новый алгоритм, исключает внешние влияния</div>
-          <div class="prod-row"><b>Индикация лихорадки</b> ✅ Смарт + гипотермия</div>
-          <div class="prod-row"><b>Подсветка</b> ✅ Большой экран с подсветкой</div>
-          <div class="prod-row"><b>Вибрация</b> ✅ Тихий виброзвонок — не будит ребёнка</div>
-          <div class="prod-row"><b>Упоминания</b> Business Insider, NBC, Tom's Guide, Wirecutter</div>
+          <div class="prod-row"><b>Точность</b>Ухо ±0.2°C / Лоб ±0.3°C</div>
+          <div class="prod-row"><b>Насадка</b>Стандартная, без подогрева</div>
+          <div class="prod-row"><b>Режимы</b>Ухо + бесконтактный лоб</div>
+          <div class="prod-row"><b>Память</b>50 измерений</div>
           <div class="pros">
-            <div class="pro">✓ 2 в 1 — ушной + бесконтактный лоб в одном устройстве</div>
-            <div class="pro">✓ Тихая вибрация — можно мерить спящему ребёнку</div>
-            <div class="pro">✓ Значительно дешевле Braun при сравнимой точности в ухе</div>
-            <div class="con">✕ Нет преднагретого зонда — может дать погрешность в холодном ухе</div>
-            <div class="con">✕ Лобный режим менее точен чем ушной (влияют пот, температура воздуха)</div>
+            <div class="pro">✓ Альтернатива при узком ухе — лоб</div>
+            <div class="pro">✓ Дешевле Braun</div>
+            <div class="con">✕ Нет преднагретого зонда</div>
           </div>
-          <div style="margin-top:14px;display:grid;gap:8px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Независимые источники</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><b style="color:var(--ink)">Упомянут:</b> Business Insider, NBC, Tom's Guide, Wirecutter — все отметили iProven как надёжный вариант 2 в 1</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://tomsguide.com/uk/best-picks/best-thermometers" target="_blank" style="color:var(--blue);font-weight:500">Tom's Guide</a>: Инфракрасная технология, чтение за 2 секунды — хороший выбор при необходимости измерять и ушным и лобным методом</div>
+          <div class="prod-src">
+            <div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.cnn.com/cnn-underscored/reviews/best-thermometer" target="_blank">CNN Underscored 2026</a>: разница ухо/лоб ~1°C</div>
+            <div class="prod-src-item">Упомянут: Business Insider, NBC, Tom's Guide</div>
           </div>
         </div>
       </div>
 
       <!-- Vicks SpeedRead -->
       <div class="prod-card">
+        <div class="prod-icon-row"><span class="prod-icon">🌡️💰</span></div>
         <div class="prod-header">
-          <div style="font-size:32px;margin-bottom:8px">🌡️💰</div><div class="prod-badge" style="background:var(--green-light);color:var(--green)">Бюджет · TechGearLab: лучшая цена/качество</div>
-          <div class="prod-name">Vicks SpeedRead V901</div>
+          <div class="prod-badge" style="background:var(--green-light);color:var(--green)">Бюджет</div>
+          <div class="prod-name">Vicks<br>SpeedRead V901</div>
           <div class="prod-price">~$15–25</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Скорость</b> 8 секунд</div>
-          <div class="prod-row"><b>Точность</b> ±0.2°C — один из самых точных в тестах TechGearLab</div>
-          <div class="prod-row"><b>Тип</b> Оральный/подмышечный (не ушной)</div>
-          <div class="prod-row"><b>Индикация</b> Цветовая подсветка (зелёный/жёлтый/красный)</div>
-          <div class="prod-row"><b>Память</b> Последнее измерение</div>
+          <div class="prod-row"><b>Точность</b>±0.2°C</div>
+          <div class="prod-row"><b>Тип</b>Оральный/подмышечный</div>
+          <div class="prod-row"><b>Скорость</b>8 секунд</div>
           <div class="pros">
-            <div class="pro">✓ Самый дешёвый вариант с реальной точностью</div>
-            <div class="pro">✓ TechGearLab: «невероятное соотношение цена/качество»</div>
-            <div class="con">✕ Не ушной — оральный/подмышечный</div>
-            <div class="con">✕ 8 секунд vs 1–2 секунды у ушных</div>
+            <div class="pro">✓ Точность за минимум денег</div>
+            <div class="con">✕ Не ушной, медленнее</div>
           </div>
-          <div class="warn">⚠ Включён для сравнения — если ушной термометр не нужен принципиально, Vicks SpeedRead даёт отличную точность за минимум денег.</div>
+          <div class="prod-src">
+            <div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.techgearlab.com/topics/health-fitness/best-thermometer" target="_blank">TechGearLab</a>: «невероятное соотношение цена/качество»</div>
+          </div>
         </div>
       </div>
 
