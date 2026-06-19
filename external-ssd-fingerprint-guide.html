@@ -156,6 +156,12 @@ a:hover{text-decoration:underline}
         <div class="choose-price">$250–500+ (250GB–4TB)</div>
       </div>
       <div class="choose-card">
+        <div class="choose-label">Биометрия телефона · Без FIPS, но быстрый</div>
+        <div class="choose-name">G-Technology ArmorLock</div>
+        <p class="choose-p">Та же схема что SecureDrive BT — разблокировка через приложение и Touch ID/Face ID. Но без FIPS-сертификации, в обмен на скорость NVMe (1000 MB/s).</p>
+        <div class="choose-price">~$400 (только 2TB)</div>
+      </div>
+      <div class="choose-card">
         <div class="choose-label">Рекордная ёмкость · PIN-клавиатура</div>
         <div class="choose-name">Apricorn Aegis Fortress L3</div>
         <p class="choose-p">FIPS 140-2 Level 3 на весь корпус включая алюминиевый кейс. До 20TB. PIN-клавиатура, авиационный алюминий 6061.</p>
@@ -274,6 +280,37 @@ a:hover{text-decoration:underline}
         </div>
       </div>
 
+      <!-- G-TECHNOLOGY ARMORLOCK -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--teal-light);color:var(--teal)">Биометрия через телефон · Без FIPS</div>
+          <div class="prod-name">G-Technology (WD) ArmorLock NVMe SSD</div>
+          <div class="prod-price">~$400 (только 2TB)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Биометрия</b>Touch ID/Face ID телефона через приложение — не сенсор на диске</div>
+          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit + NIST P-256 elliptic curve key management</div>
+          <div class="prod-row"><b>FIPS-сертификация</b>❌ Нет — независимый SSD Review прямо это подтверждает в сравнении с SecureDrive</div>
+          <div class="prod-row"><b>Скорость</b>До 1000/1000 MB/s</div>
+          <div class="prod-row"><b>Защита корпуса</b>IP67, падение с 3м, устойчив к 1000 фунтов давления</div>
+          <div class="prod-row"><b>Объёмы</b>Только 2TB</div>
+          <div class="prod-row"><b>Гарантия</b>5 лет</div>
+          <div class="pros">
+            <div class="pro">✓ Самая высокая скорость среди всех биометрических вариантов (1000 MB/s NVMe)</div>
+            <div class="pro">✓ Лучшая физическая защита корпуса в категории — IP67 + ударопрочность</div>
+            <div class="pro">✓ Удалённое управление доступом — можно авторизовать получателя посылки до отправки диска</div>
+            <div class="con">✕ Не FIPS — несмотря на «продвинутую» криптографию, формальной сертификации нет</div>
+            <div class="con">✕ Только один объём — 2TB, нет выбора</div>
+            <div class="con">✕ Зависимость от приложения и Bluetooth, как и SecureDrive BT</div>
+          </div>
+          <div style="margin-top:14px;display:grid;gap:8px">
+            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Источники</div>
+            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.thessdreview.com/hardware/portable-ssds/g-technology-armorlock-encrypted-nvme-2-tb-ssd-review-high-speed-data-security-without-the-high-cost/3/" target="_blank" style="color:var(--blue);font-weight:500">The SSD Review</a>: прямое сравнение с SecureDrive — «SecureData SecureDrive является FIPS 140-2 Level 3 валидированным... ArmorLock передаёт данные на скорости 1GB/s против ~400MB/s у SecureDrive» — то есть выше скорость, но не FIPS</div>
+            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.tomshardware.com/reviews/best-external-hard-drive-ssd,5987.html" target="_blank" style="color:var(--blue);font-weight:500">Tom's Hardware</a> (обновлено июнь 2026): «G-Technology ArmorLock даёт Samsung фору в гонке защищённого хранения, используя приложение и ключ на телефоне — может быть не так удобно как касание пальцем по сенсору, но возможно более безопасно»</div>
+          </div>
+        </div>
+      </div>
+
       <!-- APRICORN AEGIS FORTRESS L3 -->
       <div class="prod-card">
         <div class="prod-header">
@@ -358,6 +395,14 @@ a:hover{text-decoration:underline}
             <td>USB 3.0/3.2</td>
             <td>1TB–20TB</td>
             <td>$180–13,000</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>G-Technology ArmorLock</b></td>
+            <td>⚠️ Через телефон</td>
+            <td class="cross">❌ Нет</td>
+            <td>1000 MB/s NVMe</td>
+            <td>Только 2TB</td>
+            <td>~$400</td>
           </tr>
           <tr style="background:#eef2fd">
             <td><b>Дешёвые китайские (Eaget, VCOM)</b></td>
@@ -445,7 +490,7 @@ a:hover{text-decoration:underline}
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Что выбрать если нужен и отпечаток, и максимальная защита?</div>
-        <div class="faq-a">Прямого решения «и то и другое в одном устройстве на самом диске» не существует. Реалистичные варианты: 1) Samsung T7 Touch для повседневного использования + отдельный FIPS-диск для самых критичных файлов. 2) SecureDrive BT как единственный компромисс — FIPS-сертификация плюс биометрия, но разблокировка идёт через смартфон по Bluetooth, а не напрямую с диска.</div>
+        <div class="faq-a">Прямого решения «и то и другое в одном устройстве на самом диске» не существует. Реалистичные варианты: 1) Samsung T7 Touch для повседневного использования + отдельный FIPS-диск для самых критичных файлов. 2) SecureDrive BT — FIPS 140-2 Level 3 плюс биометрия через смартфон по Bluetooth. 3) G-Technology ArmorLock — та же схема «биометрия телефона», выше скорость (1000 MB/s NVMe), но без FIPS. Заметен явный паттерн: как только производитель добавляет реальную биометрию, она сразу переезжает с самого диска на смартфон — будь это ради FIPS-сертификации (SecureDrive) или просто ради удобства/скорости (ArmorLock, Samsung — обратный случай, у него биометрия на диске, но без FIPS).</div>
       </div>
 
     </div>
