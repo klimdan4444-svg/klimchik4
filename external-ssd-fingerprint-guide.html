@@ -53,20 +53,26 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-s
 .choose-p{font-size:13px;color:var(--muted);line-height:1.6}
 .choose-price{font-size:14px;font-weight:600;color:var(--blue);margin-top:10px}
 
-.prod-grid{display:grid;gap:16px}
-.prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-items:start}
+.prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
 .prod-card.top{border:2px solid var(--blue)}
-.prod-header{padding:20px 24px 16px;border-bottom:1px solid var(--border)}
-.prod-badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:6px}
-.prod-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px}
-.prod-price{font-size:15px;font-weight:500;color:var(--blue)}
-.prod-body{padding:18px 24px}
-.prod-row{font-size:13px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:flex-start}
+.prod-header{padding:16px 18px 12px;border-bottom:1px solid var(--border)}
+.prod-badge{font-size:10.5px;font-weight:500;padding:3px 9px;border-radius:4px;display:inline-block;margin-bottom:6px}
+.prod-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;line-height:1.3}
+.prod-price{font-size:13px;font-weight:600;color:var(--blue)}
+.prod-body{padding:14px 18px;flex:1}
+.prod-row{font-size:12px;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--border);line-height:1.4}
 .prod-row:last-child{border-bottom:none}
-.prod-row b{color:var(--ink);flex-shrink:0;min-width:140px}
-.pros{margin-top:12px;display:grid;gap:3px}
-.pro{font-size:13px;color:var(--green)}
-.con{font-size:13px;color:var(--red)}
+.prod-row b{color:var(--ink);display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:1px}
+.pros{margin-top:10px;display:grid;gap:3px}
+.pro{font-size:12px;color:var(--green);line-height:1.4}
+.con{font-size:12px;color:var(--red);line-height:1.4}
+.prod-src{margin-top:10px;display:grid;gap:5px}
+.prod-src-item{font-size:11.5px;color:var(--muted);padding:7px 9px;background:var(--bg);border-radius:6px;line-height:1.45}
+.prod-src-label{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:760px){
+  .prod-grid{grid-template-columns:1fr}
+}
 
 .table-wrap{overflow-x:auto;margin-bottom:16px}
 table{width:100%;border-collapse:collapse;font-size:13px}
@@ -195,13 +201,13 @@ a:hover{text-decoration:underline}
           <div class="prod-price">$88–400 в зависимости от объёма</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Биометрия</b>Сканер отпечатка прямо на корпусе устройства</div>
+          <div class="prod-row"><b>Биометрия</b>Сканер отпечатка на корпусе</div>
           <div class="prod-row"><b>Шифрование</b>AES 256-bit hardware encryption</div>
-          <div class="prod-row"><b>FIPS-сертификация</b>❌ Нет — прямо признаёт сам Samsung</div>
-          <div class="prod-row"><b>Скорость</b>До 1050/1000 MB/s (USB 3.2 Gen 2)</div>
+          <div class="prod-row"><b>FIPS</b>❌ Нет (признаёт сам Samsung)</div>
+          <div class="prod-row"><b>Скорость</b>1050/1000 MB/s</div>
           <div class="prod-row"><b>Размер</b>85×57×8.0 мм, 58г</div>
           <div class="prod-row"><b>Объёмы</b>500GB / 1TB / 2TB</div>
-          <div class="prod-row"><b>Защита</b>Падение с высоты до 2 метров</div>
+          <div class="prod-row"><b>Защита</b>Падение до 2м</div>
           <div class="prod-row"><b>Гарантия</b>3 года</div>
           <div class="pros">
             <div class="pro">✓ Единственный с реальным сенсором отпечатка на самом диске</div>
@@ -210,11 +216,10 @@ a:hover{text-decoration:underline}
             <div class="con">✕ Не FIPS-сертифицирован — не подходит для гос/военных закупок</div>
             <div class="con">✕ Активация отпечатка через программное приложение, не из коробки</div>
           </div>
-          <div style="margin-top:14px;display:grid;gap:8px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Источники</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.pcworld.com/article/398724/samsung-portable-ssd-t7-touch-review.html" target="_blank" style="color:var(--blue);font-weight:500">PCWorld</a>: «Уровень безопасности T7 Touch не соответствует Federal Information Processing Standards — диск explicitly не FIPS-сертифицирован»</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://hothardware.com/reviews/samsung-t7-touch-portable-ssd-review" target="_blank" style="color:var(--blue);font-weight:500">HotHardware</a>: подтверждает отсутствие FIPS 140-2, но отмечает что для защиты личных файлов от случайного доступа функционал достаточен</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><b style="color:var(--ink)">Официальный datasheet Samsung</b>: AES 256-bit hardware encryption, fingerprint recognition, password protection — список сертификаций CE/BSMI/KC/VCCI/FCC/IC/UL/TUV/CB не включает FIPS</div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.pcworld.com/article/398724/samsung-portable-ssd-t7-touch-review.html" target="_blank" style="color:var(--blue);font-weight:500">PCWorld</a>: не соответствует FIPS, explicitly не сертифицирован</div>
+            <div class="prod-src-item"><a href="https://hothardware.com/reviews/samsung-t7-touch-portable-ssd-review" target="_blank" style="color:var(--blue);font-weight:500">HotHardware</a>: нет FIPS 140-2, но достаточно для личных файлов</div>
+            <div class="prod-src-item"><b style="color:var(--ink)">Datasheet Samsung</b>: список сертификаций CE/BSMI/KC/FCC/UL/TUV/CB — без FIPS</div>
           </div>
         </div>
       </div>
@@ -227,14 +232,14 @@ a:hover{text-decoration:underline}
           <div class="prod-price">$241–700+ в зависимости от объёма</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Биометрия</b>❌ Нет — только PIN-клавиатура на корпусе</div>
-          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit hardware encryption</div>
-          <div class="prod-row"><b>FIPS-сертификация</b>✅ FIPS 140-2/140-3 Level 3 (формальное определение «военного уровня»)</div>
-          <div class="prod-row"><b>Доп. сертификации</b>NCSC CPA, NLNCSA BSPA, NATO Restricted level</div>
-          <div class="prod-row"><b>Скорость</b>До 370 MB/s</div>
+          <div class="prod-row"><b>Биометрия</b>❌ Нет, только PIN</div>
+          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit</div>
+          <div class="prod-row"><b>FIPS</b>✅ 140-2/140-3 Level 3</div>
+          <div class="prod-row"><b>Доп. сертификаты</b>NCSC CPA, NATO Restricted</div>
+          <div class="prod-row"><b>Скорость</b>370 MB/s</div>
           <div class="prod-row"><b>Объёмы</b>500GB / 1TB / 2TB</div>
           <div class="prod-row"><b>Размер</b>Меньше смартфона, 65г без чехла / 86г с чехлом</div>
-          <div class="prod-row"><b>Защита</b>IP68, падение с 4м, выдерживает вес 2.7т, без ПО — работает на любой ОС</div>
+          <div class="prod-row"><b>Защита</b>IP68, падение с 4м, вес 2.7т</div>
           <div class="pros">
             <div class="pro">✓ Реальная военная сертификация, не маркетинговый ярлык</div>
             <div class="pro">✓ PIN не передаётся хосту — невозможно перехватить кейлоггером</div>
@@ -243,10 +248,9 @@ a:hover{text-decoration:underline}
             <div class="con">✕ Скорость ниже Samsung — 370 MB/s vs 1050 MB/s</div>
             <div class="con">✕ Заметно дороже за тот же объём</div>
           </div>
-          <div style="margin-top:14px;display:grid;gap:8px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Источники</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://dongknows.com/istorage-diskashur-m2-review/" target="_blank" style="color:var(--blue);font-weight:500">Dong Knows Tech</a>: «Это крошечный портативный SSD со встроенной клавиатурой которая работает как сейф. Идеален для тех, кому нужна абсолютная приватность данных в дороге»</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://istorage-uk.com/government-certifications/" target="_blank" style="color:var(--blue);font-weight:500">iStorage официально</a>: первый и единственный вендор с сертификацией NATO Restricted level для диапазона diskAshur PRO2/DT2</div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://dongknows.com/istorage-diskashur-m2-review/" target="_blank" style="color:var(--blue);font-weight:500">Dong Knows Tech</a>: «работает как сейф, идеален для абсолютной приватности в дороге»</div>
+            <div class="prod-src-item"><a href="https://istorage-uk.com/government-certifications/" target="_blank" style="color:var(--blue);font-weight:500">iStorage</a>: первый вендор с NATO Restricted level</div>
           </div>
         </div>
       </div>
@@ -259,11 +263,11 @@ a:hover{text-decoration:underline}
           <div class="prod-price">$250–500+ в зависимости от объёма</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Биометрия</b>✅ Touch ID/Face ID — но через приложение на смартфоне, не сенсор на диске</div>
-          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit real-time hardware encryption</div>
-          <div class="prod-row"><b>FIPS-сертификация</b>✅ FIPS 140-2 (для USB-версии — Level 3)</div>
-          <div class="prod-row"><b>Механизм разблокировки</b>Bluetooth + приложение DataLock на любом смартфоне/Apple Watch</div>
-          <div class="prod-row"><b>Доп. функции</b>Remote wipe из приложения, антивирус ESET включён на год</div>
+          <div class="prod-row"><b>Биометрия</b>Touch ID/Face ID через телефон</div>
+          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit</div>
+          <div class="prod-row"><b>FIPS</b>✅ 140-2 (USB-версия Level 3)</div>
+          <div class="prod-row"><b>Разблокировка</b>Bluetooth + DataLock app</div>
+          <div class="prod-row"><b>Доп.</b>Remote wipe, ESET антивирус 1 год</div>
           <div class="prod-row"><b>Комплаенс</b>TAA, CJIS, HIPAA, CMMC, GDPR</div>
           <div class="prod-row"><b>Объёмы</b>250GB – 4TB</div>
           <div class="prod-row"><b>Размер</b>~13×8×2 см (по аналогии с линейкой SecureDrive)</div>
@@ -275,9 +279,8 @@ a:hover{text-decoration:underline}
             <div class="con">✕ Зависимость от приложения и аккумулятора телефона</div>
             <div class="con">✕ Экспорт в Россию, Китай, Гонконг, Венесуэлу запрещён производителем</div>
           </div>
-          <div style="margin-top:14px;display:grid;gap:8px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Источники</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.securedata.com/product/securedrive-bt-encrypted-portable-drive" target="_blank" style="color:var(--blue);font-weight:500">SecureData официально</a>: «Заменяет традиционные пароли беспроводной биометрической аутентификацией через приложение SecureData Lock — разблокировка отпечатком, лицом или PIN с любого смартфона»</div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.securedata.com/product/securedrive-bt-encrypted-portable-drive" target="_blank" style="color:var(--blue);font-weight:500">SecureData</a>: разблокировка отпечатком/лицом/PIN с любого смартфона</div>
           </div>
         </div>
       </div>
@@ -290,11 +293,11 @@ a:hover{text-decoration:underline}
           <div class="prod-price">~$400 (только 2TB)</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Биометрия</b>Touch ID/Face ID телефона через приложение — не сенсор на диске</div>
-          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit + NIST P-256 elliptic curve key management</div>
-          <div class="prod-row"><b>FIPS-сертификация</b>❌ Нет — независимый SSD Review прямо это подтверждает в сравнении с SecureDrive</div>
-          <div class="prod-row"><b>Скорость</b>До 1000/1000 MB/s</div>
-          <div class="prod-row"><b>Защита корпуса</b>IP67, падение с 3м, устойчив к 1000 фунтов давления</div>
+          <div class="prod-row"><b>Биометрия</b>Touch ID/Face ID через телефон</div>
+          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit + NIST P-256</div>
+          <div class="prod-row"><b>FIPS</b>❌ Нет (подтверждено SSD Review)</div>
+          <div class="prod-row"><b>Скорость</b>1000/1000 MB/s</div>
+          <div class="prod-row"><b>Защита</b>IP67, падение с 3м, 1000 фунтов</div>
           <div class="prod-row"><b>Объёмы</b>Только 2TB</div>
           <div class="prod-row"><b>Размер</b>134.4×81.5×18.5 мм, 200г</div>
           <div class="prod-row"><b>Гарантия</b>5 лет</div>
@@ -306,10 +309,9 @@ a:hover{text-decoration:underline}
             <div class="con">✕ Только один объём — 2TB, нет выбора</div>
             <div class="con">✕ Зависимость от приложения и Bluetooth, как и SecureDrive BT</div>
           </div>
-          <div style="margin-top:14px;display:grid;gap:8px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Источники</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.thessdreview.com/hardware/portable-ssds/g-technology-armorlock-encrypted-nvme-2-tb-ssd-review-high-speed-data-security-without-the-high-cost/3/" target="_blank" style="color:var(--blue);font-weight:500">The SSD Review</a>: прямое сравнение с SecureDrive — «SecureData SecureDrive является FIPS 140-2 Level 3 валидированным... ArmorLock передаёт данные на скорости 1GB/s против ~400MB/s у SecureDrive» — то есть выше скорость, но не FIPS</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><a href="https://www.tomshardware.com/reviews/best-external-hard-drive-ssd,5987.html" target="_blank" style="color:var(--blue);font-weight:500">Tom's Hardware</a> (обновлено июнь 2026): «G-Technology ArmorLock даёт Samsung фору в гонке защищённого хранения, используя приложение и ключ на телефоне — может быть не так удобно как касание пальцем по сенсору, но возможно более безопасно»</div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.thessdreview.com/hardware/portable-ssds/g-technology-armorlock-encrypted-nvme-2-tb-ssd-review-high-speed-data-security-without-the-high-cost/3/" target="_blank" style="color:var(--blue);font-weight:500">SSD Review</a>: ArmorLock 1GB/s vs SecureDrive ~400MB/s, но без FIPS</div>
+            <div class="prod-src-item"><a href="https://www.tomshardware.com/reviews/best-external-hard-drive-ssd,5987.html" target="_blank" style="color:var(--blue);font-weight:500">Tom's Hardware</a> (июнь 2026): ключ на телефоне — менее удобно, но возможно безопаснее</div>
           </div>
         </div>
       </div>
@@ -322,11 +324,11 @@ a:hover{text-decoration:underline}
           <div class="prod-price">$180–13,000 (1TB–20TB)</div>
         </div>
         <div class="prod-body">
-          <div class="prod-row"><b>Биометрия</b>❌ Нет — мембранная PIN-клавиатура</div>
-          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit, описывается производителем как «military grade»</div>
-          <div class="prod-row"><b>FIPS-сертификация</b>✅ FIPS 140-2 Level 3 — на ВСЕ устройство включая корпус</div>
-          <div class="prod-row"><b>Корпус</b>Авиационный алюминий 6061, неразборные крепления</div>
-          <div class="prod-row"><b>Настройка</b>Без ПО и драйверов — plug-and-play на любой системе</div>
+          <div class="prod-row"><b>Биометрия</b>❌ Нет, PIN-клавиатура</div>
+          <div class="prod-row"><b>Шифрование</b>AES-XTS 256-bit «military grade»</div>
+          <div class="prod-row"><b>FIPS</b>✅ 140-2 Level 3, весь корпус</div>
+          <div class="prod-row"><b>Корпус</b>Авиац. алюминий 6061</div>
+          <div class="prod-row"><b>Настройка</b>Без ПО, plug-and-play</div>
           <div class="prod-row"><b>PIN</b>7–16 цифр, никогда не передаётся хосту</div>
           <div class="prod-row"><b>Размер</b>120.7×76.2×22.9 мм, 318г</div>
           <div class="prod-row"><b>Гарантия</b>3 года (детали и работа)</div>
@@ -337,9 +339,8 @@ a:hover{text-decoration:underline}
             <div class="con">✕ Нет отпечатка — только PIN-клавиатура</div>
             <div class="con">✕ Громоздкий по сравнению с Samsung</div>
           </div>
-          <div style="margin-top:14px;display:grid;gap:8px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Источники</div>
-            <div style="font-size:13px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:var(--radius-sm)"><b style="color:var(--ink)">Apricorn официально</b>: «Спроектирован для полного соответствия требованиям NIST FIPS 140-2 Level 3 — весь диск, электроника, внешние крепления и сам корпус включены в границу валидации»</div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><b style="color:var(--ink)">Apricorn</b>: весь диск, электроника и корпус включены в границу FIPS-валидации</div>
           </div>
         </div>
       </div>
