@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eight Sleep Pod 5 — полный гайд: модели, цены, подписка, надёжность 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f4f0;--white:#fff;--ink:#111;--muted:#6b6a66;--border:#e2e0d8;
+  --blue:#1a4fd6;--blue-light:#eef2fd;--blue-dark:#0f2e8a;
+  --green:#1a7a3c;--green-light:#e8f5ee;
+  --amber:#c47a00;--amber-light:#fef8e8;
+  --red:#c0392b;--red-light:#fdf0ee;
+  --teal:#0d7a6b;--teal-light:#e8f5f3;
+  --radius:14px;--radius-sm:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7}
+
+.hero{background:var(--ink);color:#fff;padding:72px 24px 60px}
+.hero-inner{max-width:860px;margin:0 auto}
+.hero-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:5px 14px;display:inline-block;margin-bottom:20px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:#6b9fff}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7;margin-bottom:28px}
+.hero-nav{display:flex;flex-wrap:wrap;gap:10px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.hero-nav-label{font-size:12px;color:rgba(255,255,255,.3);width:100%;margin-bottom:4px;letter-spacing:.06em;text-transform:uppercase}
+.hero-nav a{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:30px;padding:8px 18px;font-size:13px;color:rgba(255,255,255,.8);text-decoration:none}
+
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+.section{padding:56px 0}
+.s-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.s-title{font-family:'Syne',sans-serif;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;margin-bottom:8px}
+.s-sub{font-size:15px;color:var(--muted);max-width:640px;line-height:1.7;margin-bottom:28px}
+.divider{height:1px;background:var(--border)}
+
+.verdict{background:var(--blue-light);border:1px solid #b0c8f5;border-radius:var(--radius);padding:22px 26px;margin-bottom:24px}
+.verdict h4{font-family:'Syne',sans-serif;font-size:15px;color:var(--blue-dark);margin-bottom:8px}
+.verdict p{font-size:14px;color:var(--blue-dark);line-height:1.65}
+
+.critical{background:var(--red-light);border:2px solid #e8a6a0;border-radius:var(--radius);padding:22px 26px;margin-bottom:24px}
+.critical h4{font-family:'Syne',sans-serif;font-size:15px;color:var(--red);margin-bottom:8px}
+.critical p{font-size:14px;color:#7a2a20;line-height:1.65}
+
+.choose-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:24px}
+.choose-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+.choose-card.best{border:2px solid var(--green)}
+.choose-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.choose-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px}
+.choose-p{font-size:13px;color:var(--muted);line-height:1.6}
+.choose-price{font-size:14px;font-weight:600;color:var(--blue);margin-top:10px}
+
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.prod-card.top{border:2px solid var(--blue)}
+.prod-header{padding:16px 18px 12px;border-bottom:1px solid var(--border)}
+.prod-badge{font-size:10.5px;font-weight:500;padding:3px 9px;border-radius:4px;display:inline-block;margin-bottom:6px}
+.prod-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;line-height:1.3}
+.prod-price{font-size:13px;font-weight:600;color:var(--blue)}
+.prod-body{padding:14px 18px;flex:1}
+.prod-row{font-size:12px;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--border);line-height:1.4}
+.prod-row:last-child{border-bottom:none}
+.prod-row b{color:var(--ink);display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:1px}
+.pros{margin-top:10px;display:grid;gap:3px}
+.pro{font-size:12px;color:var(--green);line-height:1.4}
+.con{font-size:12px;color:var(--red);line-height:1.4}
+@media(max-width:760px){
+  .prod-grid{grid-template-columns:1fr}
+}
+
+.table-wrap{overflow-x:auto;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:var(--ink);color:#fff;font-weight:500;padding:10px 14px;text-align:left;font-size:12px}
+tbody tr:nth-child(even){background:#faf9f6}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody td{padding:9px 14px;vertical-align:top}
+.tick{color:var(--green);font-weight:700}
+.cross{color:var(--red);font-weight:700}
+.best-m{background:var(--blue-light);color:var(--blue-dark);font-size:11px;padding:2px 7px;border-radius:4px;white-space:nowrap}
+
+.warn{background:var(--amber-light);border:1px solid #f5d890;border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--amber);margin-top:12px}
+.good{background:var(--green-light);border:1px solid #a5d6b5;border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--green);margin-top:12px}
+
+.level2{background:var(--ink);color:#fff;padding:48px 24px;text-align:center}
+.level2 h3{font-family:'Syne',sans-serif;font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:700;margin-bottom:10px}
+.level2 p{font-size:15px;color:rgba(255,255,255,.5);max-width:520px;margin:0 auto}
+.level2-line{width:40px;height:2px;background:rgba(255,255,255,.2);margin:20px auto 0}
+
+.faq-list{display:grid;gap:8px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.faq-q{padding:14px 18px;font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+.faq-q::after{content:'↓';color:var(--blue);flex-shrink:0;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 18px}
+.faq-item.open .faq-a{max-height:2000px;padding:0 18px 14px}
+
+footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:13px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+@media(max-width:600px){
+  .hero{padding:52px 20px 44px}
+  .section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Обновлено: июнь 2026 · данные проверены</div>
+    <h1>Eight Sleep<br><em>Pod 5</em><br>полный гайд</h1>
+    <p class="hero-sub">Core, Plus, Ultra — что входит, сколько стоит на самом деле, обязательная подписка и честные данные о надёжности.</p>
+    <div class="hero-nav">
+      <div class="hero-nav-label">Навигация</div>
+      <a href="#quick">⚡ Главное</a>
+      <a href="#compare">📊 Модели</a>
+      <a href="#deep">🔬 Углублённо</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ГЛАВНОЕ -->
+<div class="section" id="quick">
+  <div class="container">
+    <p class="s-tag">Главное</p>
+    <h2 class="s-title">Что нужно знать перед покупкой</h2>
+
+    <div class="critical">
+      <h4>⚠ Подписка Autopilot обязательна первые 12 месяцев — нельзя пропустить при оформлении заказа</h4>
+      <p>Это не опция «можно включить позже» — Autopilot принудительно добавляется в чекаут на первый год независимо от твоего желания. Только после 12 месяцев можно отменить. После отмены остаётся лишь ручная регулировка температуры — теряешь AI-автопилот, сон-трекинг, умные будильники, Hot Flash Mode, Pregnancy Mode и расширенную гарантию.</p>
+    </div>
+
+    <div class="choose-grid">
+      <div class="choose-card best">
+        <div class="choose-label">Лучшее соотношение цена/функции</div>
+        <div class="choose-name">Pod 5 Core</div>
+        <p class="choose-p">Cover + Hub. Дуальная зона, сон-трекинг, Autopilot, вибро- и термо-будильник, Hot Flash Mode. Это и есть основная причина покупать Eight Sleep — остальное опционально.</p>
+        <div class="choose-price">от $2,849 (Full) — $3,199 (King/Cal King)</div>
+      </div>
+      <div class="choose-card">
+        <div class="choose-label">Бюджетнее при той же функции</div>
+        <div class="choose-name">Pod 4 (всё ещё продаётся)</div>
+        <p class="choose-p">Та же дуальная зона, тот же Autopilot, тот же сон-трекинг что у Pod 5 Core — независимый разбор подтверждает «core features identical». Разница — блэнкет, спикеры в Ultra и едва заметно тише хаб.</p>
+        <div class="choose-price">от $2,649 (Queen) — на ~$350 дешевле Core</div>
+      </div>
+      <div class="choose-card">
+        <div class="choose-label">Полный пакет</div>
+        <div class="choose-name">Pod 5 Ultra</div>
+        <p class="choose-p">Core + Blanket + адаптивная База с подъёмом изголовья (антихрап) + динамики со звуковыми пейзажами. Самая дорогая и самая полная версия.</p>
+        <div class="choose-price">от $4,849–6,300 (Queen–Cal King)</div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <h4>Главный практический вывод</h4>
+      <p>Независимый разбор Wetried.it прямо рекомендует: <strong>«покупай Pod 4 если хочешь просто кровать которая охлаждается — это тот же базовый опыт за меньшие деньги»</strong>. Все ключевые функции (дуальная зона, AI Autopilot, HRV-трекинг, умный будильник) идентичны на Pod 4 и Pod 5 Core. Переплата за Pod 5 — это блэнкет, динамики в Ultra, и едва заметно тише хаб, не более.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- МОДЕЛИ -->
+<div class="section" id="compare" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Линейка моделей</p>
+    <h2 class="s-title">Pod 5 Core / Plus / Ultra — что входит в каждую</h2>
+    <p class="s-sub">Цены — стартовые MSRP, Queen-размер если не указано иное. Скидки появляются регулярно.</p>
+
+    <div class="prod-grid">
+
+      <!-- CORE -->
+      <div class="prod-card top">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--blue-light);color:var(--blue-dark)">Точка входа</div>
+          <div class="prod-name">Pod 5 Core</div>
+          <div class="prod-price">$2,949–3,199</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Состав</b>Cover + Hub</div>
+          <div class="prod-row"><b>Диапазон</b>55–110°F (13–43°C)</div>
+          <div class="prod-row"><b>Зоны</b>Дуальная, 1 хаб на двоих</div>
+          <div class="prod-row"><b>Трекинг</b>HR, HRV, дыхание, стадии сна — без носимых устройств</div>
+          <div class="prod-row"><b>Будильник</b>Вибро + термический</div>
+          <div class="prod-row"><b>Размеры</b>Full, Queen, King, Cal King</div>
+          <div class="pros">
+            <div class="pro">✓ Все ключевые функции на месте — большего не нужно 90% людей</div>
+            <div class="con">✕ Без блэнкета верх тела остаётся в комнатной температуре</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLUS -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--amber-light);color:var(--amber)">+ Блэнкет</div>
+          <div class="prod-name">Pod 5 Plus</div>
+          <div class="prod-price">Core + Blanket (~$999 отдельно)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Состав</b>Cover + Hub + гидро-блэнкет</div>
+          <div class="prod-row"><b>Блэнкет</b>5.4 кг, подключается к тому же Hub</div>
+          <div class="prod-row"><b>Эффект</b>2× мощность охлаждения/нагрева — сверху и снизу одновременно</div>
+          <div class="prod-row"><b>Совместимость</b>⚠️ Нужен пододеяльник определённого размера — несовместимость встречается у некоторых конфигураций cover</div>
+          <div class="pros">
+            <div class="pro">✓ Полное погружение в температуру со всех сторон</div>
+            <div class="con">✕ Подтверждённые случаи несовместимости блэнкета с некоторыми размерами cover</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ULTRA -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--red-light);color:var(--red)">Полный пакет</div>
+          <div class="prod-name">Pod 5 Ultra</div>
+          <div class="prod-price">$4,849–6,300</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Состав</b>Core + Blanket + адаптивная База + динамики</div>
+          <div class="prod-row"><b>База</b>3″ толщины, до 750 фунтов, между рамой и матрасом</div>
+          <div class="prod-row"><b>Антихрап</b>Автоподъём изголовья при детекции храпа</div>
+          <div class="prod-row"><b>Звук</b>Встроенные динамики, NSDR от Andrew Huberman, white noise</div>
+          <div class="prod-row"><b>Размеры</b>Только Queen, King, Cal King — нет Full</div>
+          <div class="pros">
+            <div class="pro">✓ Единственная версия с антихрап-функцией и звуком</div>
+            <div class="con">✕ Прыжок в цене ~$2,000 за Base+Blanket+динамики</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="table-wrap" style="margin-top:24px">
+      <table>
+        <thead>
+          <tr>
+            <th>Размер</th>
+            <th>Pod 4</th>
+            <th>Pod 5 Core</th>
+            <th>Pod 5 Ultra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef2fd">
+            <td><b>Full</b></td>
+            <td>~$2,449</td>
+            <td>$2,849–2,949</td>
+            <td>— (не выпускается)</td>
+          </tr>
+          <tr>
+            <td><b>Queen</b></td>
+            <td>~$2,649</td>
+            <td>$2,949–3,199</td>
+            <td>$4,849–5,899</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>King / Cal King</b></td>
+            <td>~$2,849</td>
+            <td>$3,199–3,249</td>
+            <td>$6,099–6,300</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn">⚠ Цена в США выросла на ~$400 по сравнению с Pod 4 «due to tariffs» — это прямая цитата из независимого обзора, не маркетинговое объяснение Eight Sleep.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ПОДПИСКА ДЕТАЛЬНО -->
+<div class="section">
+  <div class="container">
+    <p class="s-tag">Подписка Autopilot</p>
+    <h2 class="s-title">Три тарифа — что входит в каждый</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Тариф</th>
+            <th>Цена</th>
+            <th>Что входит</th>
+            <th>Гарантия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef2fd">
+            <td><b>Standard</b></td>
+            <td>$17/мес ($199/год)</td>
+            <td>AI-автопилот, сон-трекинг, умные будильники, Hot Flash Mode</td>
+            <td>2 года</td>
+          </tr>
+          <tr>
+            <td><b>Enhanced</b></td>
+            <td>$25/мес ($299/год)</td>
+            <td>Всё из Standard</td>
+            <td><b>5 лет</b></td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>Elite</b></td>
+            <td>$33/мес ($399/год)</td>
+            <td>Всё из Enhanced + Health Check (мониторинг аномалий сердца/дыхания)</td>
+            <td>5 лет</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="critical">
+      <h4>⚠ Без подписки после 12 месяцев — что конкретно теряешь</h4>
+      <p>Прямая цитата независимого обзора: «You retain only basic manual temperature control, which means you essentially have a very expensive cooling pad». Теряешь: AI Autopilot (авторегулировка по стадиям сна), весь сон/health-трекинг, умные будильники, Hot Flash Mode, Pregnancy Mode, коучинг. Гарантия откатывается до 2 лет вместо 5.</p>
+    </div>
+
+    <div class="good">✓ Бонус: если у тебя уже есть Autopilot, добавить партнёра на тот же Pod — бесплатно. Подписка считается на устройство, не на человека (до 2 пользователей).</div>
+
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;margin-top:28px;margin-bottom:12px">Альтернатива покупке — аренда</h3>
+    <p style="font-size:14px;color:var(--muted);line-height:1.7">Eight Sleep предлагает рент Pod 5 Core или Ultra <b>от $169/мес</b> без долгосрочных обязательств, включая Autopilot. Можно отменить в любой момент, вернуть устройство. Это не lease-to-own — устройство не переходит в собственность ни при каких условиях. Разумно для тех кто не уверен в долгосрочной аренде жилья или просто хочет попробовать без покупки.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LEVEL 2 -->
+<div id="deep"></div>
+<div class="level2">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px">Углублённо</div>
+  <h3>Хочу разобраться детально</h3>
+  <p>Реальная стоимость владения за 5 лет, надёжность, и честные независимые данные о поломках.</p>
+  <div class="level2-line"></div>
+</div>
+
+<!-- TCO -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Стоимость владения</p>
+    <h2 class="s-title">Реальная цена за 5 лет</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Статья расходов</th>
+            <th>Сумма</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef2fd">
+            <td>Hardware (Pod 5 Core, Queen)</td>
+            <td>$2,949–3,199</td>
+          </tr>
+          <tr>
+            <td>Autopilot за 5 лет (Standard $199/год)</td>
+            <td>~$995</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td>Autopilot за 5 лет (Enhanced $299/год)</td>
+            <td>~$1,495</td>
+          </tr>
+          <tr>
+            <td>Электричество (умеренный режим)</td>
+            <td>~$250–375 за 5 лет ($50–75/год)</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td>Электричество (максимальное охлаждение всегда)</td>
+            <td>~$625 за 5 лет ($125/год)</td>
+          </tr>
+          <tr>
+            <td>Возможная замена хаба вне гарантии (24–36 мес. риск)</td>
+            <td>$800–1,000 (если не покрыто гарантией)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn">⚠ Итоговая цифра по независимым обзорам: <b>$4,000–6,000 за 5 лет</b> для Pod 5 Core с учётом подписки, фильтров/обслуживания и риска замены хаба. Это в 1.5–2 раза дороже первоначальной цены hardware.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- НАДЁЖНОСТЬ -->
+<div class="section">
+  <div class="container">
+    <p class="s-tag">Долговечность</p>
+    <h2 class="s-title">Надёжность — что говорят независимые источники и реальные владельцы</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>Данные</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef2fd">
+            <td>Средний срок службы</td>
+            <td>4–6 лет (MattressNut)</td>
+          </tr>
+          <tr>
+            <td>Отказ хаба</td>
+            <td>Заметная частота в диапазоне 24–36 месяцев (помпа/чиллер)</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td>Утечки воды</td>
+            <td>Документированы в нескольких форумах, включая случаи повреждения матраса/пола. Pod 2 — больше жалоб, Pod 3/4 — реже (улучшены уплотнения)</td>
+          </tr>
+          <tr>
+            <td>Сенсоры трекинга</td>
+            <td>Потеря точности после 12+ месяцев — распространённая жалоба</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="critical">
+      <h4>⚠ Реальная история с Trustpilot (2026)</h4>
+      <p>«Купил Eight Sleep в октябре 2022 за $2,838.94, система перестала работать в начале 2026 — чуть больше 3 лет для продукта премиум-класса. Считаю это неприемлемым сроком службы для такой цены».</p>
+    </div>
+
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;margin-top:24px;margin-bottom:10px">Системные риски — не только поломки железа</h3>
+    <div style="display:grid;gap:10px">
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">AWS-сбой октябрь 2025</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Облачная зависимость временно заблокировала кровати пользователей на 110°F во время регионального сбоя Amazon Web Services. С тех пор есть ограниченный Bluetooth Backup Mode, но Autopilot всё равно требует интернет.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">FDA Class II — заявка подана, не одобрена</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Eight Sleep подал заявку на FDA Class II для детекции апноэ во сне. На середину 2026 одобрения нет — компания может делать только wellness-заявления, не медицинские.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">Незавершённый судебный процесс</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Retroactive subscription gating — блокировка ранее доступных функций без подписки у части пользователей. Статус не разрешён на середину 2026.</p>
+      </div>
+      <div style="background:var(--green-light);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid #a5d6b5">
+        <b style="font-size:13px;color:var(--green)">Финансовая стабильность — хороший знак</b>
+        <p style="font-size:13px;color:var(--green);margin-top:4px">$50M раунд финансирования при оценке $1.5B (март 2026), компания free cash flow positive. Риск что бренд закроется и устройство превратится в «дорогой кирпич» — низкий на данный момент.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Вопрос-ответ</p>
+    <h2 class="s-title">Частые вопросы</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Pod 4 или Pod 5 Core — что реально выбрать?</div>
+        <div class="faq-a">Независимый разбор Wetried.it прямо рекомендует Pod 4 для большинства покупателей: «core features identical — dual-zone cooling, AI Autopilot, HRV tracking, vibrating alarm». Разница Pod 5 — едва заметно тише хаб, физические кнопки вместо тач-зон, и доступность блэнкета (который можно докупить отдельно и на Pod 4). Экономия ~$350 на Pod 4 разумнее потратить на первый год подписки.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Можно ли купить только Cover без Hub, или наоборот?</div>
+        <div class="faq-a">Нет — Hub и Cover всегда продаются вместе как минимальная единица (Pod 5 Core). Hub физически необходим для работы Cover, отдельно он бесполезен. Blanket и Base можно докупить отдельно к уже имеющемуся Core, если позже захочешь обновиться до Plus/Ultra функционала.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Работает ли Pod без Wi-Fi?</div>
+        <div class="faq-a">С октября 2025 есть ограниченный Bluetooth Backup Mode для базовой ручной регулировки температуры при отключении интернета. Но Autopilot (AI-функции, трекинг, умные будильники) требует постоянное подключение к интернету — без Wi-Fi эти функции не работают вообще, независимо от backup-режима.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Подходит ли Pod 5 для адаптивной (split-adjustable) кровати?</div>
+        <div class="faq-a">Нет, с ограничением — независимый источник прямо указывает: «Eight Sleep Pod does not work on a split-adjustable bed... both sleeping partners will be forced to have the same elevation» (если не покупать Ultra с собственной адаптивной Base, которая заменяет твою текущую раздельную регулировку, но тоже работает синхронно для обоих, не раздельно по углу подъёма).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">HSA/FSA — можно ли оплатить через медицинский счёт?</div>
+        <div class="faq-a">Да, Eight Sleep официально HSA/FSA eligible, особенно при покупке для документированного состояния здоровья (нужно letter of medical necessity — справка от врача о медицинской необходимости).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Что такое Hot Flash Mode и Pregnancy Mode?</div>
+        <div class="faq-a"><b>Hot Flash Mode</b> — кнопка моментального резкого охлаждения твоей стороны при ночном приливе (характерно для перименопаузы/менопаузы), с последующим плавным возвратом к обычной температуре сна. <b>Pregnancy Mode</b> (запущен май 2026) — AI-функция Autopilot адаптирующая температурный режим под физиологические изменения от первого триместра до 24 недель после родов, бесплатна для всех подписчиков Autopilot.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Источники: Wetried.it · HealNourishGrow · The5kRunner · Cybernews · Tom's Guide · MattressNut · No Sleepless Nights · Trustpilot · Eight Sleep официально · Июнь 2026</p>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var item = el.closest('.faq-item');
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!wasOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
