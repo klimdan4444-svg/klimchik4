@@ -55,6 +55,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-s
 .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-items:start}
 .prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
 .prod-card.top{border:2px solid var(--blue)}
+.prod-photo{width:100%;height:auto;object-fit:contain;display:block;border-bottom:1px solid var(--border);background:var(--bg)}
 .prod-header{padding:16px 18px 12px;border-bottom:1px solid var(--border)}
 .prod-badge{font-size:10.5px;font-weight:500;padding:3px 9px;border-radius:4px;display:inline-block;margin-bottom:6px}
 .prod-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;line-height:1.3}
@@ -237,6 +238,7 @@ a:hover{text-decoration:underline}
 
       <!-- LARQ PUREVIS 2 -->
       <div class="prod-card">
+        <img class="prod-photo" src="img3/larq.jpg" alt="LARQ PureVis 2 — бутылка, UV-C крышка, фильтр и приложение">
         <div class="prod-header">
           <div class="prod-badge" style="background:var(--teal-light);color:var(--teal)">Покрытие капельным сенсором · UV-C</div>
           <div class="prod-name">LARQ Bottle PureVis 2</div>
