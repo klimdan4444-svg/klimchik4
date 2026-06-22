@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Системы контроля температуры матраса 2026 — Eight Sleep и альтернативы</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f4f0;--white:#fff;--ink:#111;--muted:#6b6a66;--border:#e2e0d8;
+  --blue:#1a4fd6;--blue-light:#eef2fd;--blue-dark:#0f2e8a;
+  --green:#1a7a3c;--green-light:#e8f5ee;
+  --amber:#c47a00;--amber-light:#fef8e8;
+  --red:#c0392b;--red-light:#fdf0ee;
+  --teal:#0d7a6b;--teal-light:#e8f5f3;
+  --radius:14px;--radius-sm:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7}
+
+.hero{background:var(--ink);color:#fff;padding:72px 24px 60px}
+.hero-inner{max-width:860px;margin:0 auto}
+.hero-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:5px 14px;display:inline-block;margin-bottom:20px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;line-height:1.15;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:#6b9fff}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7;margin-bottom:28px}
+.hero-nav{display:flex;flex-wrap:wrap;gap:10px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.hero-nav-label{font-size:12px;color:rgba(255,255,255,.3);width:100%;margin-bottom:4px;letter-spacing:.06em;text-transform:uppercase}
+.hero-nav a{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:30px;padding:8px 18px;font-size:13px;color:rgba(255,255,255,.8);text-decoration:none}
+
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+.section{padding:56px 0}
+.s-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.s-title{font-family:'Syne',sans-serif;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;margin-bottom:8px}
+.s-sub{font-size:15px;color:var(--muted);max-width:640px;line-height:1.7;margin-bottom:28px}
+.divider{height:1px;background:var(--border)}
+
+.verdict{background:var(--blue-light);border:1px solid #b0c8f5;border-radius:var(--radius);padding:22px 26px;margin-bottom:24px}
+.verdict h4{font-family:'Syne',sans-serif;font-size:15px;color:var(--blue-dark);margin-bottom:8px}
+.verdict p{font-size:14px;color:var(--blue-dark);line-height:1.65}
+
+.choose-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:24px}
+.choose-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+.choose-card.best{border:2px solid var(--green)}
+.choose-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.choose-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px}
+.choose-p{font-size:13px;color:var(--muted);line-height:1.6}
+.choose-price{font-size:14px;font-weight:600;color:var(--blue);margin-top:10px}
+
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-items:start}
+.prod-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.prod-card.top{border:2px solid var(--blue)}
+.prod-header{padding:16px 18px 12px;border-bottom:1px solid var(--border)}
+.prod-badge{font-size:10.5px;font-weight:500;padding:3px 9px;border-radius:4px;display:inline-block;margin-bottom:6px}
+.prod-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;line-height:1.3}
+.prod-price{font-size:13px;font-weight:600;color:var(--blue)}
+.prod-body{padding:14px 18px;flex:1}
+.prod-row{font-size:12px;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--border);line-height:1.4}
+.prod-row:last-child{border-bottom:none}
+.prod-row b{color:var(--ink);display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:1px}
+.pros{margin-top:10px;display:grid;gap:3px}
+.pro{font-size:12px;color:var(--green);line-height:1.4}
+.con{font-size:12px;color:var(--red);line-height:1.4}
+.prod-src{margin-top:10px;display:grid;gap:5px}
+.prod-src-label{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.prod-src-item{font-size:11.5px;color:var(--muted);padding:7px 9px;background:var(--bg);border-radius:6px;line-height:1.45}
+@media(max-width:760px){
+  .prod-grid{grid-template-columns:1fr}
+}
+
+.table-wrap{overflow-x:auto;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:var(--ink);color:#fff;font-weight:500;padding:10px 14px;text-align:left;font-size:12px}
+tbody tr:nth-child(even){background:#faf9f6}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody td{padding:9px 14px;vertical-align:top}
+.tick{color:var(--green);font-weight:700}
+.cross{color:var(--red);font-weight:700}
+.best-m{background:var(--blue-light);color:var(--blue-dark);font-size:11px;padding:2px 7px;border-radius:4px;white-space:nowrap}
+
+.warn{background:var(--amber-light);border:1px solid #f5d890;border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--amber);margin-top:12px}
+.good{background:var(--green-light);border:1px solid #a5d6b5;border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--green);margin-top:12px}
+
+.level2{background:var(--ink);color:#fff;padding:48px 24px;text-align:center}
+.level2 h3{font-family:'Syne',sans-serif;font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:700;margin-bottom:10px}
+.level2 p{font-size:15px;color:rgba(255,255,255,.5);max-width:520px;margin:0 auto}
+.level2-line{width:40px;height:2px;background:rgba(255,255,255,.2);margin:20px auto 0}
+
+.faq-list{display:grid;gap:8px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.faq-q{padding:14px 18px;font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+.faq-q::after{content:'↓';color:var(--blue);flex-shrink:0;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 18px}
+.faq-item.open .faq-a{max-height:2000px;padding:0 18px 14px}
+
+footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:13px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+@media(max-width:600px){
+  .hero{padding:52px 20px 44px}
+  .section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Обновлено: июнь 2026 · данные проверены</div>
+    <h1>Системы контроля<br><em>температуры матраса</em><br>2026</h1>
+    <p class="hero-sub">Eight Sleep и реальные альтернативы — независимые исследования сна, точные цены, габариты хабов и где заказать.</p>
+    <div class="hero-nav">
+      <div class="hero-nav-label">Навигация</div>
+      <a href="#quick">⚡ Быстрый выбор</a>
+      <a href="#compare">📊 Сравнение</a>
+      <a href="#deep">🔬 Углублённо</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- БЫСТРЫЙ ВЫБОР -->
+<div class="section" id="quick">
+  <div class="container">
+    <p class="s-tag">Быстрый ответ</p>
+    <h2 class="s-title">Что выбрать прямо сейчас</h2>
+
+    <div class="choose-grid">
+      <div class="choose-card best">
+        <div class="choose-label">Лучший overall · Премиум</div>
+        <div class="choose-name">Eight Sleep Pod 5</div>
+        <p class="choose-p">Один хаб на двоих с раздельными зонами, лучший сон-трекинг, лучшая поддержка. Но: обязательная подписка для AI-функций и самый громкий/крупный хаб в категории.</p>
+        <div class="choose-price">$2,849–6,300 + подписка $17+/мес</div>
+      </div>
+      <div class="choose-card best">
+        <div class="choose-label">Самый компактный</div>
+        <div class="choose-name">BedJet 3</div>
+        <p class="choose-p">15.5×10.5×5.75″ — официально самый маленький активный блок в категории. Воздушный (не водяной), быстрая установка (8 минут), без подписки.</p>
+        <div class="choose-price">$579–699</div>
+      </div>
+      <div class="choose-card">
+        <div class="choose-label">Без подписки навсегда</div>
+        <div class="choose-name">Chilipad Dock Pro / 2.0</div>
+        <p class="choose-p">Sleepme убрали все подписки в 2025 году. Nightstand-пульт у версии 2.0 — поворот ручки вместо приложения. Для пары нужны 2 отдельных блока.</p>
+        <div class="choose-price">$1,099–1,799</div>
+      </div>
+      <div class="choose-card">
+        <div class="choose-label">Лучший для пары с разной температурой</div>
+        <div class="choose-name">ORION Sleep System</div>
+        <p class="choose-p">Минимальная тепловая утечка между зонами (1.2°F при максимальной разнице) против 1.8°F у Pod 4. HSA/FSA-eligible, 365-night trial.</p>
+        <div class="choose-price">~$1,640–1,870 (после HSA/FSA)</div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <h4>Главный практический вывод</h4>
+      <p>Рынок реально большой и Eight Sleep далеко не единственный игрок. <strong>Если важна компактность</strong> — BedJet 3 официально самый маленький блок (15.5×10.5×5.75″) среди активных систем, и его можно убрать под кровать. <strong>Eight Sleep Pod 5, наоборот, у независимых обзорщиков (T3) назван «the weakest part of the setup» именно из-за хаба — «annoyingly chunky», слишком высокий чтобы засунуть под кровать.</strong> Если приоритет — компактность, Eight Sleep не лучший выбор несмотря на бренд-узнаваемость.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ПОЧЕМУ ЭТО ВАЖНО -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Наука</p>
+    <h2 class="s-title">Почему температура матраса реально важна</h2>
+    <p class="s-sub">Не маркетинг — два независимых peer-reviewed исследования с конкретными цифрами.</p>
+
+    <div style="display:grid;gap:12px;margin-bottom:20px">
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">Kim et al. — полисомнографическое РКИ (PubMed, окт. 2025)</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">25 участников, 3 ночи на полисомнографии каждый: контроль (естественный сон), постоянная температура матраса (33°C), и адаптивная регулировка (30°C во время REM, 33°C во время не-REM). Результат адаптивной регулировки против контроля: <strong>задержка REM-фазы снизилась с 141.8 до 110.4 минут (p=0.002)</strong>, доля REM-сна выросла до 20.8% (p=0.006) у мужчин, доля глубокого сна выросла на 12.3% у женщин (p=0.011).</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">Moyen et al. — Bioengineering (2024), неделя реального использования</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">Неделя использования температурно-контролируемого покрытия матраса в реальных условиях (не лаборатория). Более холодная температура в первой половине ночи была связана с увеличением глубокого сна у мужчин и увеличением REM-сна у женщин, плюс снижением частоты пульса во сне и повышением вариабельности сердечного ритма (HRV) — это объективный маркер восстановления организма.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">Механизм — почему это физиологически работает</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">Во время REM-сна организм фактически приостанавливает терморегуляцию — потоотделение и дрожь подавлены (Parmeggiani, основополагающие исследования). Это значит тело не может само скорректировать перегрев в этой фазе — внешний контроль температуры становится единственным способом её скорректировать. Глубокий сон (N3) наиболее чувствителен к перегреву: исследования показывают что тёплая среда сильнее всего сжимает именно эту фазу, где выделяется гормон роста и работает глимфатическая система очистки мозга от токсинов.</p>
+      </div>
+    </div>
+
+    <div class="warn">⚠ Важная деталь: европейский стандарт комфортной температуры спальни (21–25.5°C) разработан для дневного комфорта и, по данным исследований, может не обеспечивать оптимальное качество сна — оптимум для глубокого сна и для REM-сна физиологически разный, и точно подстроить это можно только активной системой контроля температуры матраса, а не комнатным термостатом.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- РАЗБОР МОДЕЛЕЙ -->
+<div class="section">
+  <div class="container">
+    <p class="s-tag">Топ систем</p>
+    <h2 class="s-title">Подробный разбор</h2>
+    <p class="s-sub">Независимые обзоры NapLab, Sleep Doctor, T3, Mattress Nut и официальные данные производителей.</p>
+
+    <div class="prod-grid">
+
+      <!-- EIGHT SLEEP POD 5 -->
+      <div class="prod-card top">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--blue-light);color:var(--blue-dark)">Премиум · Лидер бренда</div>
+          <div class="prod-name">Eight Sleep Pod 5</div>
+          <div class="prod-price">$2,849–6,300 (Core–Ultra)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Тип</b>Водяная, активная, дуальная зона</div>
+          <div class="prod-row"><b>Диапазон</b>55–110°F (13–43°C)</div>
+          <div class="prod-row"><b>Хаб</b>16"H × 16"L × 6"W — «слишком высокий для под кровать»</div>
+          <div class="prod-row"><b>Подписка</b>Обязательна для Autopilot — от $17/мес</div>
+          <div class="prod-row"><b>Время нагрева/охл.</b>10–15 минут до целевой</div>
+          <div class="prod-row"><b>Установка</b>~22 минуты, нужны 2 руки</div>
+          <div class="prod-row"><b>Утечка между зонами</b>1.8°F при максимальной разнице</div>
+          <div class="pros">
+            <div class="pro">✓ Лучший сон-трекинг (HRV, дыхание, стадии сна)</div>
+            <div class="pro">✓ Только 1 хаб нужен на двоих с раздельными зонами</div>
+            <div class="pro">✓ Pregnancy Mode, снорринг-детекция, термо-будильник</div>
+            <div class="con">✕ Хаб официально назван «the weakest part of the setup» — T3</div>
+            <div class="con">✕ Подписка добавляет $995–1,995 за 5 лет владения</div>
+            <div class="con">✕ Требует Wi-Fi для большинства функций</div>
+          </div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.t3.com/home-living/sleep/eight-sleep-pod-5" target="_blank">T3</a>: «хаб всё ещё тот же высокий, громоздкий блок... почему они не могут сделать его короче и шире вместо высокого и узкого»</div>
+            <div class="prod-src-item"><a href="https://www.mattressnut.com/eight-sleep-review/" target="_blank">Mattress Nut</a>: 5-летнее владение — $4,000–6,000 включая подписку и сменные фильтры</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEDJET 3 -->
+      <div class="prod-card top">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--green-light);color:var(--green)">Самый компактный · Без подписки</div>
+          <div class="prod-name">BedJet 3 Climate Comfort</div>
+          <div class="prod-price">$579–699 (одна зона)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Тип</b>Воздушная (не водяная), конвективная</div>
+          <div class="prod-row"><b>Диапазон</b>66–104°F (officially), охлаждение до 62°F воздухом</div>
+          <div class="prod-row"><b>Размер блока</b>15.5"×10.5"×5.75" — самый маленький в категории</div>
+          <div class="prod-row"><b>Подписка</b>Нет, никогда</div>
+          <div class="prod-row"><b>Установка</b>8 минут — самая быстрая среди активных систем</div>
+          <div class="prod-row"><b>Клинические данные</b>Опубликованы в медицинском журнале, презентованы врачами на медконференции</div>
+          <div class="prod-row"><b>Обслуживание</b>Чистка фильтра каждые 60 дней под краном</div>
+          <div class="pros">
+            <div class="pro">✓ Официально самый компактный активный блок на рынке</div>
+            <div class="pro">✓ Убирает влагу/пот — воздух эффективнее в этом чем вода</div>
+            <div class="pro">✓ Минимальное обслуживание — нет резервуара с водой</div>
+            <div class="con">✕ Воздушное охлаждение слабее водяного по теплопередаче</div>
+            <div class="con">✕ Требует Cloud Sheet (отдельно) для равномерного распределения</div>
+            <div class="con">✕ Дуальная зона требует 2 отдельных блока</div>
+          </div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://sleepdoctor.com/pages/reviews/best-bed-cooling-systems" target="_blank">Sleep Doctor</a>: «компактный дизайн... может слайдиться под большинство рам при зазоре от 6 дюймов»</div>
+            <div class="prod-src-item">Тестировщица RD.com: «впечатлена компактным, элегантным дизайном блока»</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHILIPAD / SLEEPME -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--teal-light);color:var(--teal)">Без подписки навсегда · Nightstand-пульт</div>
+          <div class="prod-name">Chilipad Dock Pro / 2.0 (Sleepme)</div>
+          <div class="prod-price">$1,099–1,799</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Тип</b>Водяная, активная</div>
+          <div class="prod-row"><b>Диапазон</b>55–115°F (2.0), 60–115°F (Cube)</div>
+          <div class="prod-row"><b>Подходит для матраса</b>10–18 дюймов толщины</div>
+          <div class="prod-row"><b>Подписка</b>Убрана полностью в 2025</div>
+          <div class="prod-row"><b>Шум</b>41.2 dBA (1 блок) / 44.9 dBA (2 блока)</div>
+          <div class="prod-row"><b>Установка</b>18 минут</div>
+          <div class="prod-row"><b>Дуальная зона</b>Требует 2 отдельных блока + розетки</div>
+          <div class="pros">
+            <div class="pro">✓ Industry-first nightstand-пульт — поворот ручки без приложения (2.0)</div>
+            <div class="pro">✓ Машинно-стираемый топпер</div>
+            <div class="pro">✓ Работает полностью офлайн (airplane mode)</div>
+            <div class="con">✕ Для пары нужны 2 блока и 2 розетки — менее компактно</div>
+            <div class="con">✕ Резервуар воды теряет больше из-за испарения, нужна доливка каждые 4-6 недель</div>
+          </div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://sleep.me/chilipad-vs-eight-sleep" target="_blank">Sleep.me</a>: единственная система совместимая со split-adjustable кроватями с разной высотой подъёма у партнёров</div>
+            <div class="prod-src-item"><a href="https://www.nosleeplessnights.com/chilipad-dock-pro-review/" target="_blank">No Sleepless Nights</a>: «резервуар намного меньше чем у Eight Sleep Pod 3» — но и худшее удержание воды</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORION SLEEP SYSTEM -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--amber-light);color:var(--amber)">Лучшая дуальная зона · HSA/FSA</div>
+          <div class="prod-name">ORION Sleep System</div>
+          <div class="prod-price">~$1,895–3,495 (~$1,640–1,870 после HSA/FSA)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Тип</b>Водяная, AI-биометрическая адаптация</div>
+          <div class="prod-row"><b>Диапазон</b>50–115°F</div>
+          <div class="prod-row"><b>Подходит для матраса</b>10–16 дюймов</div>
+          <div class="prod-row"><b>Утечка между зонами</b>1.2°F при максимальной разнице (лучше Pod 4: 1.8°F)</div>
+          <div class="prod-row"><b>Доливка воды</b>Каждые 10 недель, 1.2L — реже всех конкурентов</div>
+          <div class="prod-row"><b>Trial период</b>365 ночей — самый длинный в категории</div>
+          <div class="prod-row"><b>HSA/FSA</b>✅ Единственная система с подтверждённой eligibility</div>
+          <div class="pros">
+            <div class="pro">✓ Минимальная тепловая утечка между зонами в категории</div>
+            <div class="pro">✓ Единственная HSA/FSA-eligible система — реальная экономия на налогах</div>
+            <div class="pro">✓ Опциональный sleep-патч для персонализации с первой ночи</div>
+            <div class="con">✕ Хаб с небольшой площадью, но довольно высокий</div>
+            <div class="con">✕ Базовая функциональность работает без подписки, но AI-фичи требуют её</div>
+          </div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://www.mattressnut.com/mattress-cooler-buying-guide/" target="_blank">Mattress Nut (измерения 2026)</a>: «мы измерили менее 1.2°F перекрёстного нагрева при максимальной разнице зон одновременно (55°F и 90°F)»</div>
+            <div class="prod-src-item"><a href="https://www.mattressnut.com/eight-sleep-review/" target="_blank">Mattress Nut</a>: «ORION cover matched Eight Sleep on temperature delta (11.4°F) без ежемесячной платы»</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PULSIO THERMASLEEP -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--green-light);color:var(--green)">Бюджет · Без приложения</div>
+          <div class="prod-name">Pulsio Thermasleep</div>
+          <div class="prod-price">£449.99–799.99</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Тип</b>Водяная, ручное управление</div>
+          <div class="prod-row"><b>Зоны</b>Single / Full / Dual в зависимости от комплектации</div>
+          <div class="prod-row"><b>Совместимость</b>Любой матрас, не требует замены</div>
+          <div class="prod-row"><b>Скорость отклика</b>Заметное изменение за 5-10 минут</div>
+          <div class="prod-row"><b>Управление</b>Только физическое на блоке, без приложения</div>
+          <div class="prod-row"><b>Обслуживание</b>Дистиллированная вода, периодическая чистка</div>
+          <div class="pros">
+            <div class="pro">✓ Дешевле всех водяных активных систем в этом обзоре</div>
+            <div class="pro">✓ Нет приложения, нет подписки, нет учётной записи</div>
+            <div class="con">✕ Нет сон-трекинга и автоматизации по стадиям сна</div>
+            <div class="con">✕ Менее известный бренд — меньше долгосрочных отзывов</div>
+          </div>
+          <div class="prod-src"><div class="prod-src-label">Источники</div>
+            <div class="prod-src-item"><a href="https://running.reviews/blogs/recovery/pulsio-thermasleep-review" target="_blank">Running.Reviews</a>: «нет привычных app-интеграций и сон-трекинга более дорогих конкурентов, но абсолютно выполняет свою основную задачу за малую часть цены»</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLEEP NUMBER CLIMATE -->
+      <div class="prod-card">
+        <div class="prod-header">
+          <div class="prod-badge" style="background:var(--red-light);color:var(--red)">Встроено в матрас · Не топпер</div>
+          <div class="prod-name">Sleep Number Climate Series</div>
+          <div class="prod-price">Зависит от модели (отдельно не продаётся)</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-row"><b>Тип</b>Встроенные охлаждающие материалы в матрас целиком</div>
+          <div class="prod-row"><b>Категория</b>«Умная кровать», не накладка на существующий матрас</div>
+          <div class="prod-row"><b>Линейка</b>ComfortMode → ComfortNext → Climate (по цене)</div>
+          <div class="pros">
+            <div class="pro">✓ Регулировка жёсткости + температура в одном устройстве</div>
+            <div class="con">✕ Требует покупки целого нового матраса, не подходит к существующему</div>
+            <div class="con">✕ Самый дорогой путь решения именно температурной задачи отдельно</div>
+          </div>
+          <div class="warn" style="margin-top:8px">⚠ Не подходит под запрос «накладка на существующий матрас» — включена для полноты картины рынка, это другая категория продукта.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- СРАВНИТЕЛЬНАЯ ТАБЛИЦА -->
+<div class="section" id="compare" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Сравнение</p>
+    <h2 class="s-title">Сравнительная таблица</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Система</th>
+            <th>Тип</th>
+            <th>Размер блока</th>
+            <th>Подписка</th>
+            <th>Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef2fd">
+            <td><b>Eight Sleep Pod 5</b></td>
+            <td>Вода</td>
+            <td>16×16×6″ <span class="best-m">крупный</span></td>
+            <td class="cross">Обязательна</td>
+            <td>$2,849–6,300</td>
+          </tr>
+          <tr>
+            <td><b>BedJet 3</b> <span class="best-m">самый компактный</span></td>
+            <td>Воздух</td>
+            <td>15.5×10.5×5.75″</td>
+            <td class="tick">Нет</td>
+            <td>$579–699</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>Chilipad Dock Pro/2.0</b></td>
+            <td>Вода</td>
+            <td>Средний</td>
+            <td class="tick">Нет (с 2025)</td>
+            <td>$1,099–1,799</td>
+          </tr>
+          <tr>
+            <td><b>ORION</b></td>
+            <td>Вода</td>
+            <td>Компактная площадь, высокий</td>
+            <td>⚠️ Частично</td>
+            <td>$1,895–3,495</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>Pulsio Thermasleep</b></td>
+            <td>Вода</td>
+            <td>Компактный</td>
+            <td class="tick">Нет</td>
+            <td>£449.99–799.99</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn">⚠ «Размер блока» у водяных систем не всегда означает компактность в реальном использовании — у Eight Sleep и ORION блоки физически выше, что мешает задвинуть их под кровать, даже если площадь основания меньше чем у BedJet.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ГДЕ КУПИТЬ -->
+<div class="section">
+  <div class="container">
+    <p class="s-tag">Покупка</p>
+    <h2 class="s-title">Где купить каждую систему</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Система</th>
+            <th>Официальный магазин</th>
+            <th>Крупный ритейлер</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef2fd">
+            <td><b>Eight Sleep Pod 5</b></td>
+            <td><a href="https://www.eightsleep.com/product/pod-cover/" target="_blank">eightsleep.com</a> (продаётся только напрямую)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><b>BedJet 3</b></td>
+            <td><a href="https://bedjet.com" target="_blank">bedjet.com</a></td>
+            <td><a href="https://www.amazon.com/BedJet-Cooling-Heating-Climate-Control/dp/B01BMCWJ7G" target="_blank">Amazon</a></td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>Chilipad / Sleepme</b></td>
+            <td><a href="https://sleep.me/product/chilipad" target="_blank">sleep.me</a></td>
+            <td><a href="https://www.amazon.com/Chilipad-Cube-Bed-Cooling-System/dp/B07GT9MYRW" target="_blank">Amazon</a></td>
+          </tr>
+          <tr>
+            <td><b>ORION Sleep System</b></td>
+            <td>mynucleus.com / официальный сайт ORION</td>
+            <td>—</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>Pulsio Thermasleep</b></td>
+            <td>pulsio.co.uk (UK)</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LEVEL 2 -->
+<div id="deep"></div>
+<div class="level2">
+  <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px">Углублённо</div>
+  <h3>Хочу разобраться детально</h3>
+  <p>Вода vs воздух, во сколько обходится владение за 5 лет, и нюансы установки.</p>
+  <div class="level2-line"></div>
+</div>
+
+<!-- ВОДА VS ВОЗДУХ -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Технология</p>
+    <h2 class="s-title">Вода vs воздух — в чём разница</h2>
+
+    <div style="display:grid;gap:12px;margin-bottom:20px">
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">Водяные системы (Eight Sleep, Chilipad, ORION, Pulsio)</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">Вода греется/охлаждается в хабе и циркулирует через тонкие трубки внутри топпера. Теплопередача воды значительно выше чем у воздуха — это даёт более резкий и заметный температурный эффект. Минусы: топпер с трубками может ощущаться под телом (особенно жалобы на Chilipad OOLER в независимых тестах), нужна периодическая доливка дистиллированной воды и добавка против биоплёнки.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">Воздушные системы (BedJet)</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">Блок гонит тёплый или холодный воздух под простыню через шланг. Меньше теплопередача чем у воды, но эффективнее выводит влагу и пот — независимые тестировщики отмечают это как явное преимущество для night sweats. Минус — ощущение «как будто вентилятор дует прямо на кожу», некоторым пользователям некомфортно от прямого воздушного потока.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius);padding:18px 22px;border:1px solid var(--border)">
+        <h4 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:8px">Термоэлектрические и гибридные (на горизонте рынка)</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6">Используют электрический ток чтобы одна сторона элемента охлаждалась, другая нагревалась — без воды и без воздушного потока. Пока не доминируют на рынке активных систем для матраса, но используются в отдельных охлаждающих подушках и накладках. Гибридные системы добавляют материалы с фазовым переходом (PCM) к термоэлектрике для усиления эффекта.</p>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <h4>Итог по выбору технологии</h4>
+      <p>Если основная жалоба — <strong>ночная потливость</strong> — воздушная система (BedJet) выводит влагу эффективнее. Если жалоба — <strong>просто слишком жарко без пота</strong> — водяная система даёт более резкое и предсказуемое охлаждение. Для пары с разными предпочтениями дуальная зона важнее самой технологии — здесь ORION и Eight Sleep с одним хабом на двоих выигрывают у систем требующих два отдельных блока (Chilipad, BedJet для раздельных зон).</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TCO -->
+<div class="section">
+  <div class="container">
+    <p class="s-tag">Стоимость владения</p>
+    <h2 class="s-title">Реальная цена за 5 лет (TCO)</h2>
+    <p class="s-sub">Подписки и расходники незаметно увеличивают итоговую сумму — вот честный расчёт.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Система</th>
+            <th>Старт. цена</th>
+            <th>Подписка/год</th>
+            <th>5 лет итого (примерно)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef2fd">
+            <td><b>Eight Sleep Pod 5 Core</b></td>
+            <td>$2,849</td>
+            <td>$199–300+</td>
+            <td>$4,000–6,000</td>
+          </tr>
+          <tr>
+            <td><b>BedJet 3</b></td>
+            <td>$579–699</td>
+            <td>$0</td>
+            <td>~$600–750 (+фильтры)</td>
+          </tr>
+          <tr style="background:#eef2fd">
+            <td><b>Chilipad Dock Pro</b></td>
+            <td>$1,099–1,799</td>
+            <td>$0 (с 2025)</td>
+            <td>~$1,150–1,900</td>
+          </tr>
+          <tr>
+            <td><b>ORION</b></td>
+            <td>$1,895–3,495</td>
+            <td>Частично, с HSA/FSA скидка</td>
+            <td>~$1,640–3,700</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="good">✓ Самая большая разница в TCO — именно подписка. Eight Sleep остаётся самым дорогим по совокупной стоимости почти в любом сценарии на горизонте 5 лет.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<div class="section" style="background:#f0eeea">
+  <div class="container">
+    <p class="s-tag">Вопрос-ответ</p>
+    <h2 class="s-title">Частые вопросы</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Какая система самая компактная по итогу — с учётом высоты, не только габаритов в спецификации?</div>
+        <div class="faq-a">BedJet 3 — официально 15.5×10.5×5.75 дюйма, и это подтверждено независимыми тестировщиками как реально самый компактный вариант который влезает под большинство кроватей при зазоре от 6 дюймов. Eight Sleep Pod 5 (16×16×6″) и ORION формально не намного крупнее по площади основания, но их высота делает их физически неудобными для размещения под кроватью — T3 прямо называет это «the weakest part of the setup» у Pod 5.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Можно ли использовать только одну зону вместо обеих?</div>
+        <div class="faq-a">У Eight Sleep — нет, система продаётся только как покрытие на весь матрас целиком (хотя зоны регулируются раздельно через один хаб). У Chilipad — да, есть половинные размеры (ME Half Queen, Half King и т.д.) специально для одного спящего на двуспальной кровати.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Нужен ли Wi-Fi для работы?</div>
+        <div class="faq-a">Eight Sleep требует Wi-Fi для большинства функций (с октября 2025 есть ограниченный Bluetooth backup-режим при отключении интернета, но Autopilot всё равно требует сеть). Chilipad и BedJet можно использовать полностью офлайн — расписания задаются локально в блоке/приложении один раз и работают без подключения к интернету.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Насколько шумно работают эти системы ночью?</div>
+        <div class="faq-a">По данным независимых замеров: Chilipad Dock Pro — 41.2 dBA (один блок) / 44.9 dBA (два блока). Eight Sleep Pod 5 описывается как «near-silent» на умеренных настройках с слышимым гулом вентилятора только на экстремальном охлаждении (-7 до -10). BedJet признаётся производителем тише чем кондиционер: 38dB при 50% мощности, 42dB при 100%. Для сравнения — обычный настольный вентилятор на средней скорости даёт сравнимый или больший уровень шума.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Подходит ли это для людей с менопаузой / ночной потливостью?</div>
+        <div class="faq-a">Да, это одна из основных целевых аудиторий всех этих систем — большинство брендов прямо упоминают перименопаузу и менопаузу в маркетинге. Если основная проблема именно потливость (а не просто субъективное ощущение жары) — воздушная система BedJet выводит влагу эффективнее водяных систем по механизму действия, это подтверждают и независимые тестировщики, и опубликованные клинические данные производителя.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Источники: PubMed (Kim et al. 2025) · Bioengineering/Moyen et al. 2024 · Nature Index · T3 · Sleep Doctor · Mattress Nut · No Sleepless Nights · Running.Reviews · Sleep.me · BedJet официально · Eight Sleep официально · Июнь 2026</p>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var item = el.closest('.faq-item');
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!wasOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
