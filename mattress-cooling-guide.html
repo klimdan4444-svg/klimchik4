@@ -879,14 +879,46 @@ a:hover{text-decoration:underline}
     <h2 class="s-title">Что конкретно входит в подписку — не просто «есть/нет»</h2>
     <p class="s-sub">У Eight Sleep и ORION подписка не бинарная — это набор конкретных функций, без которых базовое железо работает, но теряет смысл умной системы.</p>
 
-    <h3 style="font-family:'Syne',sans-serif;font-size:16px;margin-top:8px;margin-bottom:12px">Eight Sleep Autopilot — 3 тарифа</h3>
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;margin-top:8px;margin-bottom:12px">Глоссарий — что означает каждый термин</h3>
+    <div style="display:grid;gap:10px;margin-bottom:24px">
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">AI-автопилот (Autopilot)</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Алгоритм который сам меняет температуру покрытия в течение ночи на основе твоих стадий сна (лёгкий/глубокий/REM), сердечного ритма и дыхания — без участия пользователя. Без этой функции температуру можно менять только вручную.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">Сон-трекинг (Sleep tracking)</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Бесконтактный мониторинг через сенсоры в покрытии: пульс, вариабельность сердечного ритма (HRV), частота дыхания, стадии сна, храп. Данные собираются всю ночь и показываются в приложении утром в виде отчёта.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">Умные будильники (Smart alarms)</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Будильник который разбудит лёгкой вибрацией или изменением температуры (не звуком) в подходящую фазу сна рядом с заданным временем — чтобы не выдёргивать из глубокого сна резко.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">Hot Flash Mode</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Функция для перименопаузы/менопаузы: детектирует начало ночного прилива жара по биометрии и автоматически резко охлаждает покрытие, затем плавно возвращает к обычной температуре. Клинически подтверждено (peer-reviewed): среднее снижение частоты ночных приливов на <b>56%</b>.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">Pregnancy Mode</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Запущена в мае 2026. AI понедельно меняет температурный режим под физиологию беременности — от первого триместра до 24 недель после родов. Показывает специфичные для беременности данные: пульс, HRV, частоту дыхания, стадии сна, храп — в сравнении с твоей же нормой до беременности. Совместима с Hot Flash Mode (для тех у кого приливы и беременность одновременно). Бесплатна для всех подписчиков Autopilot, отдельно не оплачивается.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">Health Check</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Расширенный мониторинг — отслеживает отклонения в сердечном ритме и дыхании от твоей личной нормы и уведомляет если паттерн нетипичен. Это не медицинский диагноз, а wellness-индикатор для дальнейшего разговора с врачом.</p>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-sm);padding:14px 18px;border:1px solid var(--border)">
+        <b style="font-size:13px">Snoring detection (детекция храпа)</b>
+        <p style="font-size:13px;color:var(--muted);margin-top:4px">Покрытие распознаёт звук храпа через встроенные сенсоры. Полная коррекция (автоматический лёгкий подъём изголовья при храпе) работает только с отдельным аксессуаром Base — без него фиксируется только факт и время храпа в отчёте, без физического воздействия.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;margin-top:8px;margin-bottom:12px">Eight Sleep Autopilot — 3 тарифа, полный список функций каждого</h3>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>Тариф</th>
             <th>Цена</th>
-            <th>Что входит</th>
+            <th>Полный список того что входит</th>
             <th>Гарантия</th>
           </tr>
         </thead>
@@ -894,27 +926,29 @@ a:hover{text-decoration:underline}
           <tr style="background:#eef2fd">
             <td><b>Standard</b></td>
             <td>$17/мес ($199/год)</td>
-            <td>AI-автопилот (авторегулировка по стадиям сна), сон-трекинг, умные будильники, Hot Flash Mode</td>
+            <td>AI-автопилот · сон-трекинг (пульс, HRV, дыхание, стадии сна) · умные будильники · Hot Flash Mode · Pregnancy Mode · детекция храпа (без физической коррекции без Base)</td>
             <td>2 года</td>
           </tr>
           <tr>
             <td><b>Enhanced</b></td>
             <td>$25/мес ($299/год)</td>
-            <td>Всё из Standard</td>
+            <td>AI-автопилот · сон-трекинг (пульс, HRV, дыхание, стадии сна) · умные будильники · Hot Flash Mode · Pregnancy Mode · детекция храпа — <b>идентичный набор функций что у Standard</b>, разница только в гарантии</td>
             <td><b>5 лет</b></td>
           </tr>
           <tr style="background:#eef2fd">
             <td><b>Elite</b></td>
             <td>$33/мес ($399/год)</td>
-            <td>Всё из Enhanced + Health Check (мониторинг аномалий сердца/дыхания)</td>
+            <td>AI-автопилот · сон-трекинг (пульс, HRV, дыхание, стадии сна) · умные будильники · Hot Flash Mode · Pregnancy Mode · детекция храпа · <b>+ Health Check</b> (мониторинг отклонений сердца/дыхания от твоей нормы)</td>
             <td>5 лет</td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div class="good" style="margin-top:12px">✓ Простыми словами: Standard и Enhanced дают абсолютно одинаковый функционал — единственная разница это срок гарантии (2 года против 5 лет). Платишь на $100/год больше только за продлённую гарантию. Elite добавляет к этому одну дополнительную функцию — Health Check.</div>
+
     <div class="critical" style="margin-top:16px">
       <h4>⚠ Без подписки после первого года — что конкретно теряешь</h4>
-      <p>Autopilot обязателен первые 12 месяцев при покупке — отказаться нельзя при оформлении заказа. После года можно отменить, но теряешь: авторегулировку температуры по фазам сна (остаётся только ручная регулировка вручную), весь sleep/health-трекинг, умные будильники, Hot Flash Mode, Pregnancy Mode. Гарантия откатывается до 2 лет вместо 5. По сути остаётся просто дорогая водяная грелка/охладитель без какого-либо «умного» функционала.</p>
+      <p>Autopilot обязателен первые 12 месяцев при покупке — отказаться нельзя при оформлении заказа. После года можно отменить, но теряешь: авторегулировку температуры по фазам сна (остаётся только ручная регулировка вручную, без какой-либо автоматики), весь sleep/health-трекинг (пульс, HRV, дыхание, стадии сна — данные просто не собираются), умные будильники (вибро по фазе сна, остаётся только обычный будильник на телефоне), Hot Flash Mode, Pregnancy Mode, детекцию храпа. Гарантия откатывается до 2 лет вместо 5. По сути остаётся просто дорогая водяная грелка/охладитель с ручной регулировкой температуры и без какого-либо «умного» функционала.</p>
     </div>
 
     <h3 style="font-family:'Syne',sans-serif;font-size:16px;margin-top:24px;margin-bottom:12px">ORION Intelligence — опциональная подписка</h3>
