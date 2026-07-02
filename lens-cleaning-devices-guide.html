@@ -84,7 +84,8 @@
   .stat .lbl{font-size:14px;color:var(--ink-soft);margin-top:6px}
 
   /* ---------- product cards: 2-column grid ---------- */
-  .models-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:10px 0}
+  .models-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:10px 0 34px}
+  .group-label{grid-column:1 / -1;text-align:center;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;padding-top:8px;border-top:2px solid var(--line)}
   .model{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
   .model.top{border:2px solid var(--accent)}
   .model.wide{grid-column:1 / -1}
@@ -187,12 +188,12 @@
         <span class="badge">Для мелкой оптики</span>
         <h4>LensPen MicroPro</h4>
         <p>Тот же углерод, но наконечник всего 4&nbsp;мм — для видоискателей, окуляров, камер смартфонов и дронов, куда не добраться салфеткой. Длина 9,5&nbsp;см, выдвижная кисточка, несохнущий состав.</p>
-        <div class="price">~$10 · B&amp;H, Manfrotto — шлют в обе страны</div>
+        <div class="price">$12.95 на lenspen.com · есть у B&amp;H и Manfrotto</div>
       </div>
       <div class="v-card">
         <span class="badge warn">Клон с оговорками</span>
         <h4>CarbonKlean Peeps / SmartKlear</h4>
-        <p>Та же углеродная идея, агрессивный маркетинг «технология NASA». Продукт рабочий для очков, но репутация компании неоднородна: жалобы на недоставленные заказы и ресурс сильно меньше заявленных 500 чисток.</p>
+        <p>Родственный LensPen потребительский бренд: Peeps — очки, SmartKlear/ScreenKlean — экраны телефонов и планшетов. Продукты рабочие, но репутация канала продаж неоднородна: жалобы на недоставленные заказы с официального сайта — покупать только через Amazon.</p>
         <div class="price">~$15–20 · только через Amazon</div>
       </div>
     </div>
@@ -246,7 +247,7 @@
     <div class="callout">
       <b>⚠ Два жёстких ограничения углеродной технологии</b>
       <p style="margin-bottom:8px"><b>1. Только сухие поверхности.</b> Применять карандаш на влажной линзе категорически запрещено — состав размажется.</p>
-      <p style="margin-bottom:0"><b>2. У каждой поверхности — своё устройство.</b> Классический LP-1 создан <b>только для выпуклых оптических линз</b>: его наконечник вогнутый, под кривизну линзы. Для плоских светофильтров — FilterKlear с плоской подушечкой, для экранов — отдельные продукты (SideKick, NavKlear). И общее правило: углерод оставляет чёрный след на не идеально гладких поверхностях, поэтому матовые экраны, защитные плёнки, акрил и пластик — под запретом для всей категории.</p>
+      <p style="margin-bottom:0"><b>2. У каждой поверхности — своё устройство.</b> Классический LP-1 создан <b>только для выпуклых оптических линз</b>: его наконечник вогнутый, под кривизну линзы. Для плоских светофильтров — FilterKlear с плоской подушечкой, для экранов — NavKlear с плоской прямоугольной подушечкой и VR-коллекция для гарнитур. И общее правило: углерод оставляет чёрный след на не идеально гладких поверхностях, поэтому матовые экраны, защитные плёнки, акрил и пластик — под запретом для всей категории.</p>
     </div>
 
     <h3>Правила использования (общие для всей категории)</h3>
@@ -262,6 +263,8 @@
     <p class="h-sub">Источники: официальные страницы LensPen и CarbonKlean, B&amp;H Photo, Manfrotto, Amazon, ProductReview.com.au, Pixoneye. Фото — официальные изображения производителей.</p>
 
     <div class="models-grid">
+
+      <div class="group-label" style="border-top:none;padding-top:0">🔭 Для линз и оптики</div>
 
       <!-- LensPen Original -->
       <div class="model top">
@@ -295,7 +298,7 @@
         <div class="photo" id="ph-micropro"><img src="https://lenspen.com/cdn/shop/products/MicroPro_1_800x.jpg?v=1629766580" alt="LensPen MicroPro — чистящий наконечник 4 мм" loading="lazy"></div>
         <span class="badge">Специализация · мелкая оптика</span>
         <h3>LensPen MicroPro</h3>
-        <div class="price-line">~$10 (B&amp;H, Manfrotto, lenspen.com)</div>
+        <div class="price-line">$12.95 на lenspen.com (B&amp;H, Manfrotto)</div>
         <p>Самый маленький чистящий наконечник в линейке LensPen — 4&nbsp;мм в диаметре при длине 9,5&nbsp;см. Создан для окуляров, видоискателей, маленьких линз и углублений камеры, куда физически не добраться салфеткой или обычным LP-1. Наглядная иллюстрация стратегии бренда: одна технология, сегментированная под десятки нишевых применений.</p>
         <table class="spec">
           <tr><td>Наконечник</td><td>4 мм — самый маленький в линейке</td></tr>
@@ -334,13 +337,61 @@
         </details>
       </div>
 
+
+      <div class="group-label">📱 Для экранов</div>
+
+      <!-- NavKlear -->
+      <div class="model">
+        <div class="photo" id="ph-navklear" style="background:#fff"><img src="https://lenspen.com/cdn/shop/files/IMG_5002navKlearbody_capcopy_800x.png?v=1762194179" alt="LensPen NavKlear — устройство для чистки GPS-экранов" loading="lazy" style="object-fit:contain"></div>
+        <span class="badge">Экраны · актуальная линейка LensPen</span>
+        <h3>LensPen NavKlear (GPS Screen Cleaner)</h3>
+        <div class="price-line">$19.95 на lenspen.com</div>
+        <p>Текущий экранный продукт LensPen: устройство с <b>плоской прямоугольной подушечкой</b> под экраны (в отличие от вогнутого наконечника LP-1 под линзы). Позиционируется под GPS/мультимедиа-экраны автомобилей, снимает отпечатки, пыль и жир; в комплекте выдвижная кисточка и utility-щётка для крошек в стыках. Старый экранный SideKick из каталога исчез — экранную нишу теперь закрывают NavKlear и отдельная VR-коллекция для гарнитур.</p>
+        <table class="spec">
+          <tr><td>Подушечка</td><td>Плоская прямоугольная — геометрия под плоский экран</td></tr>
+          <tr><td>Длина</td><td>10,5 см; несохнущий безжидкостный состав</td></tr>
+          <tr><td>Применение</td><td>Глянцевые экраны GPS/мультимедиа авто; принцип тот же для планшетных стёкол</td></tr>
+          <tr><td>Смежное</td><td>VR-коллекция LensPen — чистка линз и экранов гарнитур</td></tr>
+        </table>
+        <ul class="pm">
+          <li class="plus">Единственное «экранное» устройство в актуальном каталоге LensPen</li>
+          <li class="plus">Utility-щётка для стыков и углублений — продуманная деталь для авто</li>
+          <li class="minus">Только глянцевое стекло: на матовых покрытиях и плёнках углерод оставит след</li>
+        </ul>
+        <details>
+          <summary>Источники</summary>
+          <p><a href="https://lenspen.com/products/navklear-gps-screen-cleaner">lenspen.com/navklear</a> — характеристики и цена · <a href="https://lenspen.com/collections/virtual-reality">VR-коллекция LensPen</a></p>
+        </details>
+      </div>
+
+      <!-- SmartKlear / ScreenKlean -->
+      <div class="model">
+        <div class="photo" id="ph-smartklear" style="background:#fff"><img src="https://carbonklean.com/images/wp-content/product-smartklear-white-1-400x400.png" alt="CarbonKlean SmartKlear — чистка экрана смартфона" loading="lazy" style="object-fit:contain"></div>
+        <span class="badge warn">Экраны · CarbonKlean</span>
+        <h3>CarbonKlean SmartKlear (телефоны) / ScreenKlean (планшеты)</h3>
+        <div class="price-line">~$15–20 · продаются сменные подушечки</div>
+        <p>Экранная половина линейки CarbonKlean: SmartKlear — карбоновая подушечка в слайдере под экран смартфона, ScreenKlean — увеличенная версия под планшеты и e-book. Производитель заявляет пригодность для LCD, плазмы, стекла и защитных стёкол; из маркетинга — «на телефоне в 18 раз больше бактерий, чем в общественном туалете».</p>
+        <ul class="pm">
+          <li class="plus">Удобный слайдер-форм-фактор, есть сменные подушечки (продлевает жизнь устройства)</li>
+          <li class="plus">Реально закрывает нишу «чистка смартфона одной рукой без жидкости»</li>
+          <li class="minus">Владелец Samsung Z Fold сообщал об отклеившихся заводских защитных плёнках после чистки — со складными экранами осторожно</li>
+          <li class="minus">Официальный сайт выглядит заброшенным (движок 2023 года, посторонние спам-ссылки в меню) — покупать только через Amazon</li>
+        </ul>
+        <details>
+          <summary>Источники</summary>
+          <p><a href="https://carbonklean.com/product/smartklear/">carbonklean.com/smartklear</a> · <a href="https://carbonklean.com/product/screenklean/">screenklean</a> · <a href="https://www.productreview.com.au/listings/carbonklean-peeps">ProductReview.com.au</a> — кейс с Z Fold</p>
+        </details>
+      </div>
+
+      <div class="group-label">👓 Для очков</div>
+
       <!-- CarbonKlean -->
       <div class="model">
         <div class="photo" id="ph-peeps" style="background:#fff"><img src="https://carbonklean.com/images/wp-content/product-peeps-white-silver-1-400x400.png" alt="CarbonKlean Peeps — щипцы для чистки очков" loading="lazy" style="object-fit:contain"></div>
-        <span class="badge warn">Главный конкурент · DTC-маркетинг</span>
-        <h3>CarbonKlean Peeps / SmartKlear / ScreenKlean</h3>
+        <span class="badge warn">Очки · DTC-маркетинг</span>
+        <h3>CarbonKlean Peeps</h3>
         <div class="price-line">~$15–20 за устройство</div>
-        <p>Американский бренд на той же углеродной идее, но с агрессивным DTC-маркетингом: «технология, используемая NASA на МКС». Линейка по устройствам: Peeps — очки, SmartKlear — смартфоны, ScreenKlean — планшеты, CellKlear — камеры смартфонов.</p>
+        <p>Флагман CarbonKlean — щипцы для очков на той же углеродной идее, с агрессивным DTC-маркетингом: «технология, используемая NASA на МКС». Кстати, CarbonKlean и LensPen связаны напрямую: сайт lenspen.com ссылается на carbonklean.com как на партнёрский бренд — это потребительское ответвление той же углеродной технологии.</p>
         <table class="spec">
           <tr><td>Технология</td><td>Carbon Microfiber Technology — щипцы чистят обе стороны линзы</td></tr>
           <tr><td>Заявленный ресурс</td><td>500 чисток; есть сменные подушечки</td></tr>
@@ -358,6 +409,8 @@
           <p><a href="https://carbonklean.com/carbonklean-is-the-ultimate-cleaning-tool-for-screens-and-glasses/">CarbonKlean</a> — линейка · <a href="https://www.productreview.com.au/listings/carbonklean-peeps">ProductReview.com.au</a> — негатив о доставке и ресурсе · <a href="https://pixoneye.com/peeps-eyeglass-cleaner-reviews/">Pixoneye</a> — обзор 2026</p>
         </details>
       </div>
+
+      <div class="group-label">🧴 Традиционный лагерь</div>
 
       <!-- Traditional -->
       <div class="model wide">
@@ -404,13 +457,22 @@
           <td>Узкая специализация</td>
         </tr>
         <tr>
-          <td><b>LensPen SideKick</b></td>
-          <td>Экраны смартфонов/планшетов</td>
-          <td>Углеродная панель (сменная)</td>
-          <td>Сменные панели</td>
+          <td><b>LensPen NavKlear</b></td>
+          <td>Экраны (GPS/мультимедиа авто, глянцевое стекло)</td>
+          <td>Плоская прямоугольная углеродная подушечка + 2 щётки</td>
+          <td>Несохнущий состав</td>
           <td class="tick">1 год</td>
-          <td>~$15</td>
+          <td>$19.95</td>
           <td class="cross">Только глянцевые стеклянные экраны — на матовых оставит чёрный след</td>
+        </tr>
+        <tr>
+          <td><b>CarbonKlean SmartKlear / ScreenKlean</b></td>
+          <td>Экраны смартфонов / планшетов</td>
+          <td>Углеродная подушечка-слайдер (сменная)</td>
+          <td>Сменные подушечки</td>
+          <td>Satisfaction guarantee</td>
+          <td>~$15–20</td>
+          <td class="cross">Осторожно с заводскими плёнками складных экранов; покупать через Amazon</td>
         </tr>
         <tr>
           <td><b>LensPen SensorKlear Loupe Kit</b></td>
@@ -541,7 +603,7 @@
 
     <details class="faq-item">
       <summary>LensPen Original (LP-1/LP-2) — только для линз или для экранов тоже?</summary>
-      <p><b>Только для линз.</b> Официальное назначение — объективы камер, бинокли, зрительные трубы, телескопы и окуляры; наконечник LP-1 специально сделан вогнутым (12 мм), чтобы повторять выпуклую форму линзы, поэтому на плоском экране он даже геометрически прилегает плохо. Для экранов у LensPen отдельные продукты — SideKick (смартфоны/планшеты, только глянцевое стекло) и NavKlear (GPS-экраны), для плоских светофильтров — FilterKlear с плоской подушечкой. Ритейлеры отдельно предупреждают: не использовать LP-1 на влажных, акриловых и пластиковых поверхностях — углерод оставляет чёрный след на всём, что не идеально гладкое стекло.</p>
+      <p><b>Только для линз.</b> Официальное назначение — объективы камер, бинокли, зрительные трубы, телескопы и окуляры; наконечник LP-1 специально сделан вогнутым (12 мм), чтобы повторять выпуклую форму линзы, поэтому на плоском экране он даже геометрически прилегает плохо. Для экранов у LensPen отдельный продукт — NavKlear с плоской прямоугольной подушечкой (GPS/мультимедиа-экраны, только глянцевое стекло; старый экранный SideKick из актуального каталога исчез), плюс VR-коллекция для гарнитур. Для плоских светофильтров — FilterKlear с плоской подушечкой. Ритейлеры отдельно предупреждают: не использовать LP-1 на влажных, акриловых и пластиковых поверхностях — углерод оставляет чёрный след на всём, что не идеально гладкое стекло.</p>
     </details>
 
     <details class="faq-item">
