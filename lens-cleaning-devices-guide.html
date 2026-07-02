@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Девайсы для чистки экранов и оптики 2026 — LensPen, MicroPro и рынок углеродной чистки</title>
+<style>
+  :root{
+    --ink:#1c2126;
+    --ink-soft:#4a5560;
+    --paper:#f7f8f6;
+    --card:#ffffff;
+    --line:#dde3e0;
+    --accent:#0e7c66;        /* просветляющее покрытие линзы */
+    --accent-soft:#e3f2ec;
+    --warn:#b4540a;
+    --warn-soft:#fdf0e3;
+    --carbon:#2b2f33;
+    --carbon-soft:#eceef0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.65;font-size:17px;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  header{
+    background:radial-gradient(circle at 78% 30%, #14332c 0%, #0f1d1a 45%, #0b1210 100%);
+    color:#eef4f1;padding:56px 0 48px;position:relative;overflow:hidden;
+  }
+  header::before{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+    border:1px solid rgba(120,220,190,.25);
+    box-shadow:0 0 0 40px rgba(120,220,190,.06),0 0 0 90px rgba(120,220,190,.04),0 0 0 150px rgba(120,220,190,.025);
+    pointer-events:none;
+  }
+  .updated{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8fc7b4;margin-bottom:18px}
+  h1{font-size:clamp(28px,4.5vw,44px);line-height:1.15;font-weight:800;max-width:760px}
+  h1 em{font-style:normal;color:#7fe0c2}
+  .sub{margin-top:16px;font-size:19px;color:#c4d6cf;max-width:700px}
+
+  nav{background:var(--carbon);position:sticky;top:0;z-index:50}
+  nav .wrap{display:flex;flex-wrap:wrap;gap:4px;padding-top:8px;padding-bottom:8px}
+  nav a{
+    color:#cfd6db;text-decoration:none;font-size:14px;padding:6px 12px;border-radius:20px;
+  }
+  nav a:hover{background:#3a4046;color:#fff}
+
+  /* ---------- sections ---------- */
+  section{padding:52px 0}
+  section:nth-of-type(even){background:#fff}
+  .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+  h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:20px;line-height:1.25}
+  h3{font-size:20px;margin:28px 0 12px}
+  p{margin-bottom:14px}
+  p.lead{font-size:19px;color:var(--ink-soft)}
+
+  .callout{
+    border-left:4px solid var(--warn);background:var(--warn-soft);
+    padding:16px 20px;border-radius:0 10px 10px 0;margin:22px 0;
+  }
+  .callout.good{border-color:var(--accent);background:var(--accent-soft)}
+  .callout b{display:block;margin-bottom:6px}
+
+  /* ---------- quick verdict cards ---------- */
+  .verdict-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:26px 0}
+  .v-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;position:relative}
+  .v-card.top{border:2px solid var(--accent);box-shadow:0 8px 24px rgba(14,124,102,.12)}
+  .badge{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:12px;margin-bottom:10px;
+  }
+  .badge.gray{background:var(--carbon-soft);color:var(--ink-soft)}
+  .badge.warn{background:var(--warn-soft);color:var(--warn)}
+  .v-card h4{font-size:19px;margin-bottom:8px}
+  .v-card .price{margin-top:12px;font-weight:700;color:var(--ink)}
+
+  /* ---------- market stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:24px 0}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .stat .num{font-size:30px;font-weight:800;color:var(--accent);line-height:1.1}
+  .stat .lbl{font-size:14px;color:var(--ink-soft);margin-top:6px}
+
+  /* ---------- product cards ---------- */
+  .model{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;margin:26px 0}
+  .model.top{border:2px solid var(--accent)}
+  .model h3{margin-top:6px}
+  .model .price-line{font-weight:700;margin-bottom:14px}
+  .spec{width:100%;border-collapse:collapse;margin:14px 0;font-size:15.5px}
+  .spec td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .spec td:first-child{font-weight:700;width:34%;color:var(--ink-soft)}
+  ul.pm{list-style:none;margin:14px 0}
+  ul.pm li{padding:5px 0 5px 28px;position:relative;font-size:15.5px}
+  ul.pm li.plus::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+  ul.pm li.minus::before{content:"✕";position:absolute;left:0;color:var(--warn);font-weight:800}
+  details{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+  summary{cursor:pointer;font-weight:700;font-size:15px;color:var(--ink-soft)}
+  details p{font-size:14.5px;margin:10px 0 4px;color:var(--ink-soft)}
+
+  /* ---------- tables ---------- */
+  .table-scroll{overflow-x:auto;margin:20px 0}
+  table.cmp{border-collapse:collapse;width:100%;min-width:760px;background:var(--card);font-size:14.5px}
+  table.cmp th{
+    background:var(--carbon);color:#fff;padding:12px 12px;text-align:left;font-size:13.5px;
+    letter-spacing:.02em;
+  }
+  table.cmp td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.cmp tr:nth-child(even) td{background:#f2f6f4}
+  .tick{color:var(--accent);font-weight:700}
+  .cross{color:var(--warn);font-weight:700}
+
+  /* ---------- faq ---------- */
+  .faq-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 20px;margin:12px 0}
+  .faq-item summary{font-size:16.5px;color:var(--ink);padding:12px 0}
+  .faq-item p{font-size:15.5px}
+
+  footer{background:var(--carbon);color:#aeb6bd;padding:34px 0;font-size:14px}
+  footer a{color:#7fe0c2}
+  @media (max-width:640px){
+    body{font-size:16px}
+    .spec td:first-child{width:42%}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="updated">Обновлено: июль 2026 · данные проверены по первоисточникам</div>
+    <h1>Девайсы для чистки экранов и оптики — <em>LensPen, MicroPro</em> и рынок углеродной чистки</h1>
+    <p class="sub">Почему «карандаш с графитом» стал нарицательным именем целой категории, кто с ним конкурирует, сколько стоит этот рынок — и где проходит граница между работающей технологией и маркетингом про NASA.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#quick">⚡ Главный вывод</a>
+    <a href="#market">📈 Рынок в цифрах</a>
+    <a href="#tech">⚗️ Как работает углерод</a>
+    <a href="#models">📦 Разбор устройств</a>
+    <a href="#compare">📊 Сравнение</a>
+    <a href="#fakes">⚠️ Подделки</a>
+    <a href="#buy">🛒 Где купить</a>
+    <a href="#faq">❓ FAQ</a>
+  </div>
+</nav>
+
+<!-- ================= QUICK ================= -->
+<section id="quick">
+  <div class="wrap">
+    <div class="eyebrow">Главный вывод</div>
+    <h2>Одна технология, один лидер категории — и важное уточнение про MicroPro</h2>
+
+    <div class="callout">
+      <b>⚠ Сначала уточнение по терминам</b>
+      MicroPro — это <b>не конкурент LensPen, а продукт самой LensPen</b>: устройство с самым маленьким чистящим наконечником в линейке (4&nbsp;мм) для микрообъективов, окуляров и труднодоступных мест камеры. Поэтому правильная рамка исследования — не «LensPen против MicroPro», а «LensPen и её линейка против остального рынка»: углеродных клонов (CarbonKlean/Peeps), традиционных спреев и салфеток (Zeiss, Bausch&nbsp;+&nbsp;Lomb) и безымянных копий.
+    </div>
+
+    <div class="verdict-grid">
+      <div class="v-card top">
+        <span class="badge">Эталон категории</span>
+        <h4>LensPen Original (LP-1/LP-2)</h4>
+        <p>Запатентованный сухой углеродный состав + кисточка. До 500 чисток, состав обновляется в колпачке. Безопасен для линз с мультипросветлением. Само слово «ленспен» стало нарицательным для всей категории — как «ксерокс» для копиров.</p>
+        <div class="price">~$10–15 · в РФ от ~1000 ₽</div>
+      </div>
+      <div class="v-card">
+        <span class="badge">Для мелкой оптики</span>
+        <h4>LensPen MicroPro</h4>
+        <p>Тот же углерод, но наконечник всего 4&nbsp;мм — для видоискателей, окуляров, камер смартфонов и дронов, куда не добраться салфеткой. Длина 9,5&nbsp;см, выдвижная кисточка, несохнущий состав.</p>
+        <div class="price">~$10 · B&amp;H, Manfrotto</div>
+      </div>
+      <div class="v-card">
+        <span class="badge warn">Клон с оговорками</span>
+        <h4>CarbonKlean Peeps / SmartKlear</h4>
+        <p>Та же углеродная идея, агрессивный маркетинг «технология NASA». Продукт рабочий для очков, но репутация компании неоднородна: жалобы на недоставленные заказы и ресурс сильно меньше заявленных 500 чисток.</p>
+        <div class="price">~$15–20</div>
+      </div>
+    </div>
+
+    <p><b>Суть в одном абзаце:</b> категория «чистящих девайсов» — это рынок аксессуаров с низким входным барьером, который растёт на 6–7% в год за счёт AR/VR, камер в каждом устройстве и моды на экологичность. Побеждают в нём не технологии (углеродный принцип у всех одинаковый), а <b>бренд, дистрибуция и доверие</b>: LensPen — за счёт 30-летней истории и сети авторизованных дилеров, Peeps — за счёт DTC-маркетинга. Главный риск покупателя — не «неправильный выбор бренда», а подделка, которая может поцарапать линзу.</p>
+  </div>
+</section>
+
+<!-- ================= MARKET ================= -->
+<section id="market">
+  <div class="wrap">
+    <div class="eyebrow">Рынок в цифрах</div>
+    <h2>Сколько стоит рынок средств для чистки оптики и куда он движется</h2>
+    <p class="lead">Отдельного «рынка чистящих девайсов» аналитики не выделяют — карандаши и гаджеты растворены в широкой категории средств ухода за оптикой (жидкости, салфетки, микрофибра, наборы). Вот её масштаб.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">$1,42 млрд</div><div class="lbl">объём мирового рынка средств для чистки линз в 2024 году</div></div>
+      <div class="stat"><div class="num">$2,06 млрд</div><div class="lbl">прогноз к 2030 году при CAGR 6,3% (Deep Market Insights)</div></div>
+      <div class="stat"><div class="num">&lt;15%</div><div class="lbl">максимальная доля одной компании — рынок сильно фрагментирован</div></div>
+      <div class="stat"><div class="num">29% → 42%</div><div class="lbl">доля e-commerce в продажах: 2025 → прогноз 2034</div></div>
+    </div>
+
+    <p>Смежный сегмент — средства для чистки именно очков — оценивался в <b>$1,8 млрд в 2025 году</b> с прогнозом $3,1 млрд к 2034-му (CAGR 6,2%). Северная Америка лидирует по спросу, Азиатско-Тихоокеанский регион растёт быстрее всех (~7,8–8,2% в год).</p>
+
+    <h3>Что двигает рынок</h3>
+    <p><b>1. Оптика теперь везде.</b> Камеры и оптические сенсоры встроены в смартфоны, дроны, автомобили, AR/VR-гарнитуры и промышленный IoT — каждая линза требует ухода, и профессиональные B2B-наборы для чистки сенсоров выходят за пределы потребительского сегмента.</p>
+    <p><b>2. Покрытия стали нежнее.</b> Просветляющие и олеофобные покрытия на очках, экранах и объективах легко испортить неправильной чисткой — растёт спрос на «coating-safe» решения, и это крупнейший продуктовый сегмент рынка.</p>
+    <p><b>3. Экология против одноразовых салфеток.</b> Эко-салфетки — самый быстрорастущий формат (CAGR 7,4%), а многоразовые девайсы вроде LensPen (500 чисток вместо 500 салфеток) выигрывают от этого тренда автоматически.</p>
+    <p><b>4. Новые бизнес-модели.</b> В июне 2025 WHOOSH! анонсировала подписочную систему чистки для AR/VR-гарнитур с автоматическим устройством паровой очистки — категория начинает уходить от «продал и забыл» к recurring-моделям.</p>
+
+    <div class="callout good">
+      <b>✓ Что это значит практически</b>
+      Рынок стабильный, но это рынок дешёвых аксессуаров: продукт легко копируется, а его главный конкурент — «тряпочка и футболка». Поэтому вся ценность сосредоточена в бренде и каналах продаж, а не в патентах — и именно поэтому категорию заполонили клоны и подделки (см. раздел «Подделки»).
+    </div>
+  </div>
+</section>
+
+<!-- ================= TECH ================= -->
+<section id="tech">
+  <div class="wrap">
+    <div class="eyebrow">Технология</div>
+    <h2>Углеродная (сухая) чистка против жидкостей и микрофибры</h2>
+
+    <h3>Как работает углеродный состав</h3>
+    <p>В основе LensPen и всех его клонов — сухой чистящий состав на основе углерода (графита), который на молекулярном уровне абсорбирует кожный жир и следы пальцев со стеклянных поверхностей. Тот же принцип, по которому раньше натирали вымытые окна газетой: газетные чернила тоже содержат графит. Состав не содержит жидкости, не оставляет разводов и безопасен для линз с мультипросветлением.</p>
+    <p>Конструктивно все устройства категории устроены одинаково: с одной стороны — <b>выдвижная кисточка</b> для смахивания пыли и твёрдых частиц (обязательный первый шаг — иначе частицы поцарапают линзу при протирке), с другой — <b>подушечка с углеродным составом</b>. У LensPen состав в колпачке обновляется на подушечке при каждом закрытии, ресурс — до 500 использований.</p>
+
+    <h3>Почему не просто микрофибра или спрей</h3>
+    <p>Салфетки и микрофибра плохо справляются с жировыми следами от пальцев — они размазывают жир и оставляют разводы, а случайно попавшая под салфетку твёрдая частица царапает линзу. Жидкостные средства работают, но требуют двух рук, аккуратной дозировки и небезопасны рядом с электроникой и матрицами. Углеродный девайс закрывает нишу «быстро, одной рукой, в полевых условиях, без жидкости».</p>
+
+    <div class="callout">
+      <b>⚠ Два жёстких ограничения углеродной технологии</b>
+      <p style="margin-bottom:8px"><b>1. Только сухие поверхности.</b> Применять карандаш на влажной линзе категорически запрещено — состав размажется.</p>
+      <p style="margin-bottom:0"><b>2. Только гладкое стекло/глянец.</b> Углерод оставляет чёрный след на любых не идеально ровных поверхностях — поэтому экранные версии (LensPen SideKick) можно использовать только на глянцевых стеклянных экранах, а на матовых покрытиях и защитных плёнках углеродные девайсы неприменимы.</p>
+    </div>
+
+    <h3>Правила использования (общие для всей категории)</h3>
+    <p>Не прикасаться пальцами к чистящей подушечке и кисточке — жир с кожи убивает чистящие свойства. Сначала кисточка (пыль и крупные частицы), потом подушечка круговыми движениями. У карандашей — прокрутить колпачок после каждого использования, чтобы обновить состав.</p>
+  </div>
+</section>
+
+<!-- ================= MODELS ================= -->
+<section id="models">
+  <div class="wrap">
+    <div class="eyebrow">Топ устройств</div>
+    <h2>Подробный разбор</h2>
+    <p class="lead">Источники: официальные страницы LensPen и CarbonKlean, B&amp;H Photo, Manfrotto, обзоры Pixel24 / Almodi / Otzovik / ProductReview.com.au / Pixoneye.</p>
+
+    <!-- LensPen Original -->
+    <div class="model top">
+      <span class="badge">Эталон категории · создатель форм-фактора</span>
+      <h3>LensPen Original (LP-1 / LP-2)</h3>
+      <div class="price-line">~$10–15 · в РФ от ~1000 ₽ (официальные дилеры)</div>
+      <p>Канадская Parkside Optical фактически создала категорию: карандаш с кисточкой и углеродной подушечкой для любой оптики с диаметром линз от 13&nbsp;мм — объективы, бинокли, прицелы, микроскопы. В России «ленспен» стал нарицательным словом для всего класса компактных чистящих устройств.</p>
+      <table class="spec">
+        <tr><td>Технология</td><td>Сухой углеродный (графитовый) состав, запатентован</td></tr>
+        <tr><td>Ресурс</td><td>До 500 использований; состав обновляется в колпачке при каждом закрытии</td></tr>
+        <tr><td>Совместимость</td><td>Любая оптика от 13 мм, включая линзы с мультипросветлением</td></tr>
+        <tr><td>Конструкция</td><td>Выдвижная кисточка + чистящая подушечка (у LP-1 вогнутая под кривизну линзы)</td></tr>
+        <tr><td>Гарантия</td><td>1 год на продукцию LensPen</td></tr>
+        <tr><td>Экосистема</td><td>FilterKlear (плоская подушечка для светофильтров), SideKick (экраны), SensorKlear (матрицы), Glasses Klear (очки), наборы Elite/DSLR Pro</td></tr>
+      </table>
+      <ul class="pm">
+        <li class="plus">Оригинальная запатентованная технология — то, что все остальные копируют</li>
+        <li class="plus">Сеть авторизованных дилеров по всему миру, ко-брендинг с Manfrotto и Nikon</li>
+        <li class="plus">500 чисток вместо 500 одноразовых салфеток — выигрывает от эко-тренда</li>
+        <li class="minus">На выдвижной кисточке нет защитного колпачка</li>
+        <li class="minus">Цена выше noname-аналогов — и именно поэтому его массово подделывают</li>
+      </ul>
+      <details>
+        <summary>Источники</summary>
+        <p><a href="https://pixel24.ru/obzori/view/id/303">Pixel24</a> — принцип работы, правила использования, признаки подделок · <a href="https://camera.ru/blogs/blog/chistyaschiy-karandash-lenspen">Camera.ru</a> — конструкция, ресурс 500 чисток · <a href="https://www.almodi.org/raznie-ustroystva/lenspen-sistemi-ochistki-optiki-matrits-i-ekranov">Almodi</a> — тест линейки, «как Xerox для копиров»</p>
+      </details>
+    </div>
+
+    <!-- MicroPro -->
+    <div class="model">
+      <span class="badge">Специализация · мелкая оптика</span>
+      <h3>LensPen MicroPro</h3>
+      <div class="price-line">~$10 (B&amp;H, Manfrotto, lenspen.com)</div>
+      <p>Самый маленький чистящий наконечник в линейке LensPen — всего 4&nbsp;мм в диаметре при длине устройства 9,5&nbsp;см. Создан для окуляров, видоискателей, маленьких линз и углублений камеры, куда физически не добраться салфеткой или обычным LP-1. Наглядная иллюстрация стратегии бренда: одна технология, сегментированная под десятки нишевых применений.</p>
+      <table class="spec">
+        <tr><td>Наконечник</td><td>4 мм — самый маленький в линейке, форма под узкие углубления</td></tr>
+        <tr><td>Состав</td><td>«Невидимый» углерод LCF, несохнущий безжидкостный элемент</td></tr>
+        <tr><td>Кисточка</td><td>Мягкая выдвижная, снимает статику и пыль</td></tr>
+        <tr><td>Применение</td><td>Окуляры, видоискатели, камеры смартфонов и дронов, экшн-камеры, микрооптика</td></tr>
+        <tr><td>Колпачок</td><td>Обновляет углеродный состав на наконечнике</td></tr>
+      </table>
+      <ul class="pm">
+        <li class="plus">Единственный массовый инструмент для линз, куда не пролезает ничего другое</li>
+        <li class="plus">Карманный формат, не сохнет, не боится перепадов температур</li>
+        <li class="minus">Узкая специализация — для обычных объективов нужен отдельный LP-1</li>
+      </ul>
+      <details>
+        <summary>Источники</summary>
+        <p><a href="https://lenspen.com/products/micropro">lenspen.com/micropro</a> — официальные характеристики · <a href="https://www.bhphotovideo.com/c/product/1047135-REG/lenspen_nmcp_1c_micro_pro.html">B&amp;H Photo</a> — назначение и конструкция · <a href="https://www.manfrotto.com/uk-en/lenspen-micropro-small-lens-cleaner-black-ln-micropro/">Manfrotto UK</a> — гарантия 1 год</p>
+      </details>
+    </div>
+
+    <!-- SensorKlear -->
+    <div class="model">
+      <span class="badge gray">Профессиональный сегмент · матрицы</span>
+      <h3>LensPen SensorKlear Loupe Kit</h3>
+      <div class="price-line">~4 700 ₽ в российской рознице</div>
+      <p>Набор для чистки матриц зеркальных/беззеркальных камер: лупа с LED-подсветкой и окошком для доступа карандашом, резиновая груша, карандаш SensorKlear с треугольным наконечником. Показателен как выход углеродной технологии в профессиональный B2B/prosumer-сегмент — самый маржинальный на рынке.</p>
+      <ul class="pm">
+        <li class="plus">Лупа с подсветкой — реально удобный способ увидеть пыль на матрице</li>
+        <li class="plus">Груша качественная; сам форм-фактор набора продуман под полевые условия</li>
+        <li class="minus">В реальном отзыве чистящая поверхность карандаша начала отслаиваться — владелец не рискнул чистить им матрицу и использует только для линз</li>
+        <li class="minus">Для матриц опытные пользователи всё равно рекомендуют докупать швабры и жидкость</li>
+      </ul>
+      <details>
+        <summary>Источники</summary>
+        <p><a href="http://otzovik.com/review_3156931.html">Otzovik</a> — детальный владельческий разбор комплекта с фото · <a href="https://rentaphoto.store/info/brands/lenspen/">Rentaphoto</a> — розничная цена в РФ</p>
+      </details>
+    </div>
+
+    <!-- CarbonKlean -->
+    <div class="model">
+      <span class="badge warn">Главный конкурент · DTC-маркетинг</span>
+      <h3>CarbonKlean: Peeps (очки), SmartKlear (телефоны), ScreenKlean (планшеты)</h3>
+      <div class="price-line">~$15–20 за устройство</div>
+      <p>Американский бренд, построенный на той же углеродной идее, но с агрессивным DTC-маркетингом: «технология, используемая NASA на МКС», заявленное уничтожение бактерий, 6 цветов корпуса. Линейка сегментирована по устройствам: Peeps — очки, SmartKlear — смартфоны, ScreenKlean — планшеты, CellKlear — камеры смартфонов.</p>
+      <table class="spec">
+        <tr><td>Технология</td><td>Carbon Microfiber Technology (CMT) — углеродные подушечки-щипцы, чистят обе стороны линзы одновременно</td></tr>
+        <tr><td>Заявленный ресурс</td><td>500 чисток; продаются сменные подушечки</td></tr>
+        <tr><td>Маркетинг</td><td>«Exclusively used by NASA», продаётся через Amazon и собственный сайт</td></tr>
+        <tr><td>Репутация</td><td>⚠️ Смешанная: на ProductReview.com.au — жалобы на недоставленные заказы, неотвечающую поддержку, «ресурс ближе к 20 чисткам, а не 500», плохую работу со смазанными пятнами на безободковых очках</td></tr>
+      </table>
+      <ul class="pm">
+        <li class="plus">Удобный форм-фактор щипцов для очков — обе стороны линзы за один проход</li>
+        <li class="plus">Сильное присутствие на Amazon и в подарочном сегменте</li>
+        <li class="minus">Систематические жалобы на исполнение заказов с официального сайта и сервис</li>
+        <li class="minus">Реальный ресурс, по отзывам, значительно меньше заявленного</li>
+        <li class="minus">Сам бренд страдает от собственных подделок — покупатели жалуются на «не настоящие Peeps»</li>
+      </ul>
+      <details>
+        <summary>Источники</summary>
+        <p><a href="https://carbonklean.com/carbonklean-is-the-ultimate-cleaning-tool-for-screens-and-glasses/">CarbonKlean</a> — официальная линейка · <a href="https://www.productreview.com.au/listings/carbonklean-peeps">ProductReview.com.au</a> — негативные отзывы о доставке и ресурсе · <a href="https://pixoneye.com/peeps-eyeglass-cleaner-reviews/">Pixoneye</a> — обзор 2026 и конкурентный контекст</p>
+      </details>
+    </div>
+
+    <!-- Traditional -->
+    <div class="model">
+      <span class="badge gray">Традиционный лагерь · жидкости и салфетки</span>
+      <h3>Zeiss, Bausch + Lomb, WHOOSH!, Koala и DTC-спреи</h3>
+      <div class="price-line">$5–15 за комплект спрей + микрофибра</div>
+      <p>Основной объём рынка по-прежнему делают не гаджеты, а спреи, салфетки и микрофибра. Крупнейшие игроки категории — Bausch&nbsp;+&nbsp;Lomb, Zeiss, EssilorLuxottica, Hoya, 3M, Clorox, WHOOSH!, Koala Kleaner — с сильными позициями в оптиках и аптеках. Инновации смещаются в формулы: в марте 2025 Zeiss выпустила «microbiome-friendly» салфетки, Essilor — OEM-наборы в комплекте с AR-очками, а WHOOSH! ушла в подписку для AR/VR.</p>
+      <ul class="pm">
+        <li class="plus">Дешевле девайсов и привычнее массовому покупателю</li>
+        <li class="plus">Жидкость + микрофибра справляются с сильными загрязнениями лучше сухого карандаша</li>
+        <li class="minus">Нужны обе руки, неудобно в поле, жидкость нельзя к электронике/матрицам</li>
+        <li class="minus">Одноразовые салфетки проигрывают эко-тренду многоразовым девайсам</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARE ================= -->
+<section id="compare">
+  <div class="wrap">
+    <div class="eyebrow">Сравнение</div>
+    <h2>Сравнительная таблица</h2>
+    <div class="table-scroll">
+      <table class="cmp">
+        <tr>
+          <th>Устройство</th><th>Для чего</th><th>Технология</th><th>Ресурс</th><th>Гарантия</th><th>Цена</th><th>Главный риск</th>
+        </tr>
+        <tr>
+          <td><b>LensPen Original LP-1/LP-2</b><br><span class="tick">Эталон</span></td>
+          <td>Объективы, бинокли, прицелы (линзы от 13 мм)</td>
+          <td>Сухой углерод, вогнутая подушечка + кисть</td>
+          <td>До 500 чисток</td>
+          <td class="tick">1 год</td>
+          <td>~$10–15 / от 1000 ₽</td>
+          <td>Подделки на маркетплейсах</td>
+        </tr>
+        <tr>
+          <td><b>LensPen MicroPro</b></td>
+          <td>Окуляры, видоискатели, камеры смартфонов/дронов</td>
+          <td>Углерод LCF, наконечник 4 мм</td>
+          <td>Несохнущий состав</td>
+          <td class="tick">1 год</td>
+          <td>~$10</td>
+          <td>Узкая специализация</td>
+        </tr>
+        <tr>
+          <td><b>LensPen SideKick</b></td>
+          <td>Экраны смартфонов/планшетов</td>
+          <td>Углеродная панель (сменная)</td>
+          <td>Сменные панели</td>
+          <td class="tick">1 год</td>
+          <td>~$15</td>
+          <td class="cross">Только глянцевые стеклянные экраны — на матовых оставит чёрный след</td>
+        </tr>
+        <tr>
+          <td><b>LensPen SensorKlear Loupe Kit</b></td>
+          <td>Матрицы камер</td>
+          <td>Лупа с LED + груша + карандаш</td>
+          <td>—</td>
+          <td class="tick">1 год</td>
+          <td>~4 700 ₽</td>
+          <td class="cross">Карандашом по матрице — на свой страх; надёжнее швабры + жидкость</td>
+        </tr>
+        <tr>
+          <td><b>CarbonKlean Peeps</b></td>
+          <td>Очки (щипцы — обе стороны линзы)</td>
+          <td>Углеродная микрофибра (CMT)</td>
+          <td>Заявлено 500, по отзывам меньше</td>
+          <td>Satisfaction guarantee</td>
+          <td>~$15–20</td>
+          <td class="cross">Сервис и доставка с офиц. сайта, свои подделки</td>
+        </tr>
+        <tr>
+          <td><b>Спреи + микрофибра (Zeiss и др.)</b></td>
+          <td>Очки, экраны, сильные загрязнения</td>
+          <td>Жидкость + ткань</td>
+          <td>Расходники</td>
+          <td>—</td>
+          <td>$5–15</td>
+          <td>Разводы, неудобно в поле, не для матриц</td>
+        </tr>
+        <tr>
+          <td><b>Noname-копии LensPen</b></td>
+          <td>—</td>
+          <td>Имитация</td>
+          <td>Непредсказуемо</td>
+          <td class="cross">Нет</td>
+          <td>$2–5</td>
+          <td class="cross">Могут повредить линзу</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAKES ================= -->
+<section id="fakes">
+  <div class="wrap">
+    <div class="eyebrow">Подделки</div>
+    <h2>Как не купить копию, которая поцарапает линзу</h2>
+    <p class="lead">Подделок под LensPen становится всё больше: внешне они почти неотличимы от оригинала, но чистят иначе, а некачественный состав может повредить линзу. Это системная проблема всей категории — CarbonKlean тоже жалуются на «не настоящие Peeps».</p>
+    <p><b>Признаки оригинального LensPen:</b> название бренда нанесено и на упаковку, и на сам корпус устройства; на обороте упаковки — фирменная надпись; продажа только через сеть авторизованных дилеров по всему миру. Также LensPen выпускается под официальными партнёрскими брендами (например, Manfrotto, Nikon) — их список публикует сам производитель.</p>
+    <div class="callout">
+      <b>⚠ Практическое правило</b>
+      Углеродный карандаш за $2–3 на маркетплейсе — почти гарантированно копия. Экономия в $8 против риска поцарапать объектив за $500+ — плохая сделка. Покупать у авторизованных дилеров или крупных фоторитейлеров (B&amp;H, официальные представители в РФ).
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUY ================= -->
+<section id="buy">
+  <div class="wrap">
+    <div class="eyebrow">Покупка</div>
+    <h2>Где купить</h2>
+    <div class="table-scroll">
+      <table class="cmp">
+        <tr><th>Устройство</th><th>Официальный канал</th><th>Крупный ритейлер</th></tr>
+        <tr>
+          <td><b>LensPen Original / MicroPro</b></td>
+          <td><a href="https://lenspen.com/products/micropro">lenspen.com</a></td>
+          <td><a href="https://www.bhphotovideo.com/c/product/1047135-REG/lenspen_nmcp_1c_micro_pro.html">B&amp;H Photo</a> · <a href="https://www.manfrotto.com/uk-en/lenspen-micropro-small-lens-cleaner-black-ln-micropro/">Manfrotto</a> · <a href="https://www.amazon.com/s?k=lenspen">Amazon</a></td>
+        </tr>
+        <tr>
+          <td><b>LensPen в России</b></td>
+          <td>Авторизованные дилеры (список на упаковке/сайте)</td>
+          <td><a href="https://pixel24.ru/obzori/view/id/303">Pixel24</a> · <a href="https://brizz.ru/catalog/nabory_dlya_chistki_optiki/chistyashchiy_karandash_dlya_optiki_lenspen_lp_1/">Бриз.ру</a> · <a href="https://rentaphoto.store/info/brands/lenspen/">Rentaphoto</a> · ОНЛАЙН ТРЕЙД</td>
+        </tr>
+        <tr>
+          <td><b>CarbonKlean Peeps</b></td>
+          <td>carbonklean.com <span class="cross">(⚠ жалобы на исполнение заказов)</span></td>
+          <td><a href="https://www.amazon.com/Peeps-Eyeglass-Cleaner-Eyeglasses-Sunglasses/dp/B019M9NEAW">Amazon</a> — надёжнее официального сайта</td>
+        </tr>
+        <tr>
+          <td><b>Спреи и салфетки (Zeiss, Koala, WHOOSH!)</b></td>
+          <td>Сайты брендов</td>
+          <td>Amazon, оптики, аптеки</td>
+        </tr>
+      </table>
+    </div>
+    <div class="callout good">
+      <b>✓ Совет по каналу покупки</b>
+      Для LensPen самый безопасный вариант в РФ — официальные дилеры (гарантия подлинности), за рубежом — B&amp;H или Manfrotto. Для Peeps — только Amazon: отзывы о заказах напрямую с carbonklean.com включают недоставленные посылки и молчащую поддержку.
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Вопрос-ответ</div>
+    <h2>Частые вопросы</h2>
+
+    <details class="faq-item">
+      <summary>Можно ли чистить LensPen'ом экран смартфона?</summary>
+      <p>Только специальной экранной версией (SideKick) и только глянцевые стеклянные экраны. Углеродный состав оставляет чёрный след на любых не идеально ровных поверхностях — матовые экраны, защитные плёнки и матовые покрытия под запретом. Обычный карандаш LP-1 для экранов не предназначен вовсе.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Чем MicroPro отличается от обычного LensPen Original?</summary>
+      <p>Только размером и формой наконечника: у MicroPro он 4&nbsp;мм в диаметре и создан для окуляров, видоискателей и углублений, куда не добраться салфеткой или стандартной подушечкой LP-1 (она рассчитана на линзы от 13&nbsp;мм). Технология и состав те же. Если у вас обычные объективы — нужен LP-1; MicroPro — дополнение, а не замена.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Правда ли ресурс 500 чисток?</summary>
+      <p>У оригинального LensPen ресурс до 500 использований подтверждается многолетними владельческими отзывами при правильном использовании (прокручивать колпачок после каждой чистки, не трогать подушечку пальцами). У Peeps заявлены те же 500, но в отзывах встречаются оценки «около 20 реальных чисток» — вероятно, из-за разницы в качестве состава либо из-за подделок, от которых страдает сам бренд.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Можно ли чистить матрицу камеры углеродным карандашом?</summary>
+      <p>Формально SensorKlear для этого создан, но осторожность оправдана: в детальном владельческом отзыве чистящая поверхность карандаша начала отслаиваться, и владелец не рискнул касаться им матрицы. Практический консенсус: лупа и груша из набора — отличные, а для самой матрицы надёжнее специализированные швабры с жидкостью. Царапина на матрице — это ремонт ценой в половину камеры.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Почему нельзя просто протирать футболкой или обычной салфеткой?</summary>
+      <p>Ткань размазывает жир (разводы), а главное — любая твёрдая микрочастица, попавшая под ткань, работает как абразив и царапает просветляющее покрытие. Поэтому правильная последовательность любой чистки: сначала кисточка или груша (убрать частицы), потом уже контактная чистка — подушечкой или микрофиброй.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Куда движется рынок — что покупать «на вырост»?</summary>
+      <p>Три заметных вектора: специализированные форматы для AR/VR-гарнитур и камер дронов/автомобилей; эко-форматы вместо одноразовых салфеток; подписочные модели (пример — анонс WHOOSH! 2025 года с автоматическим устройством паровой очистки для VR). Для обычного пользователя это означает, что классический углеродный карандаш останется актуальным — а вот одноразовые салфетки категория постепенно вытесняет.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Источники: lenspen.com · B&amp;H Photo · Manfrotto · Deep Market Insights · Dataintelo · Verified Market Reports · CarbonKlean · ProductReview.com.au · Pixoneye · Pixel24 · Camera.ru · Almodi · Otzovik · Rentaphoto · Бриз.ру · Июль 2026
+  </div>
+</footer>
+
+</body>
+</html>
