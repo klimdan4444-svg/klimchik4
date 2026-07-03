@@ -100,6 +100,9 @@
   .photo{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#f0f2f7;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px dashed var(--line)}
   .photo img{width:100%;height:100%;object-fit:cover;display:block}
   .photo .ph{color:var(--ink-soft);font-size:13.5px;text-align:center;padding:12px}
+  .mol{width:100%;aspect-ratio:auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;min-height:150px}
+  .mol img{max-width:100%;max-height:220px;height:auto;object-fit:contain;display:block}
+  .mol .lbl{position:absolute}
   .drug table.spec{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:14.5px}
   .drug table.spec td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
   .drug table.spec td:first-child{font-weight:700;width:34%;color:var(--ink-soft)}
@@ -296,7 +299,7 @@
 
       <!-- D+Q -->
       <div class="drug">
-        <div class="photo" id="ph-dq"><span class="ph">💊 Фото: dasatinib (таблетки) + quercetin (капсулы флавоноида)</span></div>
+        <div class="mol"><img src="img4/dasatinib.webp" alt="Структурная формула дазатиниба" loading="lazy"><img src="img4/quercetin.webp" alt="Структурная формула кверцетина" loading="lazy" style="margin-left:10px"></div>
         <span class="top-badge badge-seno">Лучшая доказательная база у человека</span>
         <h3>Dasatinib + Quercetin (D+Q)</h3>
         <div class="mech">Тирозинкиназы + PI3K/AKT · комбинация</div>
@@ -315,7 +318,7 @@
 
       <!-- Navitoclax -->
       <div class="drug">
-        <div class="photo" id="ph-navitoclax"><span class="ph">🧬 Схема: navitoclax (ABT-263) блокирует BCL-2/BCL-xL/BCL-w</span></div>
+        <div class="mol"><img src="img4/navitoclax.webp" alt="Структурная формула навитоклакса (ABT-263)" loading="lazy"></div>
         <span class="top-badge badge-gray">Мощный, но «жёсткий»</span>
         <h3>Navitoclax (ABT-263)</h3>
         <div class="mech">Прямой ингибитор BCL-2 / BCL-xL / BCL-w</div>
@@ -334,7 +337,7 @@
 
       <!-- Fisetin -->
       <div class="drug">
-        <div class="photo" id="ph-fisetin"><span class="ph">🍓 Фото: fisetin — флавоноид из клубники и яблок</span></div>
+        <div class="mol"><img src="img4/fisetin.webp" alt="Структурная формула фисетина" loading="lazy"></div>
         <span class="top-badge badge-seno">Мягкая и доступная альтернатива</span>
         <h3>Fisetin</h3>
         <div class="mech">Флавоноид · мультитаргет (пересекается с кверцетином)</div>
@@ -348,7 +351,7 @@
 
       <!-- UNITY -->
       <div class="drug">
-        <div class="photo" id="ph-unity"><span class="ph">💉 Схема: локальная интравитреальная доставка в сетчатку глаза</span></div>
+        <div class="mol" style="min-height:120px"><span class="ph" style="color:var(--ink-soft);font-size:13.5px;text-align:center">💉 Локальная доставка: интравитреальные инъекции UBX1325 в сетчатку — минуя системную токсичность</span></div>
         <span class="top-badge badge-gray">Локальная доставка</span>
         <h3>UNITY Biotechnology (UBX0101, UBX1325)</h3>
         <div class="mech">Локальные инъекции — минуя системную токсичность</div>
@@ -408,7 +411,7 @@
 
       <!-- Rapamycin -->
       <div class="drug">
-        <div class="photo" id="ph-rapamycin"><span class="ph">💊 Фото: рапамицин (сиролимус) — ингибитор mTOR</span></div>
+        <div class="mol"><img src="img4/sirolimus.webp" alt="Структурная формула рапамицина (сиролимуса)" loading="lazy"></div>
         <span class="top-badge badge-morph">Геропротектор № 1 в дискуссии</span>
         <h3>Рапамицин и рапалоги</h3>
         <div class="mech">Ингибитор mTORC1</div>
@@ -423,7 +426,7 @@
 
       <!-- Metformin -->
       <div class="drug">
-        <div class="photo" id="ph-metformin"><span class="ph">💊 Фото: метформин — таблетки, испытание TAME</span></div>
+        <div class="mol"><img src="img4/metformin.webp" alt="Структурная формула метформина" loading="lazy"></div>
         <span class="top-badge badge-morph">Самый безопасный кандидат</span>
         <h3>Метформин</h3>
         <div class="mech">Активатор AMPK · модулятор NF-κB</div>
