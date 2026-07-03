@@ -84,7 +84,7 @@
 
   /* ---------- diagram wrap ---------- */
   .diagram{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin:26px 0}
-  .diagram svg{width:100%;height:auto;display:block}
+  .diagram svg{width:100%;height:auto;display:block;overflow:visible}
   .diagram .cap{text-align:center;font-size:14px;color:var(--ink-soft);margin-top:14px}
 
   /* ---------- drug cards ---------- */
@@ -100,8 +100,9 @@
   .photo{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#f0f2f7;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px dashed var(--line)}
   .photo img{width:100%;height:100%;object-fit:cover;display:block}
   .photo .ph{color:var(--ink-soft);font-size:13.5px;text-align:center;padding:12px}
-  .mol{width:100%;aspect-ratio:auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;min-height:150px}
-  .mol img{max-width:100%;max-height:220px;height:auto;object-fit:contain;display:block}
+  .mol{width:100%;aspect-ratio:auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;min-height:150px}
+  .mol img{max-width:100%;max-height:220px;height:auto;object-fit:contain;display:block;flex:0 1 auto}
+  .mol.duo img{max-width:48%}
   .mol .lbl{position:absolute}
   .drug table.spec{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:14.5px}
   .drug table.spec td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -208,15 +209,15 @@
         <text x="300" y="150" font-size="12" fill="#4b586b">хемокины</text>
         <text x="300" y="190" font-size="12" fill="#4b586b">протеазы (MMP)</text>
         <!-- healthy cells getting damaged -->
-        <circle cx="560" cy="90" r="34" fill="#eaf4ee" stroke="#3a9d6a" stroke-width="2"/>
-        <circle cx="560" cy="90" r="12" fill="#3a9d6a"/>
-        <circle cx="620" cy="170" r="34" fill="#fdf5e6" stroke="#a8620a" stroke-width="2" stroke-dasharray="4 3"/>
-        <circle cx="620" cy="170" r="12" fill="#a8620a"/>
-        <circle cx="540" cy="220" r="34" fill="#fbeae8" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/>
-        <circle cx="540" cy="220" r="12" fill="#e8776a"/>
-        <text x="560" y="150" text-anchor="middle" font-size="11" fill="#3a9d6a" font-weight="600">здоровая</text>
-        <text x="640" y="215" text-anchor="middle" font-size="11" fill="#a8620a" font-weight="600">повреждается</text>
-        <text x="540" y="270" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="600">«заражается»</text>
+        <circle cx="545" cy="90" r="32" fill="#eaf4ee" stroke="#3a9d6a" stroke-width="2"/>
+        <circle cx="545" cy="90" r="11" fill="#3a9d6a"/>
+        <circle cx="605" cy="165" r="32" fill="#fdf5e6" stroke="#a8620a" stroke-width="2" stroke-dasharray="4 3"/>
+        <circle cx="605" cy="165" r="11" fill="#a8620a"/>
+        <circle cx="525" cy="220" r="32" fill="#fbeae8" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/>
+        <circle cx="525" cy="220" r="11" fill="#e8776a"/>
+        <text x="545" y="145" text-anchor="middle" font-size="11" fill="#3a9d6a" font-weight="600">здоровая</text>
+        <text x="605" y="212" text-anchor="middle" font-size="11" fill="#a8620a" font-weight="600">повреждается</text>
+        <text x="525" y="270" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="600">«заражается»</text>
       </svg>
       <div class="cap">Одна сенесцентная клетка через SASP отравляет и состаривает соседние — поэтому их накопление самоусиливается.</div>
     </div>
@@ -299,7 +300,7 @@
 
       <!-- D+Q -->
       <div class="drug">
-        <div class="mol"><img src="img4/dasatinib.webp" alt="Структурная формула дазатиниба" loading="lazy"><img src="img4/quercetin.webp" alt="Структурная формула кверцетина" loading="lazy" style="margin-left:10px"></div>
+        <div class="mol duo"><img src="img4/dasatinib.webp" alt="Структурная формула дазатиниба" loading="lazy"><img src="img4/quercetin.webp" alt="Структурная формула кверцетина" loading="lazy"></div>
         <span class="top-badge badge-seno">Лучшая доказательная база у человека</span>
         <h3>Dasatinib + Quercetin (D+Q)</h3>
         <div class="mech">Тирозинкиназы + PI3K/AKT · комбинация</div>
