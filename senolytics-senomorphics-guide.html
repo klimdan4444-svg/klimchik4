@@ -138,6 +138,25 @@
   .src div{break-inside:avoid;margin-bottom:10px;padding-left:4px}
   .disclaimer{background:var(--senolytic-soft);border:1px solid #eecac4;border-radius:12px;padding:20px 24px;font-size:15px;margin-top:20px}
 
+  /* ---------- trials timeline ---------- */
+  .tl{position:relative;margin:26px 0 10px;padding-left:0}
+  .tl-year{display:flex;align-items:center;gap:12px;margin:26px 0 12px}
+  .tl-year .yr{background:var(--accent);color:#fff;font-weight:800;font-size:16px;padding:5px 16px;border-radius:20px;white-space:nowrap}
+  .tl-year .ln{flex:1;height:2px;background:var(--line)}
+  .trial{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:10px 0;border-left:4px solid var(--ink-soft)}
+  .trial.seno{border-left-color:var(--senolytic)}
+  .trial.morph{border-left-color:var(--senomorphic)}
+  .trial h4{font-size:16px;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .trial .tp{font-size:11px;font-weight:700;text-transform:uppercase;padding:2px 8px;border-radius:10px;letter-spacing:.03em}
+  .tp.seno{background:var(--senolytic-soft);color:var(--senolytic)}
+  .tp.morph{background:var(--senomorphic-soft);color:var(--senomorphic)}
+  .trial p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+  .trial .nct{font-family:monospace;font-size:12.5px;color:var(--accent)}
+  .trial .res{font-weight:700}
+  .trial .res.pos{color:var(--senomorphic)}
+  .trial .res.neg{color:var(--senolytic)}
+  .trial .res.neu{color:var(--warn)}
+
   footer{background:var(--dark);color:#9aa3b6;padding:34px 0;font-size:14px;text-align:center}
   footer a{color:#a99fd6}
 
@@ -185,6 +204,7 @@
     <a href="#senolytics">💥 Сенолитики</a>
     <a href="#senomorphics">🔇 Сеноморфики</a>
     <a href="#combo">🔗 Вместе</a>
+    <a href="#trials">🗓️ Все испытания</a>
     <a href="#table">📊 Сводная таблица</a>
     <a href="#availability">💊 Рецепт?</a>
     <a href="#risks">⚠️ Риски</a>
@@ -557,6 +577,141 @@
   </div>
 </section>
 
+<!-- ================= TRIALS CHRONOLOGY ================= -->
+<section id="trials">
+  <div class="wrap">
+    <div class="eyebrow">Полная хронология</div>
+    <h2>Все клинические испытания по годам</h2>
+    <p class="h-sub">Максимально полный таймлайн опытов с сенолитиками и сеноморфиками у людей — от первого испытания 2019 года до 2026. 💥 — сенолитики, 🔇 — сеноморфики. Указаны NCT-номера и исход, где он известен.</p>
+
+    <!-- 2019 -->
+    <div class="tl-year"><span class="yr">2019</span><span class="ln"></span></div>
+    <div class="trial seno">
+      <h4>💥 Первое в истории испытание сенолитиков — D+Q при фиброзе лёгких (IPF) <span class="tp seno">Пилот, открытый</span></h4>
+      <p>14 пациентов с IPF, 9 доз за 3 недели. Улучшение физической функции (6-мин ходьба, скорость). Знаковый старт всей области. <span class="nct">NCT02874989</span></p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 D+Q при диабетической болезни почек — первое доказательство клиренса клеток у человека <span class="tp seno">Фаза 1</span></h4>
+      <p>9 пациентов, 3 дня приёма. <span class="res pos">Впервые прямо показано</span>, что сенолитики снижают число сенесцентных клеток в жировой ткани и коже человека. Период полувыведения &lt;11 ч («hit-and-run»). <span class="nct">NCT02848131</span></p>
+    </div>
+
+    <!-- 2020-2021 -->
+    <div class="tl-year"><span class="yr">2020–2021</span><span class="ln"></span></div>
+    <div class="trial seno">
+      <h4>💥 UNITY Biotechnology — UBX0101 при остеоартрите колена <span class="tp seno">Фаза 1 → 2</span></h4>
+      <p>Локальные внутрисуставные инъекции (ингибитор MDM2/p53). Фаза 1 по безопасности пройдена. <span class="nct">NCT03513016</span></p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 Дазатиниб (отдельно) при системной склеродермии <span class="tp seno">Пилот</span></h4>
+      <p>Длительный приём дазатиниба, по биопсиям кожи — признаки снижения SASP и маркёров сенесценции.</p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 COVID-FIS — фисетин при COVID-19 в домах престарелых <span class="tp seno">Фаза 2</span></h4>
+      <p>Первый выход сенолитиков в «острую» медицину: цель — не дать SASP усилить цитокиновый шторм у пожилых. Цель набора 150 человек.</p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 SToMP-AD стартует при Альцгеймере (Wake Forest) <span class="tp seno">Фаза 1/2</span></h4>
+      <p>Набор пациентов с MCI/ранним АД и позитивным tau-PET. Первое испытание сенолитиков против нейродегенерации. <span class="nct">NCT04063124</span></p>
+    </div>
+
+    <!-- 2022 -->
+    <div class="tl-year"><span class="yr">2022</span><span class="ln"></span></div>
+    <div class="trial seno">
+      <h4>💥 SToMP-AD пилот опубликован (J Prev Alzheimers Dis) <span class="tp seno">Фаза 1</span></h4>
+      <p>Подтверждена осуществимость и дизайн; заложена основа для оценки проникновения дазатиниба в ЦНС.</p>
+    </div>
+    <div class="trial morph">
+      <h4>🔇 Метформин для профилактики хрупкости (преддиабет) <span class="tp morph">RCT</span></h4>
+      <p>Пожилые 65+ с преддиабетом, метформин до 2000 мг/сут, наблюдение 2 года. Первичный исход — хрупкость (Fried). Один из «сеноморфических» тестов метформина.</p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 SEN-SURVIVORS — D+Q и фисетин у выживших после детского рака <span class="tp seno">Фаза 2</span></h4>
+      <p>St. Jude: две senolytic-схемы (D+Q и фисетин) против ранней хрупкости у молодых survivors. <span class="nct">NCT04733534</span></p>
+    </div>
+
+    <!-- 2023 -->
+    <div class="tl-year"><span class="yr">2023</span><span class="ln"></span></div>
+    <div class="trial seno">
+      <h4>💥 SToMP-AD — итоги первого сенолитика при Альцгеймере (Nature Medicine) <span class="tp seno">Фаза 1</span></h4>
+      <p>5 пациентов, 12 недель. <span class="res pos">Дазатиниб впервые обнаружен в ЦНС</span> (плазма у всех, ликвор у 4 из 5); безопасно и переносимо; сдвиги биомаркёров сенесценции в ликворе и плазме.</p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 UNITY UBX0101 — провал фазы 2 при остеоартрите <span class="tp seno">Фаза 2</span></h4>
+      <p><span class="res neg">Не достиг первичной цели</span> — не превзошёл плацебо по боли. UNITY свернула суставное направление и переключилась на глазное (UBX1325). <span class="nct">NCT04129944</span></p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 STOP-Sepsis — фисетин при сепсисе у пожилых стартует <span class="tp seno">Фаза 2</span></h4>
+      <p>Многоцентровое двойное слепое РКИ; цель — не дать клиническому состоянию ухудшиться, замерить сенесцентные иммунные клетки. <span class="nct">NCT05758246</span></p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 STAMINA стартует при риске Альцгеймера (Hebrew SeniorLife) <span class="tp seno">Фаза 1</span></h4>
+      <p>Открытое одноручное, D+Q 12 недель у пожилых с медленной ходьбой и MCI. <span class="nct">NCT05422885</span></p>
+    </div>
+
+    <!-- 2024 -->
+    <div class="tl-year"><span class="yr">2024</span><span class="ln"></span></div>
+    <div class="trial seno">
+      <h4>💥 D+Q при остеопорозе — итоги фазы 2 (Mayo Clinic) <span class="tp seno">Фаза 2</span></h4>
+      <p>Пожилые женщины. <span class="res neu">По группе в целом эффекта нет</span>, но у ответивших с высокой нагрузкой сенесценции (верхняя треть p16 в T-клетках) — рост костных показателей. Серьёзных НЯ нет. Фисетин-плечо пришлось свернуть из-за COVID-набора. <span class="nct">NCT04313634</span></p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 STAMINA завершена <span class="tp seno">Фаза 1</span></h4>
+      <p>Первичное завершение янв. 2024; результаты поданы в 2025. Легла в основу перехода к RCT фазы 2 при АД.</p>
+    </div>
+    <div class="trial morph">
+      <h4>🔇 PEARL — рапамицин для здорового старения, годовые итоги <span class="tp morph">RCT</span></h4>
+      <p>Одно из первых РКИ рапамицина у в целом здоровых взрослых: оценка состава тела, мышц, качества жизни за год низких доз.</p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 PROFFi — фисетин + упражнения против хрупкости у survivors рака груди <span class="tp seno">Фаза 2</span></h4>
+      <p>Рандомизированное, тройное слепое. <span class="nct">NCT06113016</span></p>
+    </div>
+
+    <!-- 2025 -->
+    <div class="tl-year"><span class="yr">2025</span><span class="ln"></span></div>
+    <div class="trial seno">
+      <h4>💥 Фисетин при остеоартрите колена — первый строгий RCT сенолитика по исходу <span class="tp seno">Фаза 1/2</span></h4>
+      <p>74 пациента (Steadman Clinic). <span class="res neg">Значимой пользы не найдено</span>: боль, функция и МРТ-состояние хряща не отличались от плацебо. Безопасно. Первое строгое РКИ по клиническому исходу — и оно отрицательное. <span class="nct">NCT04210986</span></p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 D+Q у пожилых с риском Альцгеймера (eBioMedicine) <span class="tp seno">Фаза 1</span></h4>
+      <p>Одноручное, 12 недель. Подтверждены осуществимость, безопасность и биологическая активность у группы с MCI и медленной ходьбой.</p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 UNITY UBX1325 (foselutoclax) — ASPIRE при диабетическом макулярном отёке <span class="tp seno">Фаза 2b</span></h4>
+      <p><span class="res pos">Позитив</span>: прирост остроты зрения &gt;5 букв к 24–36 нед., non-inferiority к афлиберцепту на 9 из 10 точек. Хороший профиль безопасности. Также ENVISION при влажной AMD. <span class="nct">NCT06011798</span></p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 STAMINA — результаты (корреляция воспаления и когниции) <span class="tp seno">Фаза 1</span></h4>
+      <p><span class="res pos">Сигнал пользы</span>: снижение плазменного TNF-α коррелировало с ростом MoCA (r=−0.65, p=0.02).</p>
+    </div>
+
+    <!-- 2026 -->
+    <div class="tl-year"><span class="yr">2026</span><span class="ln"></span></div>
+    <div class="trial seno">
+      <h4>💥 RCT фазы 2 D+Q при болезни Альцгеймера — идёт <span class="tp seno">Фаза 2</span></h4>
+      <p>Полноценное рандомизированное контролируемое исследование для проверки вовлечения мишени и клинических исходов; промежуточные данные ожидаются. Развитие линии SToMP-AD/STAMINA.</p>
+    </div>
+    <div class="trial seno">
+      <h4>💥 AFFIRM / AFFIRM-LITE — фисетин против хрупкости (Mayo) <span class="tp seno">Фаза 2</span></h4>
+      <p>Женщины 70+ с нарушением походки; продолжающиеся исследования переносимости и эффективности фисетина.</p>
+    </div>
+    <div class="trial morph">
+      <h4>🔇 TAME (метформин против старения) — всё ещё не профинансирован полностью <span class="tp morph">Фаза 3/4, задумано</span></h4>
+      <p>Знаковый замысел: проверить, откладывает ли метформин появление второй возраст-зависимой болезни. Именно ради него добиваются, чтобы FDA признало старение показанием. Пока полноценно не запущен.</p>
+    </div>
+    <div class="trial morph">
+      <h4>🔇 Рапамицин/рапалоги и JAK-ингибиторы — продолжающиеся ранние исследования <span class="tp morph">Фаза 1–2</span></h4>
+      <p>Рапалоги (эверолимус) — для иммунного старения; JAK-ингибиторы (руксолитиниб) как сеноморфики — на ранней трансляционной стадии, опираясь на готовую базу безопасности из ревматологии/гематологии.</p>
+    </div>
+
+    <div class="callout">
+      <b>Что видно из полной хронологии</b>
+      За 2019–2026 сделан огромный путь: от «а можно ли вообще» до десятков испытаний. Но закономерность честная — <b>ранние пилоты давали позитив (безопасность, клиренс, биомаркёры), а как только доходило до строгих РКИ по клиническому исходу, результаты становились скромными или отрицательными</b> (UBX0101 при ОА, фисетин при ОА, D+Q при остеопорозе — значимо лишь у подгруппы). Явные позитивы — точечные: UBX1325 в офтальмологии и корреляция воспаления с когницией в STAMINA. Поле реальное, но до одобренной терапии старения ещё далеко.
+    </div>
+  </div>
+</section>
+
 <!-- ================= TABLE ================= -->
 <section id="table">
   <div class="wrap">
@@ -774,6 +929,11 @@
       <div>22. <em>RCT evaluating the senolytic Fisetin for knee osteoarthritis — no significant benefit found.</em> Osteoarthritis and Cartilage, 2025 (NCT04210986).</div>
       <div>23. TAME Trial — American Federation for Aging Research (AFAR): старение как «показание», статус финансирования. afar.org/tame-trial.</div>
       <div>24. <em>SToMP-AD: Outcomes from the first clinical trial of senolytic therapy for Alzheimer's disease.</em> PMC10168460.</div>
+      <div>25. Gonzales M. и др. <em>Senolytic therapy in mild Alzheimer's disease: a phase 1 feasibility trial.</em> Nat Med, 2023;29(10):2481–2488.</div>
+      <div>26. <em>Senolytics D+Q in IPF: phase I randomized placebo-controlled pilot.</em> eBioMedicine, 2023 (NCT02874989).</div>
+      <div>27. UNITY Biotechnology — ASPIRE (UBX1325/foselutoclax, DME, NCT06011798) и ENVISION (wet AMD, NCT05275205); UBX0101 OA — провал фазы 2.</div>
+      <div>28. STOP-Sepsis (fisetin, NCT05758246) · SEN-SURVIVORS (D+Q/fisetin, NCT04733534) · PROFFi (NCT06113016).</div>
+      <div>29. PEARL Trial — рапамицин, healthspan, medRxiv 2024 · Espinoza S. и др. — метформин против хрупкости (RCT).</div>
     </div>
     <p style="text-align:center;font-size:15px;margin-top:8px">Для актуального статуса: <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a></p>
 
