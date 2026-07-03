@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сенолитики и сеноморфики 2026 — терапии клеточного старения: механизмы, препараты, клиника</title>
+<style>
+  :root{
+    --ink:#141a24;
+    --ink-soft:#4b586b;
+    --paper:#f5f6fa;
+    --card:#ffffff;
+    --line:#dbe1ec;
+    --senolytic:#c0392b;      /* убить клетку — красный */
+    --senolytic-soft:#fbeae8;
+    --senomorphic:#1f6f8b;    /* заглушить SASP — сине-зелёный */
+    --senomorphic-soft:#e3f0f4;
+    --accent:#5b3fa8;         /* научный фиолетовый */
+    --accent-soft:#ece6f7;
+    --warn:#a8620a;
+    --warn-soft:#fbf0e2;
+    --dark:#1a2130;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.65;font-size:17px;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  a{color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  header{
+    background:radial-gradient(circle at 80% 25%, #2a2350 0%, #1a2038 45%, #10131f 100%);
+    color:#eef0f6;padding:60px 0 52px;position:relative;overflow:hidden;text-align:center;
+  }
+  header::before{
+    content:"";position:absolute;left:-100px;bottom:-140px;width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle,rgba(192,57,43,.18) 0%,transparent 65%);pointer-events:none;
+  }
+  header::after{
+    content:"";position:absolute;right:-100px;top:-120px;width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle,rgba(31,111,139,.20) 0%,transparent 65%);pointer-events:none;
+  }
+  .updated{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:#a99fd6;margin-bottom:18px}
+  h1{font-size:clamp(27px,4.4vw,44px);line-height:1.14;font-weight:800;max-width:840px;margin:0 auto;position:relative;z-index:1}
+  h1 .red{color:#e8776a}
+  h1 .teal{color:#68c4dc}
+  .sub{margin:16px auto 0;font-size:19px;color:#c3c9dd;max-width:730px;position:relative;z-index:1}
+
+  nav{background:var(--dark);position:sticky;top:0;z-index:50}
+  nav .wrap{display:flex;flex-wrap:wrap;gap:4px;padding-top:8px;padding-bottom:8px;justify-content:center}
+  nav a{color:#c6ccdb;text-decoration:none;font-size:14px;padding:6px 12px;border-radius:20px}
+  nav a:hover{background:#2f374a;color:#fff}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0}
+  section:nth-of-type(even){background:#fff}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:10px;text-align:center;color:var(--accent)}
+  h2{font-size:clamp(24px,3.2vw,34px);margin:0 auto 14px;line-height:1.25;text-align:center;max-width:840px}
+  .h-sub{text-align:center;max-width:780px;margin:0 auto 30px;font-size:18px;color:var(--ink-soft)}
+  h3{font-size:20px;margin:26px 0 12px}
+  p{margin-bottom:14px}
+  ul.body{margin:12px 0 16px 0;padding-left:22px}
+  ul.body li{margin-bottom:7px}
+
+  .callout{border-left:4px solid var(--warn);background:var(--warn-soft);padding:16px 20px;border-radius:0 10px 10px 0;margin:22px 0;text-align:left}
+  .callout.red{border-color:var(--senolytic);background:var(--senolytic-soft)}
+  .callout.teal{border-color:var(--senomorphic);background:var(--senomorphic-soft)}
+  .callout b{display:block;margin-bottom:6px}
+
+  /* ---------- two-strategy split ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:26px 0}
+  .strat{border-radius:16px;padding:26px;border:2px solid}
+  .strat.kill{border-color:var(--senolytic);background:var(--senolytic-soft)}
+  .strat.hush{border-color:var(--senomorphic);background:var(--senomorphic-soft)}
+  .strat h3{margin-top:0;display:flex;align-items:center;gap:10px;font-size:22px}
+  .strat.kill h3{color:var(--senolytic)}
+  .strat.hush h3{color:var(--senomorphic)}
+  .strat .tag{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px;opacity:.8}
+  .strat table{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+  .strat td{padding:8px 4px;border-bottom:1px solid rgba(0,0,0,.08);vertical-align:top}
+  .strat td:first-child{font-weight:700;width:38%;color:var(--ink-soft)}
+
+  /* ---------- diagram wrap ---------- */
+  .diagram{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin:26px 0}
+  .diagram svg{width:100%;height:auto;display:block}
+  .diagram .cap{text-align:center;font-size:14px;color:var(--ink-soft);margin-top:14px}
+
+  /* ---------- drug cards ---------- */
+  .drugs{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:10px 0 30px}
+  .drug{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+  .drug.wide{grid-column:1 / -1}
+  .drug .top-badge{display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 10px;border-radius:12px;margin-bottom:10px}
+  .badge-seno{background:var(--senolytic-soft);color:var(--senolytic)}
+  .badge-morph{background:var(--senomorphic-soft);color:var(--senomorphic)}
+  .badge-gray{background:#e9edf3;color:var(--ink-soft)}
+  .drug h3{margin:2px 0 4px;font-size:21px}
+  .drug .mech{font-size:14px;color:var(--ink-soft);font-weight:600;margin-bottom:12px}
+  .photo{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#f0f2f7;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px dashed var(--line)}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo .ph{color:var(--ink-soft);font-size:13.5px;text-align:center;padding:12px}
+  .drug table.spec{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:14.5px}
+  .drug table.spec td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  .drug table.spec td:first-child{font-weight:700;width:34%;color:var(--ink-soft)}
+  ul.pm{list-style:none;margin:10px 0}
+  ul.pm li{padding:4px 0 4px 26px;position:relative;font-size:14.5px}
+  ul.pm li.plus::before{content:"✓";position:absolute;left:0;color:var(--senomorphic);font-weight:800}
+  ul.pm li.minus::before{content:"✕";position:absolute;left:0;color:var(--senolytic);font-weight:800}
+  .status{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);font-size:14px}
+  .status b{color:var(--accent)}
+
+  /* ---------- comparison table ---------- */
+  .table-scroll{overflow-x:auto;margin:20px 0}
+  table.cmp{border-collapse:collapse;width:100%;min-width:820px;background:var(--card);font-size:14.5px}
+  table.cmp th{background:var(--dark);color:#fff;padding:12px;text-align:left;font-size:13px}
+  table.cmp td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.cmp tr:nth-child(even) td{background:#f1f4f9}
+  .pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap}
+  .pill.seno{background:var(--senolytic-soft);color:var(--senolytic)}
+  .pill.morph{background:var(--senomorphic-soft);color:var(--senomorphic)}
+
+  /* ---------- risks ---------- */
+  .risks{counter-reset:r;margin:20px 0}
+  .risk{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:16px 20px 16px 56px;margin:12px 0;position:relative}
+  .risk::before{counter-increment:r;content:counter(r);position:absolute;left:16px;top:16px;width:28px;height:28px;background:var(--warn);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+  .risk b{display:block;margin-bottom:3px}
+
+  /* ---------- sources / faq ---------- */
+  .faq-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 20px;margin:12px 0}
+  .faq-item summary{font-size:16.5px;color:var(--ink);padding:12px 0;cursor:pointer;font-weight:600}
+  .faq-item p{font-size:15.5px;padding-bottom:6px}
+  .src{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:16px 0;font-size:14.5px;columns:2;column-gap:32px}
+  .src div{break-inside:avoid;margin-bottom:10px;padding-left:4px}
+  .disclaimer{background:var(--senolytic-soft);border:1px solid #eecac4;border-radius:12px;padding:20px 24px;font-size:15px;margin-top:20px}
+
+  footer{background:var(--dark);color:#9aa3b6;padding:34px 0;font-size:14px;text-align:center}
+  footer a{color:#a99fd6}
+
+  @media (max-width:820px){
+    .split,.drugs{grid-template-columns:1fr}
+    .src{columns:1}
+    body{font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="updated">Обзор · данные актуальны на 2025–2026 гг.</div>
+    <h1>Сенотерапия: <span class="red">сенолитики</span> и <span class="teal">сеноморфики</span></h1>
+    <p class="sub">Два подхода к клеточному старению — избирательно <b>убить</b> стареющие клетки или <b>заглушить</b> их вредную секрецию. Механизмы, ключевые препараты, статус клинических испытаний и честные ограничения.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#why">🔬 Зачем это нужно</a>
+    <a href="#two">⚔️ Две стратегии</a>
+    <a href="#senolytics">💥 Сенолитики</a>
+    <a href="#senomorphics">🔇 Сеноморфики</a>
+    <a href="#table">📊 Сводная таблица</a>
+    <a href="#risks">⚠️ Риски</a>
+    <a href="#faq">❓ FAQ</a>
+    <a href="#sources">📚 Источники</a>
+  </div>
+</nav>
+
+<!-- ================= WHY ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">Основа</div>
+    <h2>Зачем это нужно: клеточное старение и SASP</h2>
+    <p class="h-sub">С возрастом в тканях накапливаются сенесцентные (стареющие) клетки — они необратимо вышли из клеточного цикла, но не погибли. Устойчивы к апоптозу за счёт про-выживательных путей, в первую очередь белков семейства BCL-2/BCL-xL.</p>
+
+    <p>Главная проблема не в самой остановке деления, а в <b>SASP</b> (senescence-associated secretory phenotype) — «секреторном фенотипе, ассоциированном со старением». Стареющие клетки выделяют коктейль провоспалительных цитокинов, хемокинов и протеаз, который:</p>
+    <ul class="body">
+      <li>поддерживает хроническое «тлеющее» воспаление (<em>inflammaging</em>);</li>
+      <li>повреждает соседние здоровые клетки и вгоняет их в старение — эффект «заражения»;</li>
+      <li>нарушает функцию тканей и способствует возраст-зависимым болезням.</li>
+    </ul>
+    <p>Сенесцентные клетки и их SASP признаны драйверами широкого спектра патологий: фиброза лёгких, диабетической болезни почек, остеоартрита, атеросклероза, нейродегенерации (включая болезнь Альцгеймера) и общей возрастной хрупкости (frailty). Отсюда — две принципиально разные терапевтические идеи.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif">
+        <!-- senescent cell -->
+        <circle cx="150" cy="150" r="62" fill="#fbeae8" stroke="#c0392b" stroke-width="2.5"/>
+        <circle cx="150" cy="150" r="26" fill="#e8776a"/>
+        <text x="150" y="155" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">P16</text>
+        <text x="150" y="245" text-anchor="middle" font-size="14" fill="#c0392b" font-weight="700">Сенесцентная клетка</text>
+        <text x="150" y="263" text-anchor="middle" font-size="12" fill="#7a3029">не делится · не умирает</text>
+        <!-- SASP arrows -->
+        <g stroke="#c0392b" stroke-width="1.6" fill="none" opacity="0.8">
+          <path d="M212 120 q40 -20 78 -14" marker-end="url(#ah)"/>
+          <path d="M214 150 q46 0 86 0" marker-end="url(#ah)"/>
+          <path d="M212 180 q40 20 78 14" marker-end="url(#ah)"/>
+        </g>
+        <defs>
+          <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#c0392b"/></marker>
+        </defs>
+        <text x="300" y="90" font-size="13" fill="#c0392b" font-weight="700">SASP</text>
+        <text x="300" y="112" font-size="12" fill="#4b586b">цитокины (IL-6, IL-8)</text>
+        <text x="300" y="150" font-size="12" fill="#4b586b">хемокины</text>
+        <text x="300" y="190" font-size="12" fill="#4b586b">протеазы (MMP)</text>
+        <!-- healthy cells getting damaged -->
+        <circle cx="560" cy="90" r="34" fill="#eaf4ee" stroke="#3a9d6a" stroke-width="2"/>
+        <circle cx="560" cy="90" r="12" fill="#3a9d6a"/>
+        <circle cx="620" cy="170" r="34" fill="#fdf5e6" stroke="#a8620a" stroke-width="2" stroke-dasharray="4 3"/>
+        <circle cx="620" cy="170" r="12" fill="#a8620a"/>
+        <circle cx="540" cy="220" r="34" fill="#fbeae8" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/>
+        <circle cx="540" cy="220" r="12" fill="#e8776a"/>
+        <text x="560" y="150" text-anchor="middle" font-size="11" fill="#3a9d6a" font-weight="600">здоровая</text>
+        <text x="640" y="215" text-anchor="middle" font-size="11" fill="#a8620a" font-weight="600">повреждается</text>
+        <text x="540" y="270" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="600">«заражается»</text>
+      </svg>
+      <div class="cap">Одна сенесцентная клетка через SASP отравляет и состаривает соседние — поэтому их накопление самоусиливается.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TWO STRATEGIES ================= -->
+<section id="two">
+  <div class="wrap">
+    <div class="eyebrow">Развилка</div>
+    <h2>Две стратегии в одном взгляде</h2>
+    <p class="h-sub">Обе не исключают друг друга и всё чаще рассматриваются как взаимодополняющие. Разница — в том, убираем мы саму клетку или только её вредную секрецию.</p>
+
+    <div class="split">
+      <div class="strat kill">
+        <div class="tag">Стратегия A</div>
+        <h3>💥 Сенолитики</h3>
+        <table>
+          <tr><td>Что делают</td><td>Избирательно убивают сенесцентные клетки</td></tr>
+          <tr><td>Мишень</td><td>Про-выживательные пути: BCL-2/BCL-xL, PI3K/AKT, тирозинкиназы</td></tr>
+          <tr><td>Режим</td><td>Периодический, «ударил и ушёл» (<em>hit-and-run</em>): пара дней, затем перерыв</td></tr>
+          <tr><td>Плюс</td><td>Клетка убрана — эффект держится, пока не накопится снова</td></tr>
+          <tr><td>Минус</td><td>Риск задеть нужные клетки, off-target токсичность</td></tr>
+        </table>
+      </div>
+      <div class="strat hush">
+        <div class="tag">Стратегия B</div>
+        <h3>🔇 Сеноморфики</h3>
+        <table>
+          <tr><td>Что делают</td><td>Не трогают клетки, но глушат вредный SASP</td></tr>
+          <tr><td>Мишень</td><td>Сигнальные пути SASP: mTOR, NF-κB, JAK/STAT</td></tr>
+          <tr><td>Режим</td><td>Как правило постоянный, хронический приём</td></tr>
+          <tr><td>Плюс</td><td>Обратимость, тонкая настройка, можно давать постоянно</td></tr>
+          <tr><td>Минус</td><td>Убирают симптом, а не источник; нужен постоянный приём</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SENOLYTICS ================= -->
+<section id="senolytics">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--senolytic)">Стратегия A</div>
+    <h2>Сенолитики: убрать клетку</h2>
+    <p class="h-sub">Сенесцентные клетки выживают, включая анти-апоптотические сети (SCAP). Сенолитик кратковременно отключает эти сети — и клетка, балансирующая на грани, срывается в апоптоз. Здоровые клетки, не зависящие от этих путей, страдают меньше.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif">
+        <!-- step 1 -->
+        <circle cx="110" cy="90" r="50" fill="#fbeae8" stroke="#c0392b" stroke-width="2.5"/>
+        <text x="110" y="86" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">SCAP</text>
+        <text x="110" y="102" text-anchor="middle" font-size="10" fill="#7a3029">BCL-xL «щит»</text>
+        <text x="110" y="170" text-anchor="middle" font-size="12" fill="#4b586b" font-weight="600">1. Клетка защищена</text>
+        <!-- arrow + drug -->
+        <path d="M170 90 L250 90" stroke="#5b3fa8" stroke-width="2" marker-end="url(#ah2)"/>
+        <text x="210" y="78" text-anchor="middle" font-size="11" fill="#5b3fa8" font-weight="700">сенолитик</text>
+        <defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#5b3fa8"/></marker></defs>
+        <!-- step 2 -->
+        <circle cx="330" cy="90" r="50" fill="#fbeae8" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="5 4"/>
+        <line x1="300" y1="60" x2="360" y2="120" stroke="#5b3fa8" stroke-width="3"/>
+        <text x="330" y="170" text-anchor="middle" font-size="12" fill="#4b586b" font-weight="600">2. Щит отключён</text>
+        <!-- arrow -->
+        <path d="M390 90 L470 90" stroke="#c0392b" stroke-width="2" marker-end="url(#ah3)"/>
+        <defs><marker id="ah3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#c0392b"/></marker></defs>
+        <!-- step 3 apoptosis -->
+        <g>
+          <circle cx="550" cy="90" r="30" fill="#f5d5d0" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <circle cx="595" cy="70" r="9" fill="#e8776a"/>
+          <circle cx="600" cy="110" r="7" fill="#e8776a"/>
+          <circle cx="515" cy="115" r="8" fill="#e8776a"/>
+          <circle cx="520" cy="60" r="6" fill="#e8776a"/>
+        </g>
+        <text x="560" y="170" text-anchor="middle" font-size="12" fill="#c0392b" font-weight="700">3. Апоптоз</text>
+      </svg>
+      <div class="cap">Механизм hit-and-run: сенолитик снимает «щит» BCL-xL/SCAP, и стареющая клетка самоуничтожается. Достаточно короткого курса.</div>
+    </div>
+
+    <div class="drugs">
+
+      <!-- D+Q -->
+      <div class="drug">
+        <div class="photo" id="ph-dq"><span class="ph">💊 Фото: dasatinib (таблетки) + quercetin (капсулы флавоноида)</span></div>
+        <span class="top-badge badge-seno">Лучшая доказательная база у человека</span>
+        <h3>Dasatinib + Quercetin (D+Q)</h3>
+        <div class="mech">Тирозинкиназы + PI3K/AKT · комбинация</div>
+        <p>Первая и наиболее изученная у человека сенолитическая комбинация. Дазатиниб — ингибитор тирозинкиназ (изначально онкопрепарат при лейкозах), кверцетин — растительный флавоноид, ингибитор PI3K/AKT. По отдельности слабее; вместе перекрывают более широкий спектр стареющих клеток.</p>
+        <table class="spec">
+          <tr><td>Схема</td><td>100 мг дазатиниба + 1000–1250 мг кверцетина, 2–3 дня подряд, затем перерыв («2 дня приёма, 5 отдыха»)</td></tr>
+          <tr><td>IPF (фиброз лёгких)</td><td>Первое в истории клиническое исследование сенолитиков; улучшение 6-мин ходьбы и физической функции</td></tr>
+          <tr><td>Диабет. болезнь почек</td><td>Подтверждено снижение сенесцентных клеток в жире (p16, SA-β-gal) и системного воспаления</td></tr>
+          <tr><td>MCI / Альцгеймер</td><td>Фаза 1 (SToMP-AD, STAMINA), 12-нед курсы; тенденции к улучшению когниции</td></tr>
+          <tr><td>Психиатрия</td><td>2025 — протокол пилота при шизофрении и резистентной депрессии (NCT05838560)</td></tr>
+        </table>
+        <div class="status"><b>Статус:</b> у человека <b>подтверждён клиренс клеток</b> — само явление доказано. Эффективность по клиническим исходам изучается в фазе 2.</div>
+      </div>
+
+      <!-- Navitoclax -->
+      <div class="drug">
+        <div class="photo" id="ph-navitoclax"><span class="ph">🧬 Схема: navitoclax (ABT-263) блокирует BCL-2/BCL-xL/BCL-w</span></div>
+        <span class="top-badge badge-gray">Мощный, но «жёсткий»</span>
+        <h3>Navitoclax (ABT-263)</h3>
+        <div class="mech">Прямой ингибитор BCL-2 / BCL-xL / BCL-w</div>
+        <p>Бьёт точно в главный механизм выживания стареющих клеток, поэтому в лаборатории очень эффективен. Убедительные доклинические данные: очищает клетки в моделях остеоартрита, фиброза, истощения стволовых клеток.</p>
+        <ul class="pm">
+          <li class="plus">Максимальная сенолитическая мощность — «золотой» лабораторный эталон</li>
+          <li class="minus">Тромбоцитопения: BCL-xL нужен тромбоцитам — это дозолимитирующий эффект</li>
+          <li class="minus">В моделях на старых мышах вызывал потерю трабекулярной кости</li>
+        </ul>
+        <div class="status"><b>Статус:</b> исследовательский эталон и онкоиспытания; как системный антивозрастной сенолитик <b>ограничен профилем безопасности</b>. Стимулирует разработку таргетно доставляемых BCL-xL-агентов.</div>
+      </div>
+
+      <!-- Fisetin -->
+      <div class="drug">
+        <div class="photo" id="ph-fisetin"><span class="ph">🍓 Фото: fisetin — флавоноид из клубники и яблок</span></div>
+        <span class="top-badge badge-seno">Мягкая и доступная альтернатива</span>
+        <h3>Fisetin</h3>
+        <div class="mech">Флавоноид · мультитаргет (пересекается с кверцетином)</div>
+        <p>Природный флавоноид (клубника, яблоки). В доклинике убирает стареющие клетки и снижает маркёры старения. Идёт серия исследований, преимущественно в Mayo Clinic: AFFIRM/AFFIRM-LITE (хрупкость), остеоартрит колена, STOP-Sepsis (сепсис), пилоты по COVID-19.</p>
+        <table class="spec">
+          <tr><td>Доза в испытаниях</td><td>20 мг/кг/сут в течение 2 дней</td></tr>
+          <tr><td>Оговорка</td><td>На 2025 г. опубликованных данных о клиренсе клеток <b>у человека</b> фактически нет — многие исследования не расслеплены</td></tr>
+        </table>
+        <div class="status"><b>Статус:</b> идут фазы 2; мягче и доступнее D+Q, но человеческих доказательств клиренса пока нет.</div>
+      </div>
+
+      <!-- UNITY -->
+      <div class="drug">
+        <div class="photo" id="ph-unity"><span class="ph">💉 Схема: локальная интравитреальная доставка в сетчатку глаза</span></div>
+        <span class="top-badge badge-gray">Локальная доставка</span>
+        <h3>UNITY Biotechnology (UBX0101, UBX1325)</h3>
+        <div class="mech">Локальные инъекции — минуя системную токсичность</div>
+        <p>Отдельная стратегия — доставлять сенолитик только в поражённую ткань. UBX0101 (ингибитор MDM2/p53) в колено при остеоартрите не показал эффективности в фазе 2. UBX1325/foselutoclax (ингибитор BCL-xL) — интравитреально при диабетическом макулярном отёке и AMD — дал более обнадёживающие данные.</p>
+        <div class="callout red" style="margin:6px 0 0">
+          <b>⚠ Бизнес-развязка</b>
+          В сентябре 2025 г. акционеры UNITY Biotechnology одобрили план ликвидации и роспуска компании — наглядная иллюстрация того, насколько тернист путь коммерциализации сенолитиков даже при научном интересе.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SENOMORPHICS ================= -->
+<section id="senomorphics">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--senomorphic)">Стратегия B</div>
+    <h2>Сеноморфики: заглушить SASP</h2>
+    <p class="h-sub">Сеноморфики (иногда — сеностатики) не убивают клетку, а подавляют или перенастраивают SASP, сохраняя полезные функции сенесценции — барьер против опухолей и участие в заживлении ран. Мишени — сигнальные узлы SASP: mTOR, NF-κB, JAK/STAT.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, sans-serif">
+        <!-- cell stays alive -->
+        <circle cx="150" cy="110" r="60" fill="#e3f0f4" stroke="#1f6f8b" stroke-width="2.5"/>
+        <circle cx="150" cy="110" r="24" fill="#68c4dc"/>
+        <text x="150" y="115" text-anchor="middle" font-size="12" fill="#0d3b4a" font-weight="700">жива</text>
+        <text x="150" y="195" text-anchor="middle" font-size="12" fill="#1f6f8b" font-weight="600">Клетка не тронута</text>
+        <!-- signalling nodes blocked -->
+        <g font-size="12" font-weight="700">
+          <rect x="300" y="40" width="120" height="34" rx="8" fill="#fff" stroke="#1f6f8b" stroke-width="1.6"/>
+          <text x="360" y="62" text-anchor="middle" fill="#1f6f8b">mTOR</text>
+          <rect x="300" y="93" width="120" height="34" rx="8" fill="#fff" stroke="#1f6f8b" stroke-width="1.6"/>
+          <text x="360" y="115" text-anchor="middle" fill="#1f6f8b">NF-κB</text>
+          <rect x="300" y="146" width="120" height="34" rx="8" fill="#fff" stroke="#1f6f8b" stroke-width="1.6"/>
+          <text x="360" y="168" text-anchor="middle" fill="#1f6f8b">JAK / STAT</text>
+        </g>
+        <!-- blocked arrows to SASP -->
+        <g stroke="#1f6f8b" stroke-width="1.6">
+          <line x1="210" y1="90" x2="298" y2="57"/>
+          <line x1="212" y1="110" x2="298" y2="110"/>
+          <line x1="210" y1="130" x2="298" y2="163"/>
+        </g>
+        <!-- block symbols -->
+        <g stroke="#c0392b" stroke-width="3">
+          <line x1="440" y1="57" x2="470" y2="57"/>
+          <line x1="440" y1="110" x2="470" y2="110"/>
+          <line x1="440" y1="163" x2="470" y2="163"/>
+        </g>
+        <text x="580" y="100" text-anchor="middle" font-size="13" fill="#4b586b" font-weight="700">SASP</text>
+        <text x="580" y="122" text-anchor="middle" font-size="12" fill="#9aa3b6">подавлен ✕</text>
+      </svg>
+      <div class="cap">Клетка остаётся живой, но её сигнальные узлы (mTOR, NF-κB, JAK/STAT) блокируются — вредная секреция SASP гаснет.</div>
+    </div>
+
+    <div class="drugs">
+
+      <!-- Rapamycin -->
+      <div class="drug">
+        <div class="photo" id="ph-rapamycin"><span class="ph">💊 Фото: рапамицин (сиролимус) — ингибитор mTOR</span></div>
+        <span class="top-badge badge-morph">Геропротектор № 1 в дискуссии</span>
+        <h3>Рапамицин и рапалоги</h3>
+        <div class="mech">Ингибитор mTORC1</div>
+        <p>Подавляет комплекс mTORC1 — снижает трансляцию SASP-факторов и хроническое воспаление. В низких «геропротекторных» дозах менее иммуносупрессивен, чем в трансплантологических.</p>
+        <ul class="pm">
+          <li class="plus">Продлевает жизнь мышам — один из немногих агентов с воспроизводимым эффектом на макс. продолжительность жизни</li>
+          <li class="plus">Десятилетия применения в медицине — известный профиль безопасности</li>
+          <li class="minus">Иммуносупрессия может мешать нужному воспалению при инфекции</li>
+        </ul>
+        <div class="status"><b>Статус:</b> активно изучается как геропротектор; рапалоги (эверолимус) — для улучшения иммунного ответа у пожилых.</div>
+      </div>
+
+      <!-- Metformin -->
+      <div class="drug">
+        <div class="photo" id="ph-metformin"><span class="ph">💊 Фото: метформин — таблетки, испытание TAME</span></div>
+        <span class="top-badge badge-morph">Самый безопасный кандидат</span>
+        <h3>Метформин</h3>
+        <div class="mech">Активатор AMPK · модулятор NF-κB</div>
+        <p>Активирует AMPK, влияет на SIRT1 и mTORC1, снижает окислительный стресс и приглушает NF-κB (снижает RELA/p65), тем самым гася SASP. Ретроспективы намекали на увеличение продолжительности жизни у диабетиков — это легло в основу знаменитого испытания <b>TAME</b> (Targeting Aging with Metformin).</p>
+        <ul class="pm">
+          <li class="plus">Десятилетия применения при диабете — один из самых изученных по безопасности</li>
+          <li class="minus">Чистый геропротекторный эффект у недиабетиков остаётся спорным</li>
+        </ul>
+        <div class="status"><b>Статус:</b> широко доступен; TAME призван проверить, откладывает ли метформин появление второй возраст-зависимой болезни.</div>
+      </div>
+
+      <!-- JAK inhibitors -->
+      <div class="drug wide">
+        <span class="top-badge badge-morph">Ранняя трансляционная стадия</span>
+        <h3>Ингибиторы JAK (руксолитиниб, барицитиниб, тофацитиниб)</h3>
+        <div class="mech">Ингибиторы пути JAK/STAT (JAK1/2–STAT3)</div>
+        <p>Путь JAK/STAT — ключевой усилитель SASP. Ингибиторы JAK подавляют секрецию провоспалительных цитокинов стареющими клетками. В доклинике руксолитиниб уменьшал SASP, смягчал сенесценцию кардиомиоцитов при септической кардиомиопатии (через блок JAK2/STAT3), а в моделях ХОБЛ обращал вспять сенесценцию, эмфизему и фиброз. Сами препараты уже одобрены по другим показаниям (миелофиброз, ревматоидный артрит), что упрощает перепрофилирование.</p>
+        <div class="status"><b>Статус:</b> как сеноморфики — на ранней трансляционной стадии, но с готовой базой безопасности из ревматологии и гематологии.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TABLE ================= -->
+<section id="table">
+  <div class="wrap">
+    <div class="eyebrow">Сводка</div>
+    <h2>Клинический статус на 2025–2026</h2>
+    <div class="table-scroll">
+      <table class="cmp">
+        <tr>
+          <th>Препарат</th><th>Класс</th><th>Мишень</th><th>Продвинутые показания</th><th>Статус</th>
+        </tr>
+        <tr>
+          <td><b>Dasatinib + Quercetin</b></td><td><span class="pill seno">Сенолитик</span></td>
+          <td>Тирозинкиназы + PI3K/AKT</td>
+          <td>IPF, диабет. болезнь почек, MCI/Альцгеймер, психиатрия</td>
+          <td>Подтверждён клиренс клеток у человека; идёт фаза 2</td>
+        </tr>
+        <tr>
+          <td><b>Navitoclax (ABT-263)</b></td><td><span class="pill seno">Сенолитик</span></td>
+          <td>BCL-2/BCL-xL/BCL-w</td>
+          <td>Остеоартрит, фиброз (доклиника); онкология</td>
+          <td>Ограничен токсичностью (тромбоцитопения, потеря кости)</td>
+        </tr>
+        <tr>
+          <td><b>Fisetin</b></td><td><span class="pill seno">Сенолитик</span></td>
+          <td>Флавоноид (мультитаргет)</td>
+          <td>Хрупкость, остеоартрит, сепсис</td>
+          <td>Идут фазы 2; клиренса у человека пока нет</td>
+        </tr>
+        <tr>
+          <td><b>UBX1325 (foselutoclax)</b></td><td><span class="pill seno">Локальный сенолитик</span></td>
+          <td>BCL-xL</td>
+          <td>Болезни сетчатки (DME, AMD)</td>
+          <td>Позитивные ранние данные; спонсор (UNITY) ликвидирован в 2025</td>
+        </tr>
+        <tr>
+          <td><b>Рапамицин / рапалоги</b></td><td><span class="pill morph">Сеноморфик</span></td>
+          <td>mTORC1</td>
+          <td>Геропротекция, иммунное старение</td>
+          <td>Активно изучается; известный профиль безопасности</td>
+        </tr>
+        <tr>
+          <td><b>Метформин</b></td><td><span class="pill morph">Сеноморфик</span></td>
+          <td>AMPK / NF-κB</td>
+          <td>Общее старение (TAME)</td>
+          <td>Широко доступен; геропротекция у недиабетиков спорна</td>
+        </tr>
+        <tr>
+          <td><b>Ингибиторы JAK</b></td><td><span class="pill morph">Сеноморфик</span></td>
+          <td>JAK/STAT</td>
+          <td>Воспалительные и фиброзные модели</td>
+          <td>Ранняя трансляционная стадия</td>
+        </tr>
+      </table>
+    </div>
+    <p class="h-sub" style="margin-top:18px;font-size:15px">Статус меняется быстро. Перед практическими выводами сверяйтесь с <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a> и свежими публикациями.</p>
+  </div>
+</section>
+
+<!-- ================= RISKS ================= -->
+<section id="risks">
+  <div class="wrap">
+    <div class="eyebrow">Трезвый взгляд</div>
+    <h2>Ограничения и риски</h2>
+    <div class="risks">
+      <div class="risk"><b>Гетерогенность сенесценции</b>«Сенесцентная клетка» — не один тип. Разные ткани и триггеры дают клетки с разной зависимостью от про-выживательных путей. Универсального сенолитика, вероятно, не существует — нужен подбор под «сенотип».</div>
+      <div class="risk"><b>Off-target токсичность</b>Навитоклакс — классика: точное попадание в BCL-xL бьёт по тромбоцитам. Дазатиниб при длительном приёме имеет собственный спектр побочных эффектов (потому его и дают коротким курсом).</div>
+      <div class="risk"><b>Полезные функции сенесценции</b>Сенесценция важна для подавления опухолей и заживления ран. Слишком агрессивное вмешательство теоретически может навредить.</div>
+      <div class="risk"><b>Сеноморфики убирают следствие, а не причину</b>Клетка остаётся; требуется постоянный приём, а хроническая иммуносупрессия (например, от рапамицина) может мешать нужному воспалению при инфекции.</div>
+      <div class="risk"><b>Разрыв «мыши → человек»</b>Множество ярких доклинических результатов; строгих рандомизированных данных по клиническим исходам у человека всё ещё немного. Многие испытания не расслеплены.</div>
+      <div class="risk"><b>Бизнес-риски</b>Роспуск UNITY Biotechnology в 2025 г. показывает: даже при научном прогрессе путь до одобренного лекарства долгий и дорогой.</div>
+    </div>
+
+    <div class="callout">
+      <b>Итог</b>
+      <b>Сенолитики</b> (D+Q, навитоклакс, фисетин) избирательно <b>убивают</b> стареющие клетки — больше всего человеческих данных у D+Q, навитоклакс упирается в токсичность, фисетин мягче, но клиренса у человека пока не показано. <b>Сеноморфики</b> (рапамицин, метформин, JAK-ингибиторы) <b>глушат SASP</b>, не трогая клетки — их плюс в обратимости и известных профилях безопасности перепрофилируемых препаратов. Поле активно движется к комбинированным, таргетно доставляемым подходам и персонализации под «сенотип» ткани.
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Вопрос-ответ</div>
+    <h2>Частые вопросы</h2>
+
+    <details class="faq-item">
+      <summary>Чем сенолитик отличается от сеноморфика простыми словами?</summary>
+      <p>Сенолитик <b>убивает</b> стареющую клетку целиком (снимает её защиту от апоптоза — и она самоуничтожается). Сеноморфик клетку <b>оставляет живой</b>, но глушит её вредную секрецию (SASP). Первый — «удалить источник», второй — «заткнуть источник». Их можно комбинировать.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Почему сенолитики принимают короткими курсами, а не постоянно?</summary>
+      <p>Эффект нужен только в момент «толчка в апоптоз»: сенолитик кратко отключает про-выживательную сеть, клетка гибнет — и дальше препарат не нужен, пока клетки снова не накопятся (недели). Такой режим hit-and-run резко снижает токсичность по сравнению с постоянным приёмом того же дазатиниба в онкодозах.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>D+Q уже доказал, что продлевает жизнь человеку?</summary>
+      <p>Нет. У человека доказано более узкое: D+Q <b>снижает число сенесцентных клеток</b> и маркёры воспаления (диабетическая болезнь почек), а также улучшает физическую функцию при фиброзе лёгких в пилотах. Влияние на продолжительность жизни или твёрдые клинические исходы — предмет продолжающихся исследований фазы 2, вывода о «продлении жизни» пока нет.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Кверцетин и фисетин продаются как БАДы — их можно принимать «для профилактики»?</summary>
+      <p>Дозы и комбинации в исследованиях (например, 1000–1250 мг кверцетина с рецептурным дазатинибом, или 20 мг/кг фисетина) — это не то же самое, что бытовой приём добавки. Сенолитическая активность в таких схемах изучена недостаточно, а дазатиниб вообще рецептурный онкопрепарат. Это тема для клинических исследований или наблюдения врача, а не самолечения (см. дисклеймер).</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Что случилось с UNITY Biotechnology?</summary>
+      <p>Компания разрабатывала локально доставляемые сенолитики. Её препарат для колена (UBX0101) провалил фазу 2, глазной UBX1325 давал более обнадёживающие данные — но в сентябре 2025 г. акционеры одобрили ликвидацию компании. Это показатель того, что научный интерес и коммерческий успех в этой области — разные вещи.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= SOURCES ================= -->
+<section id="sources">
+  <div class="wrap">
+    <div class="eyebrow">Доказательная база</div>
+    <h2>Источники</h2>
+    <p class="h-sub">Подборка рецензируемых публикаций и протоколов, на которых основан обзор.</p>
+    <div class="src">
+      <div>1. Schweiger A. и др. <em>Protocol for a pilot trial of D+Q in mental disorders.</em> F1000Research, 2025. DOI: 10.12688/f1000research.151963.2</div>
+      <div>2. <em>D+Q reduce kidney inflammation and senescent cell abundance in murine DKD.</em> eBioMedicine, 2026. DOI: 10.1016/j.ebiom.2026.106124</div>
+      <div>3. <em>Pilot study of senolytics (D+Q) for cognition and mobility in older adults at risk for AD.</em> eBioMedicine, 2025. DOI: 10.1016/j.ebiom.2025.105612</div>
+      <div>4. Orr M. <em>Clinical Trials of Senolytics in AD (SToMP-AD, STAMINA).</em> Innovation in Aging, 2025. DOI: 10.1093/geroni/igaf122.1102</div>
+      <div>5. Hickson L. и др. <em>Senolytics decrease senescent cells in humans: D+Q in DKD.</em> EBioMedicine, 2019. DOI: 10.1016/j.ebiom.2019.08.069 (PMC6796530)</div>
+      <div>6. <em>Navitoclax (ABT263) reduces inflammation and promotes chondrogenic phenotype in OA.</em> Aging (Albany NY), 2020. PMID: 32611834</div>
+      <div>7. Sharma A.K. и др. <em>Navitoclax Causes Trabecular Bone Loss in Aged Mice.</em> Front Cell Dev Biol, 2020. DOI: 10.3389/fcell.2020.00354</div>
+      <div>8. <em>Targeting Senescence: Senolytics and Senomorphics in Anti-Aging.</em> Biomolecules, 2025. DOI: 10.3390/biom15060860</div>
+      <div>9. <em>Heterogeneity of Cellular Senescence… in Lung Diseases.</em> Int J Mol Sci, 2025. DOI: 10.3390/ijms26199687</div>
+      <div>10. <em>Ruxolitinib-based senomorphic therapy mitigates cardiomyocyte senescence.</em> Int J Biol Sci, 2024. DOI: 10.7150/ijbs.96489</div>
+      <div>11. <em>Targeting Cell Senescence and Senolytics: Age-Related Endocrine Dysfunction.</em> Endocrine Reviews, 2024.</div>
+      <div>12. <em>Pharmacological targeting of the SASP in atherosclerosis.</em> Naunyn-Schmiedeberg's Arch Pharmacol, 2026. DOI: 10.1007/s00210-026-05416-4</div>
+      <div>13. STOP-Sepsis (fisetin, фаза 2), протокол. PMID: 39434114</div>
+      <div>14. NCT04210986 — <em>Fisetin Attenuate OA-Related Cartilage Degeneration.</em></div>
+      <div>15. UNITY Biotechnology — публичные материалы о UBX0101/UBX1325 и ликвидации компании (2025).</div>
+    </div>
+    <p style="text-align:center;font-size:15px;margin-top:8px">Для актуального статуса: <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a></p>
+
+    <div class="disclaimer">
+      <b>⚠ Дисклеймер.</b> Материал носит образовательный характер и не является медицинской рекомендацией. Дазатиниб — рецептурный онкопрепарат с серьёзными побочными эффектами; навитоклакс вызывает тромбоцитопению; «безобидные» добавки вроде кверцетина и фисетина в сенолитических дозах и комбинациях изучены недостаточно. Не занимайтесь самолечением. Любые вмешательства — только в рамках клинических исследований или под наблюдением врача.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Обзор подготовлен на основе публикаций и протоколов 2025–2026 гг. Поле быстро меняется — проверяйте свежие источники.<br>
+    Источники: F1000Research · eBioMedicine · Aging · Front Cell Dev Biol · Biomolecules · Int J Mol Sci · Int J Biol Sci · Endocrine Reviews · ClinicalTrials.gov · PubMed · Июль 2026
+  </div>
+</footer>
+
+</body>
+</html>
