@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Трекеры Chipolo на Amazon 2026 — POP, LOOP, CARD против старых Spot и Point</title>
+<style>
+  :root{
+    --ink:#1c2126;
+    --ink-soft:#4a5560;
+    --paper:#f6f7f9;
+    --card:#ffffff;
+    --line:#dde1e8;
+    --accent:#1f66d0;        /* фирменный синий Chipolo */
+    --accent-soft:#e6effb;
+    --warn:#b4540a;
+    --warn-soft:#fdf0e3;
+    --pop:#f5b300;           /* жёлтый POP */
+    --carbon:#23272e;
+    --carbon-soft:#eceef0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.65;font-size:17px;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  a{color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  header{
+    background:radial-gradient(circle at 78% 30%, #16305c 0%, #101c36 45%, #0b111f 100%);
+    color:#eef2f8;padding:60px 0 52px;position:relative;overflow:hidden;text-align:center;
+  }
+  header::before{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+    border:1px solid rgba(245,179,0,.35);
+    box-shadow:0 0 0 40px rgba(120,170,240,.07),0 0 0 90px rgba(120,170,240,.045),0 0 0 150px rgba(120,170,240,.025);
+    pointer-events:none;
+  }
+  .updated{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8fb4e8;margin-bottom:18px}
+  h1{font-size:clamp(28px,4.5vw,44px);line-height:1.15;font-weight:800;max-width:840px;margin:0 auto}
+  h1 em{font-style:normal;color:#ffd257}
+  .sub{margin:16px auto 0;font-size:19px;color:#c2cede;max-width:740px}
+
+  nav{background:var(--carbon);position:sticky;top:0;z-index:50}
+  nav .wrap{display:flex;flex-wrap:wrap;gap:4px;padding-top:8px;padding-bottom:8px;justify-content:center}
+  nav a{color:#cfd6db;text-decoration:none;font-size:14px;padding:6px 12px;border-radius:20px}
+  nav a:hover{background:#3a4046;color:#fff}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0}
+  section:nth-of-type(even){background:#fff}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px;text-align:center}
+  h2{font-size:clamp(24px,3.2vw,34px);margin:0 auto 14px;line-height:1.25;text-align:center;max-width:840px}
+  .h-sub{text-align:center;max-width:760px;margin:0 auto 30px;font-size:18px;color:var(--ink-soft)}
+  h3{font-size:20px;margin:28px 0 12px}
+  p{margin-bottom:14px}
+  p.lead{font-size:19px;color:var(--ink-soft)}
+
+  .callout{
+    border-left:4px solid var(--warn);background:var(--warn-soft);
+    padding:16px 20px;border-radius:0 10px 10px 0;margin:22px 0;text-align:left;
+  }
+  .callout.good{border-color:var(--accent);background:var(--accent-soft)}
+  .callout b{display:block;margin-bottom:6px}
+
+  /* ---------- quick verdict cards ---------- */
+  .verdict-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:26px 0}
+  .v-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .v-card.top{border:2px solid var(--accent);box-shadow:0 8px 24px rgba(31,102,208,.14)}
+  .badge{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:12px;margin-bottom:10px;
+  }
+  .badge.gray{background:var(--carbon-soft);color:var(--ink-soft)}
+  .badge.warn{background:var(--warn-soft);color:var(--warn)}
+  .badge.pop{background:#fdf3d3;color:#8a6a00}
+  .v-card h4{font-size:19px;margin-bottom:8px}
+  .v-card .price{margin-top:12px;font-weight:700;color:var(--ink)}
+
+  /* ---------- market stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:24px 0}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center}
+  .stat .num{font-size:30px;font-weight:800;color:var(--accent);line-height:1.1}
+  .stat .lbl{font-size:14px;color:var(--ink-soft);margin-top:6px}
+
+  /* ---------- product cards: 2-column grid ---------- */
+  .models-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:10px 0 34px}
+  .group-label{grid-column:1 / -1;text-align:center;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;padding-top:8px;border-top:2px solid var(--line)}
+  .model{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+  .model.top{border:2px solid var(--accent)}
+  .model.wide{grid-column:1 / -1}
+  .model h3{margin-top:8px;font-size:21px}
+  .model .price-line{font-weight:700;margin-bottom:12px;color:var(--accent)}
+  .photo{
+    width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--carbon-soft);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+    border:1px dashed var(--line);
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo .ph{color:var(--ink-soft);font-size:14px;text-align:center;padding:12px}
+  .spec{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+  .spec td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  .spec td:first-child{font-weight:700;width:36%;color:var(--ink-soft)}
+  ul.pm{list-style:none;margin:12px 0}
+  ul.pm li{padding:4px 0 4px 26px;position:relative;font-size:15px}
+  ul.pm li.plus::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+  ul.pm li.minus::before{content:"✕";position:absolute;left:0;color:var(--warn);font-weight:800}
+  details{margin-top:auto;border-top:1px dashed var(--line);padding-top:10px}
+  summary{cursor:pointer;font-weight:700;font-size:15px;color:var(--ink-soft)}
+  details p{font-size:14.5px;margin:10px 0 4px;color:var(--ink-soft)}
+
+  /* ---------- tables ---------- */
+  .table-scroll{overflow-x:auto;margin:20px 0}
+  table.cmp{border-collapse:collapse;width:100%;min-width:760px;background:var(--card);font-size:14.5px}
+  table.cmp th{background:var(--carbon);color:#fff;padding:12px;text-align:left;font-size:13.5px}
+  table.cmp td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.cmp tr:nth-child(even) td{background:#f2f5f9}
+  .tick{color:var(--accent);font-weight:700}
+  .cross{color:var(--warn);font-weight:700}
+
+  /* ---------- buy: country columns ---------- */
+  .buy-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:10px 0}
+  .country{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .country.wide{grid-column:1 / -1}
+  .country h3{margin-top:0;display:flex;align-items:center;gap:10px}
+  .country .flag{font-size:28px}
+  .shop{padding:12px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+  .shop:last-child{border-bottom:none}
+  .shop b{display:block}
+  .shop span{color:var(--ink-soft);font-size:14.5px}
+
+  /* ---------- faq ---------- */
+  .faq-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 20px;margin:12px 0}
+  .faq-item summary{font-size:16.5px;color:var(--ink);padding:12px 0}
+  .faq-item p{font-size:15.5px}
+
+  footer{background:var(--carbon);color:#aeb6bd;padding:34px 0;font-size:14px;text-align:center}
+  footer a{color:#8ec2ff}
+
+  @media (max-width:820px){
+    .models-grid{grid-template-columns:1fr}
+    .buy-grid{grid-template-columns:1fr}
+    body{font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="updated">Обновлено: июль 2026 · цены по Amazon US</div>
+    <h1>Трекеры Chipolo на Amazon — <em>POP, LOOP, CARD</em> против старых Spot и Point</h1>
+    <p class="sub">Словенский конкурент AirTag: громче, ярче и работает с любым телефоном. Что реально покупать, какая версия под вашу экосистему, во что не вляпаться — и где брать в Сербии и на маркетплейсах РФ.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#verdict">⚡ Главный вывод</a>
+    <a href="#networks">📡 Сети и совместимость</a>
+    <a href="#models">📦 Модели</a>
+    <a href="#compare">📊 Сравнение</a>
+    <a href="#traps">⚠️ Ловушки</a>
+    <a href="#buy">🛒 Где купить</a>
+    <a href="#faq">❓ FAQ</a>
+  </div>
+</nav>
+
+<!-- ================= VERDICT ================= -->
+<section id="verdict">
+  <div class="wrap">
+    <div class="eyebrow">Главный вывод</div>
+    <h2>Одна покупка закрывает вопрос: POP 4-pack. Остальное — под конкретные задачи</h2>
+    <p class="h-sub">«Chipolo» на Amazon — это не одна модель, а два разных поколения, и правильная рамка выбора — не «какой Chipolo», а «какое поколение и под какой телефон».</p>
+
+    <div class="verdict-grid">
+      <div class="v-card top">
+        <span class="badge">🏆 Оптимум · 9/10 в обзорах</span>
+        <h4>Chipolo POP</h4>
+        <p>120 дБ (у AirTag 2 — ~85), Bluetooth 6.0, сменная батарейка на год, отверстие под кольцо. Работает с iPhone или Android — сеть на выбор.</p>
+        <div class="price">$24.50–30 · 4-pack $75–89</div>
+      </div>
+      <div class="v-card">
+        <span class="badge gray">Флагман · перезаряжаемый</span>
+        <h4>Chipolo LOOP</h4>
+        <p>USB-C вместо батареек, полная защита IP67, до 125 дБ и 120 м. Для велосипеда, питомца, улицы.</p>
+        <div class="price">~$39 · есть 4-pack и бандлы</div>
+      </div>
+      <div class="v-card">
+        <span class="badge pop">Для кошелька · Qi-зарядка</span>
+        <h4>Chipolo CARD</h4>
+        <p>Толщина банковской карты, заряжается на беспроводной Qi-зарядке — единственная карта-трекер, которую не надо выбрасывать через 2 года.</p>
+        <div class="price">~$45</div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">120 дБ</div><div class="lbl">громкость POP — против ~85 дБ у AirTag 2</div></div>
+      <div class="stat"><div class="num">&lt;$19</div><div class="lbl">за трекер в 4-pack по акции (минимум — $71.20 за набор)</div></div>
+      <div class="stat"><div class="num">2 сети</div><div class="lbl">Apple Find My или Google Find Hub — на выбор при настройке</div></div>
+      <div class="stat"><div class="num">$0</div><div class="lbl">подписок — все функции бесплатны навсегда</div></div>
+    </div>
+
+    <div class="callout good">
+      <b>Суть в одном абзаце</b>
+      Лучшая покупка по цене/функциям — <strong>POP 4-pack за $75–89</strong>: ключи + сумка + чемодан + что угодно. LOOP — переплата за USB-C и водозащиту, оправдан для улицы. CARD — единственный разумный выбор для кошелька. Старые Spot/Point берите только со скидкой и только понимая привязку к экосистеме. Chipolo проигрывает в одном сценарии: iPhone + нужен точный поиск «со стрелкой» по квартире — это UWB, он есть у AirTag и отсутствует у всей линейки Chipolo.
+    </div>
+  </div>
+</section>
+
+<!-- ================= NETWORKS ================= -->
+<section id="networks">
+  <div class="wrap">
+    <div class="eyebrow">Технология</div>
+    <h2>Как Chipolo ищет вещи: две глобальные сети и одно жёсткое правило</h2>
+    <p class="h-sub">Рядом — Bluetooth и громкий звонок. Вдали — миллионы чужих смартфонов, анонимно передающих координаты вашей вещи.</p>
+
+    <p>Рядом с вами трекер работает по Bluetooth: нажали кнопку в приложении — Chipolo звенит (до 120–125 дБ, слышно через стену и диванные подушки). Двойное нажатие на сам трекер — звонит ваш телефон, даже в беззвучном режиме.</p>
+
+    <p>Магия начинается, когда вещь потеряна далеко. Трекер анонимно «видят» чужие смартфоны и передают его координаты вам на карту. Таких сетей две: <strong>Apple Find My</strong> («Локатор») — сотни миллионов iPhone, iPad и Mac, открыта для сторонних трекеров с 2021 года; и <strong>Google Find Hub</strong> — аналог на базе Android, запущенный только в 2024-м. Из-за этой трёхлетней форы Apple почти весь рынок трекеров исторически заточен под iPhone.</p>
+
+    <div class="callout">
+      <b>⚠ Жёсткое правило Apple</b>
+      Устройство в сети Find My не может одновременно состоять в других поисковых сетях — это условие сертификации. Поэтому даже универсальные POP/LOOP/CARD работают <strong>в одной сети за раз</strong>: выбираете при настройке, переключение — через сброс трекера. «Одновременно и iPhone, и Android» не умеет ни один трекер на рынке.
+    </div>
+
+    <h3 style="text-align:center">Что означают приставки в названиях</h3>
+    <p class="h-sub" style="margin-bottom:16px">Это главный фильтр при покупке — важнее цены и цвета:</p>
+    <ul class="pm" style="max-width:840px;margin:0 auto 14px">
+      <li class="plus"><strong>POP / LOOP / CARD</strong> (без приставок, поколение 2025+) — сеть на выбор: Apple Find My или Google Find Hub. Требования: iOS 14.5+ или Android 9+.</li>
+      <li class="minus"><strong>ONE Spot / CARD Spot</strong> — только Apple Find My. На Android их даже не настроить.</li>
+      <li class="minus"><strong>ONE Point</strong> — только Google Find Hub. Бесполезен с iPhone.</li>
+      <li class="minus"><strong>ONE / Classic</strong> (совсем старые) — обе ОС, но только через собственное приложение Chipolo: поиск на расстоянии почти не работает.</li>
+    </ul>
+
+    <p style="max-width:840px;margin:0 auto">Ко всем новым моделям прилагается бесплатное companion-приложение Chipolo с допфункциями: вызов телефона, смена рингтона, кнопка селфи, уведомления «вы забыли вещь» (Android). Подписок нет — в отличие от Tile, где часть функций платная.</p>
+  </div>
+</section>
+
+<!-- ================= MODELS ================= -->
+<section id="models">
+  <div class="wrap">
+    <div class="eyebrow">Топ устройств</div>
+    <h2>Подробный разбор: что именно лежит на Amazon</h2>
+    <p class="h-sub">Источники: карточки Amazon, chipolo.net, обзоры HotAirTag (март 2026), Android Authority, 9to5Toys. Цены — Amazon US на июль 2026, без учёта разовых распродаж.</p>
+
+    <div class="models-grid">
+
+      <div class="group-label">🔑 Брелоки — универсальное поколение</div>
+
+      <!-- POP -->
+      <div class="model top">
+        <div class="photo" style="background:#fff"><img src="https://chipolo.net/imager/assets/images/pop-image-desktop_616b2c32fb7bb9679ad560fc61635847_4f24388536e58ef9929903cb633a81c2.webp" alt="Chipolo POP — цветные Bluetooth-трекеры" loading="lazy" style="object-fit:contain"></div>
+        <span class="badge">🏆 Лучшая покупка · 9/10</span>
+        <h3>Chipolo POP</h3>
+        <div class="price-line">$24.50–30 за штуку · 4-pack $89, по акциям $75 и ниже</div>
+        <p>Дебютировал в 2025-м и стал самым интересным продуктом Chipolo за годы: первый массовый трекер «под любой телефон». Шесть ярких цветов, готовое отверстие под кольцо (AirTag требует брелок-аксессуар за отдельные деньги) и главный козырь — динамик.</p>
+        <table class="spec">
+          <tr><td>Сети</td><td>Apple Find My <em>или</em> Google Find Hub — на выбор при настройке</td></tr>
+          <tr><td>Громкость</td><td>До 120 дБ — против ~85 дБ у AirTag 2</td></tr>
+          <tr><td>Связь</td><td>Bluetooth 6.0 с Channel Sounding; дальность до 90 м</td></tr>
+          <tr><td>Батарея</td><td>Сменная CR2032, ~1 год; замена — $1 и 30 секунд</td></tr>
+          <tr><td>Защита / вес</td><td>IP55 (пыль и брызги) · 10 г · произведён в ЕС</td></tr>
+        </table>
+        <ul class="pm">
+          <li class="plus">Динамик 120 дБ — громче почти всего рынка</li>
+          <li class="plus">Один подарок подходит владельцу любого телефона</li>
+          <li class="plus">Кольцо-отверстие в корпусе — ноль расходов на аксессуары</li>
+          <li class="minus">Нет UWB — точного поиска «со стрелкой», как у AirTag</li>
+          <li class="minus">IP55: дождь — да, лужа или стирка — нет; реальная дальность меньше паспортной</li>
+        </ul>
+        <details>
+          <summary>Купить / источники</summary>
+          <p><a href="https://www.amazon.com/Chipolo-POP-Tracker-Tag-Compatible/dp/B0DZXXB7KF">Amazon: 4-pack Standard Mix</a> · <a href="https://www.amazon.com/Chipolo-POP-Tracker-Tag-Compatible/dp/B0F1CV36BM">4-pack Color Mix</a> · поштучно — <a href="https://www.amazon.com/stores/Chipolo/page/290EF9C6-803B-4E8C-A6C2-C19B8F8266FD">фирменный магазин Chipolo</a> · обзор: hotairtag.com (9/10)</p>
+        </details>
+      </div>
+
+      <!-- LOOP -->
+      <div class="model">
+        <div class="photo" style="background:#fff"><img src="https://chipolo.net/imager/assets/images/loop-image-desktop_616b2c32fb7bb9679ad560fc61635847_4f24388536e58ef9929903cb633a81c2.webp" alt="Chipolo LOOP — перезаряжаемый трекер с USB-C" loading="lazy" style="object-fit:contain"></div>
+        <span class="badge gray">Флагман · USB-C</span>
+        <h3>Chipolo LOOP</h3>
+        <div class="price-line">~$39 · есть 4-pack и бандл 2×LOOP + CARD</div>
+        <p>Новинка 2026 года и первый брелок Chipolo без батареек: заряжается по USB-C. Из-за спроса на старте регулярно уходил в предзаказы даже на официальном сайте.</p>
+        <table class="spec">
+          <tr><td>Сети</td><td>Apple Find My <em>или</em> Google Find Hub</td></tr>
+          <tr><td>Громкость / дальность</td><td>До 125 дБ · до 120 м</td></tr>
+          <tr><td>Питание</td><td>Аккумулятор, USB-C, ~1 год на заряде</td></tr>
+          <tr><td>Защита</td><td>IP67 — до 30 минут на глубине 1 м</td></tr>
+        </table>
+        <ul class="pm">
+          <li class="plus">Никаких батареек — воткнули кабель, как наушники</li>
+          <li class="plus">IP67 + 125 дБ — лучший вариант для велосипеда, рюкзака, ошейника</li>
+          <li class="minus">Дороже POP на ~$10 при тех же базовых функциях</li>
+          <li class="minus">Из-за спроса бывает out of stock / предзаказ</li>
+        </ul>
+        <details>
+          <summary>Купить / источники</summary>
+          <p>Одиночные, 4-pack (вкл. Charcoal) и бандлы — <a href="https://www.amazon.com/stores/Chipolo/page/290EF9C6-803B-4E8C-A6C2-C19B8F8266FD">фирменный магазин на Amazon</a> · <a href="https://chipolo.net/en-us/products/chipolo-loop">chipolo.net/loop</a></p>
+        </details>
+      </div>
+
+      <div class="group-label">💳 Для кошелька</div>
+
+      <!-- CARD -->
+      <div class="model">
+        <div class="photo" style="background:#fff"><img src="https://chipolo.net/imager/assets/images/card-image-desktop_616b2c32fb7bb9679ad560fc61635847_4f24388536e58ef9929903cb633a81c2.webp" alt="Chipolo CARD — карта-трекер для кошелька с Qi-зарядкой" loading="lazy" style="object-fit:contain"></div>
+        <span class="badge pop">Qi-зарядка · единственная в классе</span>
+        <h3>Chipolo CARD</h3>
+        <div class="price-line">~$45</div>
+        <p>Плоская пластина толщиной с две банковские карты — для отделения кошелька, обложки паспорта, чехла ноутбука, куда брелок физически не влезает. Ключевое отличие от всех карт-трекеров прошлых лет: <strong>перезаряжается на любой беспроводной Qi-зарядке</strong>. У конкурентов (Tile Slim, старый CARD Spot) батарея несъёмная — через 2 года устройство целиком отправляется в мусор.</p>
+        <ul class="pm">
+          <li class="plus">Не надо менять из-за севшей батареи — заряжаете раз в год</li>
+          <li class="plus">Apple Find My или Google Find Hub — на выбор · IP67 · до 110 дБ</li>
+          <li class="minus">Самая дорогая позиция линейки</li>
+          <li class="minus">Нет отверстия — на ключи не повесить; звук тише брелоков</li>
+        </ul>
+        <details>
+          <summary>Купить / источники</summary>
+          <p><a href="https://www.amazon.com/stores/Chipolo/page/290EF9C6-803B-4E8C-A6C2-C19B8F8266FD">Фирменный магазин на Amazon</a> — там же бандл 2×LOOP + CARD выгоднее, чем по отдельности · <a href="https://chipolo.net/en-us/products/chipolo-card">chipolo.net/card</a></p>
+        </details>
+      </div>
+
+      <!-- SPOT / POINT -->
+      <div class="model">
+        <div class="photo" style="background:#fff"><img src="https://chipolo.net/imager/products/116485/One_1_black_5b56692a8ed40168c6a1a2c6081706be.webp" alt="Chipolo ONE Spot — трекер для сети Apple Find My" loading="lazy" style="object-fit:contain"></div>
+        <span class="badge warn">Прошлое поколение · только со скидкой</span>
+        <h3>ONE Spot · CARD Spot · ONE Point</h3>
+        <div class="price-line">$25–35 · ONE Point: $29 за штуку, $99 за 4-pack</div>
+        <p>Раздельные версии до эпохи POP: <strong>Spot</strong> — навсегда Apple Find My, <strong>Point</strong> — навсегда Google Find Hub. Внутри своей сети почти не уступают POP (у ONE Spot те же 120 дБ и сменная батарейка), поэтому по хорошей скидке — рациональная покупка под конкретный телефон. Без скидки смысла нет: за те же деньги POP умеет всё то же плюс выбор сети.</p>
+        <ul class="pm">
+          <li class="minus">Привязка к экосистеме навсегда: сменили iPhone на Android — трекер стал сувениром</li>
+          <li class="minus">У CARD Spot батарея несъёмная: ~2 года — и на выброс (есть скидочная программа обмена, но это новая покупка)</li>
+          <li class="minus">Вымываются из ассортимента — распродают остатки</li>
+        </ul>
+        <details>
+          <summary>Где / источники</summary>
+          <p>Amazon (магазин бренда) и — почти единственное, что реально есть на маркетплейсах РФ, см. <a href="#buy">раздел о покупке</a> · программа обмена: chipolo.net/renewal</p>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARE ================= -->
+<section id="compare">
+  <div class="wrap">
+    <div class="eyebrow">Сравнение</div>
+    <h2>Вся линейка в одной таблице</h2>
+    <p class="h-sub">Плюс два главных конкурента для контекста — AirTag 2 и Samsung SmartTag2.</p>
+    <div class="table-scroll">
+      <table class="cmp">
+        <thead>
+          <tr><th>Модель</th><th>Сеть / совместимость</th><th>Формат</th><th>Питание</th><th>Звук</th><th>Защита</th><th>Цена (Amazon)</th><th>Главный минус</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>POP 🏆</td><td><span class="tick">Apple или Google</span> — на выбор</td><td>Брелок, 6 цветов</td><td>CR2032, ~1 год, сменная</td><td>120 дБ</td><td>IP55</td><td>$24.50–30 · 4-pack $75–89</td><td>Нет UWB; брызгозащита</td></tr>
+          <tr><td>LOOP</td><td><span class="tick">Apple или Google</span> — на выбор</td><td>Брелок</td><td>Аккумулятор, USB-C</td><td>125 дБ</td><td>IP67</td><td>~$39</td><td>Цена; надо заряжать</td></tr>
+          <tr><td>CARD</td><td><span class="tick">Apple или Google</span> — на выбор</td><td>Карта</td><td>Аккумулятор, Qi</td><td>~110 дБ</td><td>IP67</td><td>~$45</td><td>Дороже всех; не для ключей</td></tr>
+          <tr><td>ONE Spot</td><td><span class="cross">Только Apple</span></td><td>Брелок</td><td>CR2032, сменная</td><td>120 дБ</td><td>IPX5</td><td>$25–28</td><td>Привязка к iPhone навсегда</td></tr>
+          <tr><td>CARD Spot</td><td><span class="cross">Только Apple</span></td><td>Карта</td><td>Несъёмная, ~2 года</td><td>~105 дБ</td><td>IPX5</td><td>~$35</td><td>Батарея = срок жизни трекера</td></tr>
+          <tr><td>ONE Point</td><td><span class="cross">Только Google</span></td><td>Брелок</td><td>CR2032, сменная</td><td>120 дБ</td><td>IPX5</td><td>$29 · 4-pack $99</td><td>Бесполезен с iPhone; дефицитен</td></tr>
+          <tr><td>ONE / Classic</td><td><span class="cross">Только прилож. Chipolo</span></td><td>Брелок</td><td>CR2032 / CR2025</td><td>92–120 дБ</td><td>до IPX5</td><td>распродажи</td><td>Нет глобальных сетей — поиск вдали почти не работает</td></tr>
+          <tr><td>AirTag 2</td><td><span class="cross">Только Apple</span></td><td>«Таблетка», нужен аксессуар</td><td>CR2032, сменная</td><td>~85 дБ</td><td>IP67</td><td>~$29</td><td>Тихий; аксессуар за доплату; но есть UWB-стрелка</td></tr>
+          <tr><td>Samsung SmartTag2</td><td><span class="cross">Только Samsung Galaxy</span></td><td>Брелок с ушком</td><td>CR2032, сменная</td><td>—</td><td>IP67</td><td>~$20–30</td><td>Не работает ни с iPhone, ни с другими Android</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRAPS ================= -->
+<section id="traps">
+  <div class="wrap">
+    <div class="eyebrow">Подводные камни</div>
+    <h2>Как не купить не тот Chipolo</h2>
+    <p class="h-sub">Четыре типичные ошибки — все из реальных отзывов и карточек маркетплейсов.</p>
+
+    <p><strong>Ловушка №1 — приставка в названии.</strong> Внешне ONE Spot, ONE Point и POP — почти одинаковые цветные кружки. Разница — в одном слове в заголовке карточки, и она решает всё: Spot не заработает на Android, Point — на iPhone. Всегда читайте полное название и строку «Works with…».</p>
+
+    <p><strong>Ловушка №2 — «мёртвая» карта.</strong> CARD Spot и старая CARD (2nd gen) не перезаряжаются: батарея на 1–2 года — это срок жизни устройства. Перезаряжаемая через Qi — только новая CARD поколения 2025+. На маркетплейсах под одним названием «Chipolo CARD» продаются оба варианта.</p>
+
+    <p><strong>Ловушка №3 — залежавшийся сток.</strong> У трекеров со встроенной батареей отсчёт идёт с завода, а не с покупки. Товар, пролежавший год у перекупщика, отдаст вам половину ресурса. Смотрите фото упаковки в отзывах и дату производства.</p>
+
+    <p><strong>Ловушка №4 — «other sellers» на Amazon.</strong> У популярных трекеров есть серые продавцы. Надёжный путь — покупать из <a href="https://www.amazon.com/stores/Chipolo/page/290EF9C6-803B-4E8C-A6C2-C19B8F8266FD">официального storefront Chipolo</a> или карточек с продавцом Chipolo/Amazon.</p>
+
+    <div class="callout">
+      <b>⚠ Практическое правило</b>
+      Перед оплатой ответьте на два вопроса: <em>какой у меня (или у одаряемого) телефон</em> и <em>есть ли в названии слово Spot или Point</em>. Несовпадение = трекер-сувенир. Если сомневаетесь — берите POP: он не ошибается.
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUY ================= -->
+<section id="buy">
+  <div class="wrap">
+    <div class="eyebrow">Покупка</div>
+    <h2>Где купить: Amazon, Сербия и маркетплейсы РФ</h2>
+    <p class="h-sub">Основной канал с полной линейкой — Amazon. Локальные варианты — с оговорками.</p>
+
+    <div class="buy-grid">
+      <div class="country wide">
+        <h3><span class="flag">🇺🇸</span> Amazon — полная линейка и лучшие цены</h3>
+        <div class="shop"><b><a href="https://www.amazon.com/Chipolo-POP-Tracker-Tag-Compatible/dp/B0DZXXB7KF">Chipolo POP 4-pack (Standard Mix)</a></b><span>$89, по акциям $75.56 (≈$19/шт). Исторический минимум — $71.20 на Black Friday: крупные распродажи Amazon стабильно дают лучшую цену.</span></div>
+        <div class="shop"><b><a href="https://www.amazon.com/Chipolo-POP-Tracker-Tag-Compatible/dp/B0F1CV36BM">Chipolo POP 4-pack (Color Mix)</a></b><span>Та же цена, яркая расцветка — жёлтый/синий/красный/зелёный.</span></div>
+        <div class="shop"><b><a href="https://www.amazon.com/stores/Chipolo/page/290EF9C6-803B-4E8C-A6C2-C19B8F8266FD">Фирменный магазин Chipolo на Amazon</a></b><span>Одиночные POP (все 6 цветов, $24.50–30), вся линейка LOOP (вкл. 4-pack и Charcoal), CARD и бандл 2×LOOP + CARD. Покупка отсюда снимает риск серых продавцов.</span></div>
+      </div>
+
+      <div class="country">
+        <h3><span class="flag">🇷🇸</span> Сербия</h3>
+        <div class="shop"><b>Macola — Белград</b><span>Kneza Miloša 2 · macola.rs · +381 11 3349298 · пн–сб. Официальный Apple-реселлер, первым привёз Chipolo в Сербию. В основном прошлое поколение Spot/Point — наличие POP/LOOP уточнять по телефону.</span></div>
+        <div class="shop"><b>chipolo.net</b><span>Производитель в соседней Словении; перед заказом проверить доставку в Сербию в корзине (не ЕС — возможна пошлина).</span></div>
+        <div class="shop"><b>Big Bang / Gizzmo (Любляна) · Amazon.de</b><span>Вся линейка в наличии (POP 35 €) — вариант, если бываете в ЕС. Локально мониторить Ananas.rs и KupujemProdajem.</span></div>
+      </div>
+
+      <div class="country">
+        <h3><span class="flag">🇷🇺</span> Маркетплейсы РФ</h3>
+        <div class="shop"><b>Ozon — <a href="https://www.ozon.ru/brand/chipolo-146031516/">каталог бренда</a></b><span>Самый широкий выбор: ONE, ONE Spot, CARD Spot; ~4 600–5 900 ₽, остатки штучные. POP/LOOP пока не доехали.</span></div>
+        <div class="shop"><b>Wildberries — <a href="https://www.wildberries.ru/catalog/tags/chipolo">каталог по тегу</a></b><span>Напр., <a href="https://www.wildberries.ru/catalog/127992523/detail.aspx">CARD Spot</a> за ~2 400–2 900 ₽ с WB Кошельком. Только версии под Apple.</span></div>
+        <div class="shop"><b>Яндекс Маркет — <a href="https://market.yandex.ru/search?text=Bluetooth-трекер+Chipolo">поиск по бренду</a></b><span>Единичные ONE и CARD. iPhone → берите Spot смело (Find My в РФ работает штатно). Android → Spot не подойдёт вовсе: ловить POP/Point у перекупщиков, везти с Amazon через форвардера или смотреть Moto Tag / Pebblebee; SmartTag2 — только для Samsung Galaxy.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Вопрос-ответ</div>
+    <h2>Частые вопросы</h2>
+
+    <details class="faq-item">
+      <summary>Chipolo работает и с iPhone, и с Android одновременно?</summary>
+      <p>Нет — и никакой трекер так не умеет: правила сертификации Apple Find My запрещают устройству состоять в двух поисковых сетях сразу. POP/LOOP/CARD дают выбор сети при настройке (iOS 14.5+ или Android 9+), переключиться можно позже через сброс трекера. Старые Spot (Apple) и Point (Google) привязаны к своей сети навсегда.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Чем POP лучше AirTag — и когда всё-таки AirTag?</summary>
+      <p>POP громче (120 дБ против ~85), имеет отверстие под кольцо (AirTag требует аксессуар), работает с Android и стоит сопоставимо. AirTag выигрывает в одном: UWB-точный поиск на iPhone — стрелка и расстояние до вещи прямо на экране, незаменимо при поиске по квартире. iPhone + важна «стрелка» → AirTag; всё остальное (включая смешанную семью iOS/Android) → POP.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Найдёт ли Chipolo вещь в другом городе или стране?</summary>
+      <p>Да, если трекер добавлен в Apple Find My или Google Find Hub: любая проходящая мимо «чужая» техника соответствующей экосистемы анонимно сообщит координаты, и вы увидите вещь на карте. Работает по всему миру; плотность сети Apple пока выше. У старых ONE/Classic глобальных сетей нет — только небольшое сообщество пользователей приложения Chipolo, рассчитывать на него не стоит.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>А в России сети Apple и Google работают?</summary>
+      <p>По состоянию на 2026 год — да: Find My («Локатор») на iPhone работает штатно; сеть Google Find Hub, по свежим обзорам, тоже функционирует без ограничений, обновления приходят через Google Play. Проблема РФ не в сетях, а в ассортименте: на маркетплейсах преобладают Spot-версии под Apple, трекеры под Google дефицитны.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Что взять в кошелёк?</summary>
+      <p>Новую CARD с Qi-зарядкой — единственную карту-трекер, у которой севшая батарея не означает покупку нового устройства. CARD Spot с несъёмной батареей на ~2 года имеет смысл только с хорошей скидкой (на ВБ он бывает за ~2 400–2 900 ₽ — на фоне $45 за новую CARD это уже разговор). Брелок POP в кошелёк класть можно, но толщина 6+ мм в кармане с картами ощущается.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Samsung SmartTag2 — не проще ли вместо Chipolo?</summary>
+      <p>Только если у вас смартфон Samsung Galaxy (Android 9+): SmartTag2 работает исключительно в экосистеме Samsung SmartThings Find — не на iPhone и не на Android других брендов. Плюс метка отвязывается только с того устройства, к которому привязана. Для владельца Galaxy это отличный дешёвый вариант (~2–3 тыс. ₽ на ВБ/Ozon); для всех остальных — бесполезный.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Нужна ли подписка?</summary>
+      <p>Нет. Поиск, сети, companion-приложение с допфункциями (вызов телефона, селфи-кнопка, смена рингтона, «вы забыли вещь») — всё бесплатно навсегда. Это одно из главных отличий от Tile, где часть функций за подписку.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Источники: Amazon.com (карточки POP 4-pack, фирменный storefront Chipolo) · <a href="https://chipolo.net">chipolo.net</a> (характеристики, фото, таблица сравнения) · HotAirTag, обзор Chipolo POP, март 2026 · Android Authority · 9to5Toys · DGL.ru · Samsung.com · Macola (Сербия) · каталоги Ozon, Wildberries, Яндекс Маркет.<br>
+    Июль 2026 · Цены и наличие меняются — проверяйте в карточке товара перед покупкой. Фото товаров — chipolo.net.
+  </div>
+</footer>
+
+</body>
+</html>
