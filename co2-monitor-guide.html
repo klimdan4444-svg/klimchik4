@@ -118,6 +118,7 @@ footer a{color:#C4DEE7}
       <a href="#ndir">🔬 NDIR vs подделки</a>
       <a href="#alts">📋 Альтернативы</a>
       <a href="#mount">🔩 Куда вешать</a>
+      <a href="#integrations">🔌 Интеграции</a>
       <a href="#buy">🛒 Где купить</a>
       <a href="#faq">💬 FAQ</a>
     </nav>
@@ -240,8 +241,8 @@ footer a{color:#C4DEE7}
       <div class="tbl-scroll">
         <table>
           <tr><th>Модель</th><th>Сенсор</th><th>CO₂, ppm</th><th>Точность</th><th>Экран</th><th>Питание / автономность</th><th>Связь</th><th>Цена, $</th><th>Купить</th></tr>
-          <tr><td><strong>Aranet4 Home</strong> 🏆</td><td>NDIR (Senseair)</td><td>0–9999</td><td>±30 ppm + 3%</td><td>E-ink 70×70 мм корпус</td><td>2× AA, от 2 лет</td><td>Bluetooth + приложение Aranet</td><td>~190</td><td><a href="https://www.amazon.com/dp/B07YY7BH2W" target="_blank" rel="noopener">Amazon</a></td></tr>
-          <tr><td><strong>Inkbird IAM-T1</strong></td><td>NDIR Senseair (Швеция)</td><td>0–9999</td><td>±30 ppm + 3%</td><td>E-ink 2,13"</td><td>2× AA, до 18 мес (интервал 10 мин)</td><td>Bluetooth 5.0 до 100 м, 30 дней оффлайн-данных</td><td>150 (без скидки 170)</td><td><a href="https://www.amazon.com/dp/B0C8JB82ZZ" target="_blank" rel="noopener">Amazon</a></td></tr>
+          <tr><td><strong>Aranet4 Home</strong> 🏆</td><td>NDIR (Senseair)</td><td>0–9999</td><td>±30 ppm + 3%</td><td>E-ink 70×70 мм корпус</td><td>2× AA, от 2 лет</td><td>Bluetooth + приложение Aranet Home (графики, экспорт CSV, несколько датчиков)</td><td>~190</td><td><a href="https://www.amazon.com/dp/B07YY7BH2W" target="_blank" rel="noopener">Amazon</a></td></tr>
+          <tr><td><strong>Inkbird IAM-T1</strong></td><td>NDIR Senseair (Швеция)</td><td>0–9999</td><td>±30 ppm + 3%</td><td>E-ink 2,13"</td><td>2× AA, до 18 мес (интервал 10 мин)</td><td>Bluetooth 5.0 до 100 м + приложение INKBIRD (графики, выгрузка 30 дней оффлайн-данных)</td><td>150 (без скидки 170)</td><td><a href="https://www.amazon.com/dp/B0C8JB82ZZ" target="_blank" rel="noopener">Amazon</a></td></tr>
           <tr><td><strong>Inkbird INK-CO2W / CO2WIFI</strong></td><td>NDIR (MH-Z19E)</td><td>400–5000</td><td>—</td><td>LCD с подсветкой</td><td>Аккум 2400 мА·ч — 10–15 ч, дальше USB</td><td>Wi-Fi 2,4 ГГц + приложение</td><td>~80</td><td><a href="https://www.amazon.com/dp/B0G648JLQV" target="_blank" rel="noopener">Amazon</a></td></tr>
           <tr><td><strong>Qingping Air Monitor Lite</strong></td><td>NDIR SenseAir S8 + PM-сенсор</td><td>400–9999</td><td>—</td><td>OLED + сенсорная полоса</td><td>USB-C, аккум 2000 мА·ч — до 7 ч; производитель рекомендует постоянное питание (на батарее автоотключение через 10 мин)</td><td>Wi-Fi, Apple HomeKit + Mijia</td><td>~76–90</td><td><a href="https://www.amazon.com/dp/B092HK4BB1" target="_blank" rel="noopener">Amazon</a></td></tr>
           <tr><td><strong>Tuya NDIR-монитор</strong> (ML)</td><td>NDIR, автокалибровка</td><td>400–5000</td><td>±50 ppm</td><td>LCD</td><td>Съёмный аккум 18650 + USB (время от батареи продавец не указывает)</td><td>Wi-Fi 2,4 ГГц, приложение Tuya</td><td>~30–60</td><td><a href="https://produto.mercadolivre.com.br/MLB-5080837102-monitor-de-medidor-de-qualidade-do-ar-wifi-indoor-co2-carbon-_JM" target="_blank" rel="noopener">Mercado Livre</a></td></tr>
@@ -277,6 +278,57 @@ footer a{color:#C4DEE7}
         <li><strong>Раз в пару недель — «проверка улицей».</strong> Вынесите прибор на свежий воздух или к открытому окну: он должен показать ~420–450 ppm. У большинства моделей есть ручная или автоматическая калибровка по этому уровню.</li>
         <li><strong>Пороги.</strong> До 800 ppm — отлично; выше 1000 — пора проветрить; выше 1400 — концентрация внимания заметно падает, проветривание обязательно.</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section id="integrations">
+  <div class="wrap">
+    <div class="kicker">Для технарей</div>
+    <h2>Интеграции, опенсорс и что из этого можно построить</h2>
+    <p class="sub">Датчик как источник данных для своих систем: дашборды, автоматизация вентиляции, аналитика продуктивности, LLM-агенты. Разница между моделями здесь огромная — от «всё написано до вас» до «данные заперты в приложении».</p>
+
+    <div class="card">
+      <h3>🏆 Aranet4 — самая богатая опенсорс-экосистема</h3>
+      <p>BLE-протокол Aranet4 давно реверс-инжинирнут сообществом, и вокруг него сложился целый стек готовых инструментов:</p>
+      <ul class="pros">
+        <li><strong>Python-библиотека Aranet4-Python</strong> (репозиторий Anrijs/Aranet4-Python, ставится как <span class="mono">pip install aranet4</span>): читает текущие показания и — главное — выкачивает всю историю измерений из памяти прибора без официального приложения. В комплекте CLI-утилита <span class="mono">aranetctl</span>. Пайплайн «Raspberry Pi/комп с BT → скрипт по крону → SQLite/InfluxDB» собирается за вечер.</li>
+        <li><strong>Home Assistant — официальная интеграция Aranet</strong>: слушает BLE-рассылки пассивно (нужно один раз включить «Smart Home integrations» в приложении Aranet), прибор появляется в HA автоматически со всеми четырьмя метриками.</li>
+        <li><strong>ESPHome</strong>: ESP32 за ~$5 превращается в постоянный BLE-шлюз — датчик стримит в умный дом без компьютера.</li>
+        <li><strong>Экспортёры в Prometheus и MQTT-мосты</strong> от сообщества + готовые дашборды Grafana — мониторинг уровня «как у прода».</li>
+      </ul>
+      <p>Писать самому не нужно ничего, только склеить готовое.</p>
+    </div>
+
+    <div class="card">
+      <h3>Qingping Lite — локальная интеграция через HomeKit</h3>
+      <p>Другой путь, тоже рабочий: HomeKit — открытый локальный протокол, поэтому Home Assistant подхватывает Qingping через штатный HomeKit Controller напрямую по Wi-Fi, без облака Xiaomi и без BLE-донглов, в реальном времени. Дальше — любые автоматизации HA. Плюс приложение Qingping+ умеет экспорт истории, а для Apple-домов автоматизации доступны вообще без единой строчки кода (через хаб HomePod/Apple TV). Отдельных зрелых python-библиотек под него меньше, чем у Aranet, но при живом HA они и не нужны.</p>
+    </div>
+
+    <div class="card">
+      <h3>Inkbird IAM-T1 — можно, но руками</h3>
+      <p>Поддержка IAM-T1 появилась в родной интеграции INKBIRD в Home Assistant (по BLE, автообнаружение), так что базовый сценарий «датчик → HA → графики и автоматизации» работает из коробки; в трекере HA, правда, встречаются жалобы на редкие сбои чтения температуры. Есть и альтернативные пути: ESPHome-конфиг с разобранными BLE-характеристиками (гайд SmartHomeScene, лямбды ammaraskar) и кастомная интеграция Lakjdf/homeassistant-inkbird-iam-t1 с постоянным подключением. Приложение INKBIRD экспортирует накопленные данные в CSV за любой период. Python-библиотек уровня аранетовской нет — вне HA придётся писать BLE-клиент самому по разобранным UUID.</p>
+    </div>
+
+    <div class="card">
+      <h3>Tuya-монитор — хакается, но это лотерея</h3>
+      <p>Пути три: официальная интеграция Tuya в HA (через облако), локальные LocalTuya / tuya-local (нужно добыть local key через Tuya IoT Platform) и облачный Tuya Cloud API напрямую. На практике с ноунеймами это рулетка: прошивки разные, ключи отваливаются, названия датчиков в API кривые. Работает у многих — но готовьтесь ковыряться.</p>
+      <ul class="cons" style="margin-top:14px">
+        <li><strong>INK-CO2W (Wi-Fi)</strong> — данные заперты в приложении INKBIRD, публичного API и локального доступа нет: для интеграций не брать.</li>
+        <li><strong>IP-2000C</strong> — только офлайн-выгрузка на ПК по USB через фирменный софт; live-потока нет в принципе. Это логгер для отчётов, не источник телеметрии.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Что из этого реально строят</h3>
+      <ul class="pros">
+        <li><strong>Автоматика проветривания:</strong> CO₂ &gt; 1000 ppm → Home Assistant включает бризер/вентилятор через умную розетку или реле, &lt; 700 — выключает. Самый популярный сценарий, собирается из готовых блоков за час.</li>
+        <li><strong>Дашборд как у прода:</strong> InfluxDB + Grafana — графики CO₂ по комнатам, наложение на время сна и рабочие часы, алерты в Telegram.</li>
+        <li><strong>Аналитика продуктивности:</strong> скрестить поток CO₂ с опенсорс тайм-трекером ActivityWatch — и смотреть корреляцию «духота ↔ падение фокуса» на своих данных. Научная база под этим есть: выше ~1400 ppm когнитивные показатели заметно снижаются.</li>
+        <li><strong>Буквально «мозговая активность»:</strong> сам датчик её не меряет, но если добавить EEG-гарнитуру (Muse, OpenBCI) с опенсорс-библиотекой BrainFlow — агент может сопоставлять ppm с реальными нейрометриками. CO₂-датчик в такой схеме — один из источников данных.</li>
+        <li><strong>LLM-агент:</strong> Home Assistant отдаёт всё через REST/WebSocket API и MQTT — агент читает метрики, замечает паттерны («каждый день к 16:00 у тебя 1300 ppm — поставь проветривание на 15:30») и пишет отчёты.</li>
+      </ul>
+      <div class="note ok" style="margin-bottom:0"><strong>✓ Вывод для интеграторов</strong> Нужен источник данных для своих систем — однозначно <strong>Aranet4</strong>: единственный, где весь инструментарий уже написан сообществом. Второе место — <strong>Qingping</strong> за локальный HomeKit без костылей. IAM-T1 — если основной сценарий всё же «стена», а интеграция вторична. INK-CO2W и IP-2000C для интеграций не подходят.</div>
     </div>
   </div>
 </section>
